@@ -8975,6 +8975,23 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;br&gt;&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
+<package name="0603">
+<description>&lt;p&gt;&lt;b&gt;Generic 1608 (0603) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<wire x1="-1.6" y1="0.7" x2="1.6" y2="0.7" width="0.0508" layer="39"/>
+<wire x1="1.6" y1="0.7" x2="1.6" y2="-0.7" width="0.0508" layer="39"/>
+<wire x1="1.6" y1="-0.7" x2="-1.6" y2="-0.7" width="0.0508" layer="39"/>
+<wire x1="-1.6" y1="-0.7" x2="-1.6" y2="0.7" width="0.0508" layer="39"/>
+<wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
+<wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
+<smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<text x="0" y="0.762" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
+<rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+</package>
 <package name="0603-RES">
 <wire x1="-1.6002" y1="0.6858" x2="1.6002" y2="0.6858" width="0.0508" layer="39"/>
 <wire x1="1.6002" y1="0.6858" x2="1.6002" y2="-0.6858" width="0.0508" layer="39"/>
@@ -9003,6 +9020,21 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.1524" layer="94"/>
 <wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
 <wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<text x="0" y="1.524" size="1.778" layer="95" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.524" size="1.778" layer="96" font="vector" align="top-center">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+</symbol>
+<symbol name="RESISTOR@1">
+<wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-1.016" x2="-0.889" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-0.889" y1="1.016" x2="-0.254" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-0.254" y1="-1.016" x2="0.381" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="1.016" x2="1.016" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.1524" layer="94"/>
 <text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
 <text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
@@ -9013,7 +9045,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="1MOHM-1/10W-1%(0603)" prefix="R" uservalue="yes">
 <description>RES-07868</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="0603-RES">
@@ -9030,10 +9062,52 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </device>
 </devices>
 </deviceset>
+<deviceset name="4.7KOHM" prefix="R">
+<description>&lt;h3&gt;4.7kΩ resistor&lt;/h3&gt;
+&lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0603-1/10W-1%" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-07857"/>
+<attribute name="VALUE" value="4.7k"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="3.9KOHM" prefix="R">
+<description>&lt;h3&gt;3.9kΩ resistor&lt;/h3&gt;
+&lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0603-1/10W-1%" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-08701"/>
+<attribute name="VALUE" value="3.9k"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="100KOHM-1/10W-1%(0603)" prefix="R" uservalue="yes">
 <description>RES-07828</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="0603-RES">
@@ -9053,7 +9127,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="10KOHM-1/10W-1%(0603)" prefix="R" uservalue="yes">
 <description>RES-00824</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="0603" package="0603-RES">
@@ -9073,7 +9147,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="68.1KOHM1/10W1%(0603)" prefix="R" uservalue="yes">
 <description>RES-09380</description>
 <gates>
-<gate name="&gt;NAME" symbol="RESISTOR" x="0" y="0"/>
+<gate name="&gt;NAME" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="0603-RES">
@@ -9093,7 +9167,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="150KOHM1/10W1%(0603)" prefix="R" uservalue="yes">
 <description>RES-09117</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="0603-RES">
@@ -9113,7 +9187,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="470OHM1/10W1%(0603)" prefix="R" uservalue="yes">
 <description>RES-07869</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="0603-RES">
@@ -9133,7 +9207,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="20OHM1/10W1%(0603)" prefix="R" uservalue="yes">
 <description>RES-07862</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="SMD" package="0603-RES">
@@ -9153,7 +9227,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="10OHM-1/10W-5%0603" prefix="R" uservalue="yes">
 <description>RES-09834</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="SMD" package="0603-RES">
@@ -9173,7 +9247,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <deviceset name="180OHM1/10W1%(0603)" prefix="R" uservalue="yes">
 <description>RES-08788</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="0603-RES">
@@ -12487,12 +12561,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="vcc"/>
 <part name="R13" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="DVDD"/>
-<part name="R19" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
-<part name="R20" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
-<part name="R21" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
-<part name="R22" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
-<part name="R23" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
-<part name="R24" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
+<part name="R19" library="SparkFun-Resistors" deviceset="4.7KOHM" device="-0603-1/10W-1%" value="4.7k"/>
+<part name="R20" library="SparkFun-Resistors" deviceset="4.7KOHM" device="-0603-1/10W-1%" value="4.7k"/>
+<part name="R21" library="SparkFun-Resistors" deviceset="4.7KOHM" device="-0603-1/10W-1%" value="4.7k"/>
+<part name="R22" library="SparkFun-Resistors" deviceset="4.7KOHM" device="-0603-1/10W-1%" value="4.7k"/>
+<part name="R23" library="SparkFun-Resistors" deviceset="4.7KOHM" device="-0603-1/10W-1%" value="4.7k"/>
+<part name="R24" library="SparkFun-Resistors" deviceset="3.9KOHM" device="-0603-1/10W-1%" value="3.9k"/>
 <part name="R27" library="SparkFun-Resistors" deviceset="10OHM-1/10W-5%0603" device="SMD" value="10"/>
 <part name="C19" library="SparkFun-Capacitors" deviceset="47NF(0.047UF/47000PF)-25V-5%(0603)" device="SMD" value="47nF"/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -12504,9 +12578,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U3" library="SparkFun-IC-Memory" deviceset="AT25SF041" device="" value="4MB Flash"/>
 <part name="R25" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
 <part name="R26" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
-<part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="DVDD"/>
 <part name="GND29" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12576,7 +12650,10 @@ I/O not 5V tolerant!!</text>
 <instance part="C12" gate="G$1" x="226.06" y="160.02"/>
 <instance part="GND4" gate="1" x="226.06" y="152.4" rot="MR0"/>
 <instance part="J1" gate="G$1" x="241.3" y="129.032" rot="R180"/>
-<instance part="J2" gate="G$1" x="230.124" y="71.882" rot="MR180"/>
+<instance part="J2" gate="G$1" x="230.124" y="71.882" smashed="yes" rot="MR180">
+<attribute name="VALUE" x="209.804" y="79.756" size="1.778" layer="96" font="vector" rot="MR180" align="top-left"/>
+<attribute name="NAME" x="227.584" y="64.262" size="1.778" layer="95" font="vector" rot="MR180"/>
+</instance>
 <instance part="GND6" gate="1" x="220.98" y="59.182"/>
 <instance part="R2" gate="G$1" x="185.42" y="76.962" rot="R90"/>
 <instance part="R3" gate="G$1" x="200.66" y="79.502" rot="R90"/>
@@ -12668,28 +12745,28 @@ I/O not 5V tolerant!!</text>
 <instance part="R14" gate="G$1" x="106.68" y="142.24"/>
 <instance part="GND1" gate="1" x="17.526" y="3.556"/>
 <instance part="SUPPLY6" gate="G$1" x="25.146" y="28.956"/>
-<instance part="R13" gate="G$1" x="12.7" y="104.14" rot="R180"/>
-<instance part="SUPPLY9" gate="G$1" x="5.08" y="109.22"/>
-<instance part="R19" gate="G$1" x="12.7" y="96.52" rot="R180"/>
-<instance part="R20" gate="G$1" x="12.7" y="88.9" rot="R180"/>
-<instance part="R21" gate="G$1" x="12.7" y="81.28" rot="R180"/>
-<instance part="R22" gate="G$1" x="12.7" y="73.66" rot="R180"/>
-<instance part="R23" gate="G$1" x="12.7" y="66.04" rot="R180"/>
-<instance part="R24" gate="G$1" x="12.7" y="58.42" rot="R180"/>
+<instance part="R13" gate="G$1" x="43.18" y="55.88" rot="R180"/>
+<instance part="SUPPLY9" gate="G$1" x="35.56" y="58.42"/>
+<instance part="R19" gate="G$1" x="12.7" y="111.76" rot="R180"/>
+<instance part="R20" gate="G$1" x="12.7" y="104.14" rot="R180"/>
+<instance part="R21" gate="G$1" x="12.7" y="96.52" rot="R180"/>
+<instance part="R22" gate="G$1" x="12.7" y="88.9" rot="R180"/>
+<instance part="R23" gate="G$1" x="12.7" y="81.28" rot="R180"/>
+<instance part="R24" gate="G$1" x="12.7" y="73.66" rot="R180"/>
 <instance part="R27" gate="G$1" x="127" y="121.92"/>
 <instance part="C19" gate="G$1" x="137.16" y="114.3"/>
 <instance part="GND9" gate="1" x="137.16" y="106.68"/>
 <instance part="GND10" gate="1" x="40.64" y="5.08"/>
-<instance part="R18" gate="G$1" x="12.7" y="40.64"/>
+<instance part="R18" gate="G$1" x="43.18" y="43.18"/>
 <instance part="AVDD2" gate="G$1" x="185.42" y="84.582"/>
 <instance part="FD3" gate="G$1" x="241.3" y="30.48"/>
 <instance part="FD4" gate="G$1" x="241.3" y="33.02"/>
 <instance part="U3" gate="G$1" x="193.04" y="162.56"/>
-<instance part="R25" gate="G$1" x="12.7" y="48.26" rot="R180"/>
-<instance part="R26" gate="G$1" x="45.72" y="55.88" rot="R180"/>
-<instance part="GND11" gate="1" x="55.88" y="45.72"/>
+<instance part="R25" gate="G$1" x="43.18" y="50.8" rot="R180"/>
+<instance part="R26" gate="G$1" x="12.7" y="66.04" rot="R180"/>
 <instance part="SUPPLY1" gate="G$1" x="226.06" y="175.26"/>
 <instance part="GND29" gate="1" x="175.26" y="152.4" rot="MR0"/>
+<instance part="GND5" gate="1" x="5.08" y="58.42"/>
 </instances>
 <busses>
 </busses>
@@ -12870,16 +12947,40 @@ I/O not 5V tolerant!!</text>
 <wire x1="40.64" y1="20.32" x2="40.64" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R26" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="55.88" x2="55.88" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="55.88" x2="55.88" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="GND11" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="GND"/>
 <wire x1="177.8" y1="160.02" x2="175.26" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="160.02" x2="175.26" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="GND29" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R19" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="111.76" x2="5.08" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="111.76" x2="5.08" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="R24" gate="G$1" pin="2"/>
+<wire x1="5.08" y1="104.14" x2="5.08" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="96.52" x2="5.08" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="88.9" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="81.28" x2="5.08" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="73.66" x2="5.08" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="66.04" x2="5.08" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="73.66" x2="5.08" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="R23" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="81.28" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R22" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="88.9" x2="5.08" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="R21" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="96.52" x2="5.08" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="R20" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="104.14" x2="5.08" y2="104.14" width="0.1524" layer="91"/>
+<junction x="5.08" y="104.14"/>
+<junction x="5.08" y="96.52"/>
+<junction x="5.08" y="88.9"/>
+<junction x="5.08" y="81.28"/>
+<junction x="5.08" y="73.66"/>
+<pinref part="R26" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="66.04" x2="5.08" y2="66.04" width="0.1524" layer="91"/>
+<junction x="5.08" y="66.04"/>
 </segment>
 </net>
 <net name="DVDD" class="0">
@@ -12919,42 +13020,14 @@ I/O not 5V tolerant!!</text>
 <wire x1="35.56" y1="152.4" x2="35.56" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="104.14" x2="5.08" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="104.14" x2="5.08" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="SUPPLY9" gate="G$1" pin="VCC"/>
-<wire x1="5.08" y1="104.14" x2="5.08" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="96.52" x2="5.08" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="88.9" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="81.28" x2="5.08" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="73.66" x2="5.08" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="66.04" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="R24" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="58.42" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="R23" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="66.04" x2="5.08" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="R22" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="73.66" x2="5.08" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="R21" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="81.28" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="R20" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="88.9" x2="5.08" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="R19" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="96.52" x2="5.08" y2="96.52" width="0.1524" layer="91"/>
-<junction x="5.08" y="96.52"/>
-<junction x="5.08" y="104.14"/>
-<junction x="5.08" y="88.9"/>
-<junction x="5.08" y="81.28"/>
-<junction x="5.08" y="73.66"/>
-<junction x="5.08" y="66.04"/>
-<wire x1="5.08" y1="58.42" x2="5.08" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="58.42" x2="35.56" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="R25" gate="G$1" pin="2"/>
-<wire x1="5.08" y1="48.26" x2="7.62" y2="48.26" width="0.1524" layer="91"/>
-<junction x="5.08" y="58.42"/>
+<wire x1="35.56" y1="50.8" x2="38.1" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="R18" gate="G$1" pin="1"/>
-<wire x1="7.62" y1="40.64" x2="5.08" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="40.64" x2="5.08" y2="48.26" width="0.1524" layer="91"/>
-<junction x="5.08" y="48.26"/>
+<wire x1="38.1" y1="43.18" x2="35.56" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="43.18" x2="35.56" y2="50.8" width="0.1524" layer="91"/>
+<junction x="35.56" y="50.8"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="VCC"/>
@@ -13047,8 +13120,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R25" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="48.26" x2="20.32" y2="48.26" width="0.1524" layer="91"/>
-<label x="20.32" y="48.26" size="1.27" layer="95" xref="yes"/>
+<wire x1="48.26" y1="50.8" x2="50.8" y2="50.8" width="0.1524" layer="91"/>
+<label x="50.8" y="50.8" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="!CS"/>
@@ -13427,8 +13500,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R24" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="58.42" x2="20.32" y2="58.42" width="0.1524" layer="91"/>
-<label x="20.32" y="58.42" size="1.27" layer="95" xref="yes"/>
+<wire x1="17.78" y1="73.66" x2="20.32" y2="73.66" width="0.1524" layer="91"/>
+<label x="20.32" y="73.66" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_00" class="0">
@@ -13444,8 +13517,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R19" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="96.52" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
-<label x="20.32" y="96.52" size="1.27" layer="95" xref="yes"/>
+<wire x1="17.78" y1="111.76" x2="20.32" y2="111.76" width="0.1524" layer="91"/>
+<label x="20.32" y="111.76" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_01" class="0">
@@ -13461,8 +13534,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R20" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="88.9" x2="20.32" y2="88.9" width="0.1524" layer="91"/>
-<label x="20.32" y="88.9" size="1.27" layer="95" xref="yes"/>
+<wire x1="17.78" y1="104.14" x2="20.32" y2="104.14" width="0.1524" layer="91"/>
+<label x="20.32" y="104.14" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_03" class="0">
@@ -13478,8 +13551,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R22" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="73.66" x2="20.32" y2="73.66" width="0.1524" layer="91"/>
-<label x="20.32" y="73.66" size="1.27" layer="95" xref="yes"/>
+<wire x1="17.78" y1="88.9" x2="20.32" y2="88.9" width="0.1524" layer="91"/>
+<label x="20.32" y="88.9" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_04" class="0">
@@ -13495,8 +13568,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R23" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="66.04" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
-<label x="20.32" y="66.04" size="1.27" layer="95" xref="yes"/>
+<wire x1="17.78" y1="81.28" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
+<label x="20.32" y="81.28" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_06" class="0">
@@ -13506,9 +13579,9 @@ I/O not 5V tolerant!!</text>
 <label x="38.1" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R26" gate="G$1" pin="2"/>
-<wire x1="40.64" y1="55.88" x2="38.1" y2="55.88" width="0.1524" layer="91"/>
-<label x="38.1" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R26" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="66.04" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
+<label x="20.32" y="66.04" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_02" class="0">
@@ -13519,8 +13592,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R21" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="81.28" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
-<label x="20.32" y="81.28" size="1.27" layer="95" xref="yes"/>
+<wire x1="17.78" y1="96.52" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
+<label x="20.32" y="96.52" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="NFDIO2/IO0_2"/>
@@ -13543,9 +13616,9 @@ I/O not 5V tolerant!!</text>
 <label x="38.1" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="20.32" y1="40.64" x2="17.78" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="43.18" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="R18" gate="G$1" pin="2"/>
-<label x="20.32" y="40.64" size="1.27" layer="95" xref="yes"/>
+<label x="50.8" y="43.18" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO_07" class="0">
@@ -13556,8 +13629,8 @@ I/O not 5V tolerant!!</text>
 </segment>
 <segment>
 <pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="104.14" x2="20.32" y2="104.14" width="0.1524" layer="91"/>
-<label x="20.32" y="104.14" size="1.27" layer="95" xref="yes"/>
+<wire x1="48.26" y1="55.88" x2="50.8" y2="55.88" width="0.1524" layer="91"/>
+<label x="50.8" y="55.88" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
