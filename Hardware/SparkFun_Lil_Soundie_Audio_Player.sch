@@ -166,14 +166,213 @@ We've spent an enormous amount of time creating and checking these footprints an
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
 <package name="CREATIVE_COMMONS">
+<description>&lt;h3&gt;Creative Commons License Template&lt;/h3&gt;
+&lt;p&gt;CC BY-SA 4.0 License with &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;link to license&lt;/a&gt; and placeholder for designer name.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;FRAME_LEDGER&lt;/li&gt;
+&lt;li&gt;FRAME_LETTER&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <text x="-20.32" y="5.08" size="1.778" layer="51" font="vector">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
 <text x="0" y="2.54" size="1.778" layer="51" font="vector"> https://creativecommons.org/licenses/by-sa/4.0/</text>
 <text x="11.43" y="0" size="1.778" layer="51" font="vector">Designed by:</text>
 </package>
+<package name="OSHW-LOGO-L">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Large - Silkscreen&lt;/h3&gt;
+&lt;p&gt;Silkscreen logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<polygon width="0.15" layer="21">
+<vertex x="0.9209" y="-2.2231" curve="9.497479"/>
+<vertex x="1.2751" y="-2.0407"/>
+<vertex x="2.1548" y="-2.758"/>
+<vertex x="2.758" y="-2.1548"/>
+<vertex x="2.0407" y="-1.2751" curve="18.998791"/>
+<vertex x="2.3446" y="-0.5413"/>
+<vertex x="3.4739" y="-0.4265"/>
+<vertex x="3.4739" y="0.4265"/>
+<vertex x="2.3446" y="0.5413" curve="18.998791"/>
+<vertex x="2.0407" y="1.2751"/>
+<vertex x="2.758" y="2.1548"/>
+<vertex x="2.1548" y="2.758"/>
+<vertex x="1.2751" y="2.0407" curve="18.998791"/>
+<vertex x="0.5413" y="2.3446"/>
+<vertex x="0.4265" y="3.4739"/>
+<vertex x="-0.4265" y="3.4739"/>
+<vertex x="-0.5413" y="2.3446" curve="18.998791"/>
+<vertex x="-1.2751" y="2.0407"/>
+<vertex x="-2.1548" y="2.758"/>
+<vertex x="-2.758" y="2.1548"/>
+<vertex x="-2.0407" y="1.2751" curve="18.998791"/>
+<vertex x="-2.3446" y="0.5413"/>
+<vertex x="-3.4739" y="0.4265"/>
+<vertex x="-3.4739" y="-0.4265"/>
+<vertex x="-2.3446" y="-0.5413" curve="18.998791"/>
+<vertex x="-2.0407" y="-1.2751"/>
+<vertex x="-2.758" y="-2.1548"/>
+<vertex x="-2.1548" y="-2.758"/>
+<vertex x="-1.2751" y="-2.0407" curve="9.497479"/>
+<vertex x="-0.9209" y="-2.2231"/>
+<vertex x="-0.4186" y="-1.0105" curve="-67.504205"/>
+<vertex x="-1.0938" y="0" curve="-247.497204"/>
+<vertex x="0.4186" y="-1.0105"/>
+</polygon>
+</package>
+<package name="SFE_LOGO_FLAME_.4">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.4" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<polygon width="0.01" layer="21">
+<vertex x="6.17" y="9.11"/>
+<vertex x="6.18" y="9.09"/>
+<vertex x="6.19" y="9.02"/>
+<vertex x="6.19" y="8.92"/>
+<vertex x="6.18" y="8.8"/>
+<vertex x="6.16" y="8.68"/>
+<vertex x="6.1" y="8.56"/>
+<vertex x="6" y="8.47"/>
+<vertex x="5.85" y="8.42"/>
+<vertex x="5.72" y="8.42"/>
+<vertex x="5.58" y="8.44"/>
+<vertex x="5.43" y="8.5"/>
+<vertex x="5.28" y="8.57"/>
+<vertex x="5.13" y="8.66"/>
+<vertex x="4.99" y="8.77"/>
+<vertex x="4.86" y="8.88"/>
+<vertex x="4.75" y="9"/>
+<vertex x="4.65" y="9.14"/>
+<vertex x="4.58" y="9.28"/>
+<vertex x="4.54" y="9.41"/>
+<vertex x="4.52" y="9.53"/>
+<vertex x="4.54" y="9.65"/>
+<vertex x="4.58" y="9.76"/>
+<vertex x="4.64" y="9.87"/>
+<vertex x="4.72" y="9.97"/>
+<vertex x="4.87" y="10.1"/>
+<vertex x="5.04" y="10.19"/>
+<vertex x="5.21" y="10.23"/>
+<vertex x="5.37" y="10.25"/>
+<vertex x="5.52" y="10.25"/>
+<vertex x="5.63" y="10.24"/>
+<vertex x="5.71" y="10.23"/>
+<vertex x="5.74" y="10.23"/>
+<vertex x="5.69" y="10.27"/>
+<vertex x="5.54" y="10.38"/>
+<vertex x="5.3" y="10.51"/>
+<vertex x="5" y="10.64"/>
+<vertex x="4.64" y="10.73"/>
+<vertex x="4.23" y="10.74"/>
+<vertex x="3.79" y="10.65"/>
+<vertex x="3.34" y="10.41"/>
+<vertex x="2.99" y="10.12"/>
+<vertex x="2.77" y="9.81"/>
+<vertex x="2.66" y="9.48"/>
+<vertex x="2.66" y="9.13"/>
+<vertex x="2.76" y="8.79"/>
+<vertex x="2.94" y="8.44"/>
+<vertex x="3.21" y="8.09"/>
+<vertex x="3.54" y="7.75"/>
+<vertex x="3.81" y="7.44"/>
+<vertex x="3.93" y="7.14"/>
+<vertex x="3.95" y="6.86"/>
+<vertex x="3.86" y="6.61"/>
+<vertex x="3.68" y="6.41"/>
+<vertex x="3.44" y="6.25"/>
+<vertex x="3.15" y="6.17"/>
+<vertex x="2.83" y="6.17"/>
+<vertex x="2.62" y="6.22"/>
+<vertex x="2.44" y="6.3"/>
+<vertex x="2.3" y="6.4"/>
+<vertex x="2.19" y="6.52"/>
+<vertex x="2.12" y="6.66"/>
+<vertex x="2.08" y="6.79"/>
+<vertex x="2.08" y="6.92"/>
+<vertex x="2.12" y="7.04"/>
+<vertex x="2.18" y="7.14"/>
+<vertex x="2.26" y="7.22"/>
+<vertex x="2.35" y="7.29"/>
+<vertex x="2.45" y="7.35"/>
+<vertex x="2.54" y="7.4"/>
+<vertex x="2.61" y="7.43"/>
+<vertex x="2.66" y="7.45"/>
+<vertex x="2.68" y="7.47"/>
+<vertex x="2.66" y="7.48"/>
+<vertex x="2.59" y="7.5"/>
+<vertex x="2.49" y="7.52"/>
+<vertex x="2.36" y="7.54"/>
+<vertex x="2.19" y="7.56"/>
+<vertex x="2" y="7.54"/>
+<vertex x="1.8" y="7.51"/>
+<vertex x="1.58" y="7.45"/>
+<vertex x="1.39" y="7.36"/>
+<vertex x="1.21" y="7.24"/>
+<vertex x="1.04" y="7.1"/>
+<vertex x="0.9" y="6.91"/>
+<vertex x="0.78" y="6.69"/>
+<vertex x="0.7" y="6.41"/>
+<vertex x="0.65" y="6.08"/>
+<vertex x="0.64" y="5.7"/>
+<vertex x="0.64" y="5.06"/>
+<vertex x="0.64" y="4.42"/>
+<vertex x="0.64" y="3.78"/>
+<vertex x="0.64" y="3.14"/>
+<vertex x="0.64" y="2.5"/>
+<vertex x="0.64" y="1.86"/>
+<vertex x="0.64" y="1.21"/>
+<vertex x="0.64" y="0.57"/>
+<vertex x="0.67" y="0.6"/>
+<vertex x="0.74" y="0.69"/>
+<vertex x="0.85" y="0.83"/>
+<vertex x="1" y="1"/>
+<vertex x="1.18" y="1.21"/>
+<vertex x="1.38" y="1.44"/>
+<vertex x="1.61" y="1.69"/>
+<vertex x="1.84" y="1.95"/>
+<vertex x="2.1" y="2.23"/>
+<vertex x="2.33" y="2.48"/>
+<vertex x="2.54" y="2.7"/>
+<vertex x="2.74" y="2.89"/>
+<vertex x="2.94" y="3.03"/>
+<vertex x="3.15" y="3.14"/>
+<vertex x="3.39" y="3.19"/>
+<vertex x="3.65" y="3.19"/>
+<vertex x="4.16" y="3.19"/>
+<vertex x="4.64" y="3.25"/>
+<vertex x="5.08" y="3.38"/>
+<vertex x="5.48" y="3.55"/>
+<vertex x="5.85" y="3.78"/>
+<vertex x="6.19" y="4.06"/>
+<vertex x="6.5" y="4.38"/>
+<vertex x="6.78" y="4.74"/>
+<vertex x="7.17" y="5.47"/>
+<vertex x="7.37" y="6.2"/>
+<vertex x="7.41" y="6.9"/>
+<vertex x="7.31" y="7.55"/>
+<vertex x="7.11" y="8.12"/>
+<vertex x="6.83" y="8.59"/>
+<vertex x="6.51" y="8.93"/>
+<vertex x="6.17" y="9.12"/>
+</polygon>
+</package>
+<package name="FIDUCIAL-MICRO">
+<description>&lt;h3&gt;Fiducial - Circle, 0.25in&lt;/h3&gt;
+&lt;p&gt;Point-of-reference for pick-and-place machines and other optical instruments.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;FIDUCIAL&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<smd name="1" x="0" y="0" dx="0.635" dy="0.635" layer="1" roundness="100" cream="no"/>
+</package>
 <package name="DUMMY">
-<description>NOTHING HERE!!! For when you want a symbol with no package as an option against symbols with a package.</description>
+<description>&lt;h3&gt;Dummy Footprint&lt;/h3&gt;
+&lt;p&gt;NOTHING HERE!!! For when you want a symbol with no package as an option against symbols with a package.&lt;/p&gt;
+
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;BADGERHACK_LOGO&lt;/li&gt;
+&lt;li&gt;FRAME-LETTER&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 </package>
 <package name="OSHW-LOGO-S_COPPER">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Small - Top Copper&lt;/h3&gt;
+&lt;p&gt;Exposed copper logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.15" layer="1">
 <vertex x="0.3947" y="-0.9528" curve="9.498218"/>
 <vertex x="0.5465" y="-0.8746"/>
@@ -211,6 +410,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="OSHW-LOGO-M_COPPER">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Medium - Top Copper&lt;/h3&gt;
+&lt;p&gt;Exposed copper logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.15" layer="1">
 <vertex x="0.6578" y="-1.588" curve="9.499253"/>
 <vertex x="0.9108" y="-1.4576"/>
@@ -248,6 +451,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="OSHW-LOGO-L_COPPER">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Large - Top Copper&lt;/h3&gt;
+&lt;p&gt;Exposed copper logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.15" layer="1">
 <vertex x="0.9209" y="-2.2231" curve="9.497479"/>
 <vertex x="1.2751" y="-2.0407"/>
@@ -284,44 +491,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="0.4186" y="-1.0105"/>
 </polygon>
 </package>
-<package name="OSHW-LOGO-L">
-<polygon width="0.15" layer="21">
-<vertex x="0.9209" y="-2.2231" curve="9.497479"/>
-<vertex x="1.2751" y="-2.0407"/>
-<vertex x="2.1548" y="-2.758"/>
-<vertex x="2.758" y="-2.1548"/>
-<vertex x="2.0407" y="-1.2751" curve="18.998791"/>
-<vertex x="2.3446" y="-0.5413"/>
-<vertex x="3.4739" y="-0.4265"/>
-<vertex x="3.4739" y="0.4265"/>
-<vertex x="2.3446" y="0.5413" curve="18.998791"/>
-<vertex x="2.0407" y="1.2751"/>
-<vertex x="2.758" y="2.1548"/>
-<vertex x="2.1548" y="2.758"/>
-<vertex x="1.2751" y="2.0407" curve="18.998791"/>
-<vertex x="0.5413" y="2.3446"/>
-<vertex x="0.4265" y="3.4739"/>
-<vertex x="-0.4265" y="3.4739"/>
-<vertex x="-0.5413" y="2.3446" curve="18.998791"/>
-<vertex x="-1.2751" y="2.0407"/>
-<vertex x="-2.1548" y="2.758"/>
-<vertex x="-2.758" y="2.1548"/>
-<vertex x="-2.0407" y="1.2751" curve="18.998791"/>
-<vertex x="-2.3446" y="0.5413"/>
-<vertex x="-3.4739" y="0.4265"/>
-<vertex x="-3.4739" y="-0.4265"/>
-<vertex x="-2.3446" y="-0.5413" curve="18.998791"/>
-<vertex x="-2.0407" y="-1.2751"/>
-<vertex x="-2.758" y="-2.1548"/>
-<vertex x="-2.1548" y="-2.758"/>
-<vertex x="-1.2751" y="-2.0407" curve="9.497479"/>
-<vertex x="-0.9209" y="-2.2231"/>
-<vertex x="-0.4186" y="-1.0105" curve="-67.504205"/>
-<vertex x="-1.0938" y="0" curve="-247.497204"/>
-<vertex x="0.4186" y="-1.0105"/>
-</polygon>
-</package>
 <package name="OSHW-LOGO-M">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Medium - Silkscreen&lt;/h3&gt;
+&lt;p&gt;Silkscreen logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="21">
 <vertex x="0.6578" y="-1.588" curve="9.499253"/>
 <vertex x="0.9108" y="-1.4576"/>
@@ -359,6 +533,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="OSHW-LOGO-S">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Small - Silkscreen&lt;/h3&gt;
+&lt;p&gt;Silkscreen logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.15" layer="21">
 <vertex x="0.3947" y="-0.9528" curve="9.498218"/>
 <vertex x="0.5465" y="-0.8746"/>
@@ -396,6 +574,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="OSHW-LOGO-MINI">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Mini - Silkscreen&lt;/h3&gt;
+&lt;p&gt;Silkscreen logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.076" layer="21">
 <vertex x="1.2366" y="-0.17263125"/>
 <vertex x="1.2366" y="0.14736875"/>
@@ -589,6 +771,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.1">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.1" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="21">
 <vertex x="1.7" y="2.49"/>
 <vertex x="1.7" y="2.4"/>
@@ -687,6 +873,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.2">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.2" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="21">
 <vertex x="3.12" y="4.54"/>
 <vertex x="3.12" y="4.53"/>
@@ -820,6 +1010,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.3">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.3" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="21">
 <vertex x="4.65" y="6.54"/>
 <vertex x="4.65" y="6.52"/>
@@ -952,140 +1146,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="4.64" y="6.55"/>
 </polygon>
 </package>
-<package name="SFE_LOGO_FLAME_.4">
-<polygon width="0.01" layer="21">
-<vertex x="6.17" y="9.11"/>
-<vertex x="6.18" y="9.09"/>
-<vertex x="6.19" y="9.02"/>
-<vertex x="6.19" y="8.92"/>
-<vertex x="6.18" y="8.8"/>
-<vertex x="6.16" y="8.68"/>
-<vertex x="6.1" y="8.56"/>
-<vertex x="6" y="8.47"/>
-<vertex x="5.85" y="8.42"/>
-<vertex x="5.72" y="8.42"/>
-<vertex x="5.58" y="8.44"/>
-<vertex x="5.43" y="8.5"/>
-<vertex x="5.28" y="8.57"/>
-<vertex x="5.13" y="8.66"/>
-<vertex x="4.99" y="8.77"/>
-<vertex x="4.86" y="8.88"/>
-<vertex x="4.75" y="9"/>
-<vertex x="4.65" y="9.14"/>
-<vertex x="4.58" y="9.28"/>
-<vertex x="4.54" y="9.41"/>
-<vertex x="4.52" y="9.53"/>
-<vertex x="4.54" y="9.65"/>
-<vertex x="4.58" y="9.76"/>
-<vertex x="4.64" y="9.87"/>
-<vertex x="4.72" y="9.97"/>
-<vertex x="4.87" y="10.1"/>
-<vertex x="5.04" y="10.19"/>
-<vertex x="5.21" y="10.23"/>
-<vertex x="5.37" y="10.25"/>
-<vertex x="5.52" y="10.25"/>
-<vertex x="5.63" y="10.24"/>
-<vertex x="5.71" y="10.23"/>
-<vertex x="5.74" y="10.23"/>
-<vertex x="5.69" y="10.27"/>
-<vertex x="5.54" y="10.38"/>
-<vertex x="5.3" y="10.51"/>
-<vertex x="5" y="10.64"/>
-<vertex x="4.64" y="10.73"/>
-<vertex x="4.23" y="10.74"/>
-<vertex x="3.79" y="10.65"/>
-<vertex x="3.34" y="10.41"/>
-<vertex x="2.99" y="10.12"/>
-<vertex x="2.77" y="9.81"/>
-<vertex x="2.66" y="9.48"/>
-<vertex x="2.66" y="9.13"/>
-<vertex x="2.76" y="8.79"/>
-<vertex x="2.94" y="8.44"/>
-<vertex x="3.21" y="8.09"/>
-<vertex x="3.54" y="7.75"/>
-<vertex x="3.81" y="7.44"/>
-<vertex x="3.93" y="7.14"/>
-<vertex x="3.95" y="6.86"/>
-<vertex x="3.86" y="6.61"/>
-<vertex x="3.68" y="6.41"/>
-<vertex x="3.44" y="6.25"/>
-<vertex x="3.15" y="6.17"/>
-<vertex x="2.83" y="6.17"/>
-<vertex x="2.62" y="6.22"/>
-<vertex x="2.44" y="6.3"/>
-<vertex x="2.3" y="6.4"/>
-<vertex x="2.19" y="6.52"/>
-<vertex x="2.12" y="6.66"/>
-<vertex x="2.08" y="6.79"/>
-<vertex x="2.08" y="6.92"/>
-<vertex x="2.12" y="7.04"/>
-<vertex x="2.18" y="7.14"/>
-<vertex x="2.26" y="7.22"/>
-<vertex x="2.35" y="7.29"/>
-<vertex x="2.45" y="7.35"/>
-<vertex x="2.54" y="7.4"/>
-<vertex x="2.61" y="7.43"/>
-<vertex x="2.66" y="7.45"/>
-<vertex x="2.68" y="7.47"/>
-<vertex x="2.66" y="7.48"/>
-<vertex x="2.59" y="7.5"/>
-<vertex x="2.49" y="7.52"/>
-<vertex x="2.36" y="7.54"/>
-<vertex x="2.19" y="7.56"/>
-<vertex x="2" y="7.54"/>
-<vertex x="1.8" y="7.51"/>
-<vertex x="1.58" y="7.45"/>
-<vertex x="1.39" y="7.36"/>
-<vertex x="1.21" y="7.24"/>
-<vertex x="1.04" y="7.1"/>
-<vertex x="0.9" y="6.91"/>
-<vertex x="0.78" y="6.69"/>
-<vertex x="0.7" y="6.41"/>
-<vertex x="0.65" y="6.08"/>
-<vertex x="0.64" y="5.7"/>
-<vertex x="0.64" y="5.06"/>
-<vertex x="0.64" y="4.42"/>
-<vertex x="0.64" y="3.78"/>
-<vertex x="0.64" y="3.14"/>
-<vertex x="0.64" y="2.5"/>
-<vertex x="0.64" y="1.86"/>
-<vertex x="0.64" y="1.21"/>
-<vertex x="0.64" y="0.57"/>
-<vertex x="0.67" y="0.6"/>
-<vertex x="0.74" y="0.69"/>
-<vertex x="0.85" y="0.83"/>
-<vertex x="1" y="1"/>
-<vertex x="1.18" y="1.21"/>
-<vertex x="1.38" y="1.44"/>
-<vertex x="1.61" y="1.69"/>
-<vertex x="1.84" y="1.95"/>
-<vertex x="2.1" y="2.23"/>
-<vertex x="2.33" y="2.48"/>
-<vertex x="2.54" y="2.7"/>
-<vertex x="2.74" y="2.89"/>
-<vertex x="2.94" y="3.03"/>
-<vertex x="3.15" y="3.14"/>
-<vertex x="3.39" y="3.19"/>
-<vertex x="3.65" y="3.19"/>
-<vertex x="4.16" y="3.19"/>
-<vertex x="4.64" y="3.25"/>
-<vertex x="5.08" y="3.38"/>
-<vertex x="5.48" y="3.55"/>
-<vertex x="5.85" y="3.78"/>
-<vertex x="6.19" y="4.06"/>
-<vertex x="6.5" y="4.38"/>
-<vertex x="6.78" y="4.74"/>
-<vertex x="7.17" y="5.47"/>
-<vertex x="7.37" y="6.2"/>
-<vertex x="7.41" y="6.9"/>
-<vertex x="7.31" y="7.55"/>
-<vertex x="7.11" y="8.12"/>
-<vertex x="6.83" y="8.59"/>
-<vertex x="6.51" y="8.93"/>
-<vertex x="6.17" y="9.12"/>
-</polygon>
-</package>
 <package name="SFE_LOGO_FLAME_.5">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.5" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="21">
 <vertex x="7.41" y="10.77"/>
 <vertex x="7.42" y="10.74"/>
@@ -1220,6 +1285,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.6">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.6" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="21">
 <vertex x="8.85" y="13.12"/>
 <vertex x="8.86" y="13.08"/>
@@ -1356,6 +1425,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.7">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.7" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="21">
 <vertex x="10.18" y="15.58"/>
 <vertex x="10.18" y="15.54"/>
@@ -1494,6 +1567,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.8">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.8" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="21">
 <vertex x="11.06" y="17.02"/>
 <vertex x="11.06" y="16.96"/>
@@ -1635,6 +1712,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.9">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.9" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="21">
 <vertex x="12.72" y="19.45"/>
 <vertex x="12.73" y="19.39"/>
@@ -1783,6 +1864,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_COPPER_.1">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.1" Height - Top Copper&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="1">
 <vertex x="1.7" y="2.49"/>
 <vertex x="1.7" y="2.4"/>
@@ -1881,6 +1966,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_COPPER_.2">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.2" Height - Top Copper&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="1">
 <vertex x="3.12" y="4.54"/>
 <vertex x="3.12" y="4.53"/>
@@ -2014,6 +2103,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_COPPER_.3">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.3" Height - Top Copper&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="1">
 <vertex x="4.65" y="6.54"/>
 <vertex x="4.65" y="6.52"/>
@@ -2147,6 +2240,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_COPPER_EXPOSED_.1">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.1" Height - Top Copper (Exposed)&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="1">
 <vertex x="1.7" y="2.49"/>
 <vertex x="1.7" y="2.4"/>
@@ -2341,6 +2438,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_COPPER_EXPOSED_.2">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.2" Height - Top Copper (Exposed)&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="1">
 <vertex x="3.12" y="4.54"/>
 <vertex x="3.12" y="4.53"/>
@@ -2589,6 +2690,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_COPPER_EXPOSED_.3">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.3" Height - Top Copper (Exposed)&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0762" layer="1">
 <vertex x="4.65" y="6.54"/>
 <vertex x="4.65" y="6.52"/>
@@ -2841,6 +2946,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_STOP_.1">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.1" Height - Top Stopmask&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.01" layer="51">
 <vertex x="1.9" y="2.24"/>
 <vertex x="1.9" y="2.16"/>
@@ -3055,6 +3164,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="SFE_LOGO_FLAME_.05">
+<description>&lt;h3&gt;SparkFun Flame Logo - 0.05" Height - Silkscreen&lt;/h3&gt;
+&lt;p&gt;SparkFun Flame Logo&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0.0254" layer="21">
 <vertex x="1.05" y="1.58"/>
 <vertex x="1.05" y="1.57"/>
@@ -3524,20 +3637,29 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </package>
 <package name="FIDUCIAL-1X2">
+<description>&lt;h3&gt;Fiducial - Circle, 1mm&lt;/h3&gt;
+&lt;p&gt;Point-of-reference for pick-and-place machines and other optical instruments.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;FIDUCIAL&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
-</package>
-<package name="MICRO-FIDUCIAL">
-<smd name="1" x="0" y="0" dx="0.635" dy="0.635" layer="1" roundness="100" cream="no"/>
 </package>
 </packages>
 <symbols>
-<symbol name="LETTER_L">
+<symbol name="FRAME-LETTER">
+<description>&lt;h3&gt;Schematic Frame - Letter&lt;/h3&gt;
+&lt;p&gt;Standard 8.5x11 US Ledger frame&lt;/p&gt;
+&lt;p&gt;Devices using&lt;ul&gt;&lt;li&gt;FRAME-LETTER&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <wire x1="0" y1="185.42" x2="248.92" y2="185.42" width="0.4064" layer="94"/>
 <wire x1="248.92" y1="185.42" x2="248.92" y2="0" width="0.4064" layer="94"/>
 <wire x1="0" y1="185.42" x2="0" y2="0" width="0.4064" layer="94"/>
 <wire x1="0" y1="0" x2="248.92" y2="0" width="0.4064" layer="94"/>
 </symbol>
 <symbol name="DOCFIELD">
+<description>&lt;h3&gt;Schematic Documentation Field&lt;/h3&gt;
+&lt;p&gt;Autofilling schematic symbol-layer info including board name, designer, revision, and save date.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;FRAME-LEDGER&lt;/li&gt;
+&lt;li&gt;FRAME-LETTER&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <wire x1="0" y1="0" x2="71.12" y2="0" width="0.254" layer="94"/>
 <wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.254" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
@@ -3570,6 +3692,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="1.27" y="11.43" size="2.54" layer="94">Design by:</text>
 </symbol>
 <symbol name="OSHW-LOGO">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo&lt;/h3&gt;
+&lt;p&gt; This logo indicates the piece of hardware it is found on incorporates a OSHW license and/or adheres to the definition of open source hardware found here: &lt;a href="http://freedomdefined.org/OSHW"&gt;http://freedomdefined.org/OSHW&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Devices using&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <rectangle x1="-9.5059" y1="-9.0106" x2="-9.4043" y2="-8.9979" layer="94"/>
 <rectangle x1="-9.5186" y1="-8.9979" x2="-9.3916" y2="-8.9852" layer="94"/>
 <rectangle x1="-9.5313" y1="-8.9852" x2="-9.3789" y2="-8.9725" layer="94"/>
@@ -7124,6 +7249,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </symbol>
 <symbol name="SFE_LOGO_FLAME">
+<description>&lt;h3&gt;SparkFun Flame Logo&lt;/h3&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;SFE_LOGO_FLAME&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <polygon width="0" layer="94">
 <vertex x="7.28" y="11.18"/>
 <vertex x="7.28" y="11.15"/>
@@ -7258,6 +7386,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </polygon>
 </symbol>
 <symbol name="FIDUCIAL">
+<description>&lt;h3&gt;Fiducial&lt;/h3&gt;
+&lt;p&gt;Point-of-reference for pick-and-place machines and other optical instruments.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;FIDUCIAL&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
 <wire x1="-0.762" y1="0.762" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
 <wire x1="0.762" y1="0.762" x2="-0.762" y2="-0.762" width="0.254" layer="94"/>
 <circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
@@ -7276,10 +7408,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbols>
 <devicesets>
 <deviceset name="FRAME-LETTER" prefix="FRAME">
-<description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
-Standard 8.5x11 US Letter frame</description>
+<description>&lt;h3&gt;Schematic Frame - Letter&lt;/h3&gt;
+&lt;p&gt;Standard 8.5x11 US Letter frame&lt;/p&gt;</description>
 <gates>
-<gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
+<gate name="G$1" symbol="FRAME-LETTER" x="0" y="0"/>
 <gate name="V" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
 </gates>
 <devices>
@@ -7299,8 +7431,8 @@ Standard 8.5x11 US Letter frame</description>
 </devices>
 </deviceset>
 <deviceset name="OSHW-LOGO" prefix="LOGO">
-<description>&lt;b&gt;Open Source Hardware Logo&lt;/b&gt;
- This logo indicates the piece of hardware it is found on incorporates a OSHW license and/or adheres to the definition of open source hardware found here: http://freedomdefined.org/OSHW</description>
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo&lt;/h3&gt;
+&lt;p&gt; This logo indicates the piece of hardware it is found on incorporates a OSHW license and/or adheres to the definition of open source hardware found here: &lt;a href="http://freedomdefined.org/OSHW"&gt;http://freedomdefined.org/OSHW&lt;/a&gt;&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="OSHW-LOGO" x="-5.08" y="-5.08"/>
 </gates>
@@ -7343,10 +7475,8 @@ Standard 8.5x11 US Letter frame</description>
 </devices>
 </deviceset>
 <deviceset name="SFE_LOGO_FLAME" prefix="LOGO">
-<description>&lt;h3&gt;SFE Logo, flame only&lt;/h3&gt;&lt;p&gt;
-This is the SparkFun flame logo. The logo on the schematic will always be&lt;br&gt;
-the same size; the package variant is the height of the flame. Default layer&lt;br&gt;
-for the logo on the board is tSilk.</description>
+<description>&lt;h3&gt;SparkFun Flame Logo&lt;/h3&gt;
+&lt;p&gt;This is the SparkFun flame logo. The logo on the schematic will always be the same size; the package variant is the height of the flame. Default layer for the logo on the board is tSilk.&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="SFE_LOGO_FLAME" x="0" y="0"/>
 </gates>
@@ -7444,8 +7574,8 @@ for the logo on the board is tSilk.</description>
 </devices>
 </deviceset>
 <deviceset name="FIDUCIAL" prefix="FD">
-<description>&lt;b&gt;Fiducial Alignment Points&lt;/b&gt;
-Various fiducial points for machine vision alignment.</description>
+<description>&lt;h3&gt;Fiducial Alignment Points&lt;/h3&gt;
+&lt;p&gt;Point-of-reference for pick-and-place machines and other optical instruments.&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
 </gates>
@@ -7455,7 +7585,7 @@ Various fiducial points for machine vision alignment.</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="UFIDUCIAL" package="MICRO-FIDUCIAL">
+<device name="UFIDUCIAL" package="FIDUCIAL-MICRO">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -7484,254 +7614,6 @@ Various fiducial points for machine vision alignment.</description>
 <device name="">
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="SparkFun-DigitalIC">
-<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
-In this library you'll find all manner of digital ICs- microcontrollers, memory chips, logic chips, FPGAs, etc.&lt;br&gt;&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
-&lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="LQFP-48">
-<wire x1="-3.375" y1="3.1" x2="-3.1" y2="3.375" width="0.254" layer="21"/>
-<wire x1="-3.1" y1="3.375" x2="3.1" y2="3.375" width="0.254" layer="21"/>
-<wire x1="3.1" y1="3.375" x2="3.375" y2="3.1" width="0.254" layer="21"/>
-<wire x1="3.375" y1="3.1" x2="3.375" y2="-3.1" width="0.254" layer="21"/>
-<wire x1="3.375" y1="-3.1" x2="3.1" y2="-3.375" width="0.254" layer="21"/>
-<wire x1="3.1" y1="-3.375" x2="-3.1" y2="-3.375" width="0.254" layer="21"/>
-<wire x1="-3.1" y1="-3.375" x2="-3.375" y2="-3.1" width="0.254" layer="21"/>
-<wire x1="-3.375" y1="-3.1" x2="-3.375" y2="3.1" width="0.254" layer="21"/>
-<smd name="1" x="-2.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="2" x="-2.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="3" x="-1.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="4" x="-1.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="5" x="-0.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="6" x="-0.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="7" x="0.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="8" x="0.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="9" x="1.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="10" x="1.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="11" x="2.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="12" x="2.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="13" x="4.25" y="-2.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="14" x="4.25" y="-2.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="15" x="4.25" y="-1.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="16" x="4.25" y="-1.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="17" x="4.25" y="-0.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="18" x="4.25" y="-0.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="19" x="4.25" y="0.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="20" x="4.25" y="0.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="21" x="4.25" y="1.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="22" x="4.25" y="1.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="23" x="4.25" y="2.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="24" x="4.25" y="2.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="25" x="2.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="26" x="2.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="27" x="1.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="28" x="1.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="29" x="0.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="30" x="0.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="31" x="-0.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="32" x="-0.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="33" x="-1.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="34" x="-1.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="35" x="-2.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="36" x="-2.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
-<smd name="37" x="-4.25" y="2.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="38" x="-4.25" y="2.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="39" x="-4.25" y="1.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="40" x="-4.25" y="1.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="41" x="-4.25" y="0.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="42" x="-4.25" y="0.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="43" x="-4.25" y="-0.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="44" x="-4.25" y="-0.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="45" x="-4.25" y="-1.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="46" x="-4.25" y="-1.75" dx="1.143" dy="0.254" layer="1"/>
-<smd name="47" x="-4.25" y="-2.25" dx="1.143" dy="0.254" layer="1"/>
-<smd name="48" x="-4.25" y="-2.75" dx="1.143" dy="0.254" layer="1"/>
-<text x="-3.81" y="5.08" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-3.81" y="-6.35" size="0.4064" layer="27">&gt;VALUE</text>
-<rectangle x1="-2.85" y1="-4.5" x2="-2.65" y2="-3.45" layer="51"/>
-<rectangle x1="-2.35" y1="-4.5" x2="-2.15" y2="-3.45" layer="51"/>
-<rectangle x1="-1.85" y1="-4.5" x2="-1.65" y2="-3.45" layer="51"/>
-<rectangle x1="-1.35" y1="-4.5" x2="-1.15" y2="-3.45" layer="51"/>
-<rectangle x1="-0.85" y1="-4.5" x2="-0.65" y2="-3.45" layer="51"/>
-<rectangle x1="-0.35" y1="-4.5" x2="-0.15" y2="-3.45" layer="51"/>
-<rectangle x1="0.15" y1="-4.5" x2="0.35" y2="-3.45" layer="51"/>
-<rectangle x1="0.65" y1="-4.5" x2="0.85" y2="-3.45" layer="51"/>
-<rectangle x1="1.15" y1="-4.5" x2="1.35" y2="-3.45" layer="51"/>
-<rectangle x1="1.65" y1="-4.5" x2="1.85" y2="-3.45" layer="51"/>
-<rectangle x1="2.15" y1="-4.5" x2="2.35" y2="-3.45" layer="51"/>
-<rectangle x1="2.65" y1="-4.5" x2="2.85" y2="-3.45" layer="51"/>
-<rectangle x1="3.45" y1="-2.85" x2="4.5" y2="-2.65" layer="51"/>
-<rectangle x1="3.45" y1="-2.35" x2="4.5" y2="-2.15" layer="51"/>
-<rectangle x1="3.45" y1="-1.85" x2="4.5" y2="-1.65" layer="51"/>
-<rectangle x1="3.45" y1="-1.35" x2="4.5" y2="-1.15" layer="51"/>
-<rectangle x1="3.45" y1="-0.85" x2="4.5" y2="-0.65" layer="51"/>
-<rectangle x1="3.45" y1="-0.35" x2="4.5" y2="-0.15" layer="51"/>
-<rectangle x1="3.45" y1="0.15" x2="4.5" y2="0.35" layer="51"/>
-<rectangle x1="3.45" y1="0.65" x2="4.5" y2="0.85" layer="51"/>
-<rectangle x1="3.45" y1="1.15" x2="4.5" y2="1.35" layer="51"/>
-<rectangle x1="3.45" y1="1.65" x2="4.5" y2="1.85" layer="51"/>
-<rectangle x1="3.45" y1="2.15" x2="4.5" y2="2.35" layer="51"/>
-<rectangle x1="3.45" y1="2.65" x2="4.5" y2="2.85" layer="51"/>
-<rectangle x1="2.65" y1="3.45" x2="2.85" y2="4.5" layer="51"/>
-<rectangle x1="2.15" y1="3.45" x2="2.35" y2="4.5" layer="51"/>
-<rectangle x1="1.65" y1="3.45" x2="1.85" y2="4.5" layer="51"/>
-<rectangle x1="1.15" y1="3.45" x2="1.35" y2="4.5" layer="51"/>
-<rectangle x1="0.65" y1="3.45" x2="0.85" y2="4.5" layer="51"/>
-<rectangle x1="0.15" y1="3.45" x2="0.35" y2="4.5" layer="51"/>
-<rectangle x1="-0.35" y1="3.45" x2="-0.15" y2="4.5" layer="51"/>
-<rectangle x1="-0.85" y1="3.45" x2="-0.65" y2="4.5" layer="51"/>
-<rectangle x1="-1.35" y1="3.45" x2="-1.15" y2="4.5" layer="51"/>
-<rectangle x1="-1.85" y1="3.45" x2="-1.65" y2="4.5" layer="51"/>
-<rectangle x1="-2.35" y1="3.45" x2="-2.15" y2="4.5" layer="51"/>
-<rectangle x1="-2.85" y1="3.45" x2="-2.65" y2="4.5" layer="51"/>
-<rectangle x1="-4.5" y1="2.65" x2="-3.45" y2="2.85" layer="51"/>
-<rectangle x1="-4.5" y1="2.15" x2="-3.45" y2="2.35" layer="51"/>
-<rectangle x1="-4.5" y1="1.65" x2="-3.45" y2="1.85" layer="51"/>
-<rectangle x1="-4.5" y1="1.15" x2="-3.45" y2="1.35" layer="51"/>
-<rectangle x1="-4.5" y1="0.65" x2="-3.45" y2="0.85" layer="51"/>
-<rectangle x1="-4.5" y1="0.15" x2="-3.45" y2="0.35" layer="51"/>
-<rectangle x1="-4.5" y1="-0.35" x2="-3.45" y2="-0.15" layer="51"/>
-<rectangle x1="-4.5" y1="-0.85" x2="-3.45" y2="-0.65" layer="51"/>
-<rectangle x1="-4.5" y1="-1.35" x2="-3.45" y2="-1.15" layer="51"/>
-<rectangle x1="-4.5" y1="-1.85" x2="-3.45" y2="-1.65" layer="51"/>
-<rectangle x1="-4.5" y1="-2.35" x2="-3.45" y2="-2.15" layer="51"/>
-<rectangle x1="-4.5" y1="-2.85" x2="-3.45" y2="-2.65" layer="51"/>
-<circle x="-3.81" y="-3.7846" radius="0.487915625" width="0.127" layer="21"/>
-<rectangle x1="3.5814" y1="1.4732" x2="4.9276" y2="1.524" layer="41"/>
-<rectangle x1="3.5814" y1="0.9652" x2="4.9276" y2="1.016" layer="41"/>
-<rectangle x1="-4.9276" y1="0.9652" x2="-3.556" y2="1.016" layer="41"/>
-</package>
-</packages>
-<symbols>
-<symbol name="VS1000">
-<wire x1="-10.16" y1="-33.02" x2="-10.16" y2="40.64" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="40.64" x2="35.56" y2="40.64" width="0.254" layer="94"/>
-<wire x1="35.56" y1="40.64" x2="35.56" y2="-33.02" width="0.254" layer="94"/>
-<wire x1="35.56" y1="-33.02" x2="-10.16" y2="-33.02" width="0.254" layer="94"/>
-<pin name="XRESET" x="-15.24" y="30.48" length="middle"/>
-<pin name="TEST" x="-15.24" y="27.94" length="middle"/>
-<pin name="XTAL1" x="-15.24" y="22.86" length="middle"/>
-<pin name="XTAL0" x="-15.24" y="20.32" length="middle"/>
-<pin name="NFDIO0/IO0_0" x="-15.24" y="15.24" length="middle"/>
-<pin name="NFDIO1/IO0_1" x="-15.24" y="12.7" length="middle"/>
-<pin name="NFDIO2/IO0_2" x="-15.24" y="10.16" length="middle"/>
-<pin name="NFDIO3/IO0_3" x="-15.24" y="7.62" length="middle"/>
-<pin name="NFDIO4/IO0_4" x="-15.24" y="5.08" length="middle"/>
-<pin name="NFDIO5/IO0_5" x="-15.24" y="2.54" length="middle"/>
-<pin name="NFDIO6/IO0_6" x="-15.24" y="0" length="middle"/>
-<pin name="NFDIO7/IO0_7" x="-15.24" y="-2.54" length="middle"/>
-<pin name="NFRDY/GPIO0_8" x="-15.24" y="-7.62" length="middle"/>
-<pin name="NFRD/GPIO0_9" x="-15.24" y="-10.16" length="middle"/>
-<pin name="CS1/GPIO0_10" x="-15.24" y="-12.7" length="middle"/>
-<pin name="NFCLE/GPIO0_12" x="-15.24" y="-15.24" length="middle"/>
-<pin name="NFALE/GPIO0_13" x="-15.24" y="-17.78" length="middle"/>
-<pin name="NFWR/GPIO0_11" x="-15.24" y="-20.32" length="middle"/>
-<pin name="CS2/GPIO0_14" x="-15.24" y="-22.86" length="middle"/>
-<pin name="DGND2" x="22.86" y="-38.1" length="middle" rot="R90"/>
-<pin name="DGND3" x="25.4" y="-38.1" length="middle" rot="R90"/>
-<pin name="AGND1" x="2.54" y="-38.1" length="middle" rot="R90"/>
-<pin name="AGND2" x="5.08" y="-38.1" length="middle" rot="R90"/>
-<pin name="AGND3" x="7.62" y="-38.1" length="middle" rot="R90"/>
-<pin name="AGND4" x="10.16" y="-38.1" length="middle" rot="R90"/>
-<pin name="DGND1" x="20.32" y="-38.1" length="middle" rot="R90"/>
-<pin name="VHIGH" x="40.64" y="30.48" length="middle" rot="R180"/>
-<pin name="POWBTN" x="40.64" y="25.4" length="middle" rot="R180"/>
-<pin name="LEFT" x="40.64" y="20.32" length="middle" rot="R180"/>
-<pin name="RIGHT" x="40.64" y="17.78" length="middle" rot="R180"/>
-<pin name="GBUF" x="40.64" y="15.24" length="middle" rot="R180"/>
-<pin name="RCAP" x="40.64" y="10.16" length="middle" rot="R180"/>
-<pin name="XCS/GPIO1_0" x="40.64" y="5.08" length="middle" rot="R180"/>
-<pin name="SCLK/GPIO1_1" x="40.64" y="2.54" length="middle" rot="R180"/>
-<pin name="SI/GPIO1_2" x="40.64" y="0" length="middle" rot="R180"/>
-<pin name="SO/GPIO1_3" x="40.64" y="-2.54" length="middle" rot="R180"/>
-<pin name="RX/GPIO1_4" x="40.64" y="-7.62" length="middle" rot="R180"/>
-<pin name="TX/GPIO1_5" x="40.64" y="-10.16" length="middle" rot="R180"/>
-<pin name="USBN" x="40.64" y="-15.24" length="middle" rot="R180"/>
-<pin name="USBP" x="40.64" y="-17.78" length="middle" rot="R180"/>
-<pin name="CVDD" x="0" y="45.72" length="middle" rot="R270"/>
-<pin name="IOVDD2" x="22.86" y="45.72" length="middle" rot="R270"/>
-<pin name="AVDD1" x="5.08" y="45.72" length="middle" rot="R270"/>
-<pin name="AVDD2" x="7.62" y="45.72" length="middle" rot="R270"/>
-<pin name="AVDD3" x="10.16" y="45.72" length="middle" rot="R270"/>
-<pin name="AVDD4" x="12.7" y="45.72" length="middle" rot="R270"/>
-<pin name="IOVDD3" x="25.4" y="45.72" length="middle" rot="R270"/>
-<pin name="IOVDD1" x="20.32" y="45.72" length="middle" rot="R270"/>
-<text x="10.16" y="50.8" size="1.778" layer="95" font="vector" align="top-center">&gt;NAME</text>
-<text x="12.7" y="-43.18" size="1.778" layer="96" font="vector" align="bottom-center">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="VS1000">
-<description>OGG Vorbis codec</description>
-<gates>
-<gate name="G$1" symbol="VS1000" x="-10.16" y="-5.08"/>
-</gates>
-<devices>
-<device name="" package="LQFP-48">
-<connects>
-<connect gate="G$1" pin="AGND1" pad="38"/>
-<connect gate="G$1" pin="AGND2" pad="41"/>
-<connect gate="G$1" pin="AGND3" pad="42"/>
-<connect gate="G$1" pin="AGND4" pad="48"/>
-<connect gate="G$1" pin="AVDD1" pad="34"/>
-<connect gate="G$1" pin="AVDD2" pad="39"/>
-<connect gate="G$1" pin="AVDD3" pad="44"/>
-<connect gate="G$1" pin="AVDD4" pad="46"/>
-<connect gate="G$1" pin="CS1/GPIO0_10" pad="15"/>
-<connect gate="G$1" pin="CS2/GPIO0_14" pad="21"/>
-<connect gate="G$1" pin="CVDD" pad="32"/>
-<connect gate="G$1" pin="DGND1" pad="6"/>
-<connect gate="G$1" pin="DGND2" pad="18"/>
-<connect gate="G$1" pin="DGND3" pad="31"/>
-<connect gate="G$1" pin="GBUF" pad="43"/>
-<connect gate="G$1" pin="IOVDD1" pad="30"/>
-<connect gate="G$1" pin="IOVDD2" pad="19"/>
-<connect gate="G$1" pin="IOVDD3" pad="7"/>
-<connect gate="G$1" pin="LEFT" pad="47"/>
-<connect gate="G$1" pin="NFALE/GPIO0_13" pad="17"/>
-<connect gate="G$1" pin="NFCLE/GPIO0_12" pad="16"/>
-<connect gate="G$1" pin="NFDIO0/IO0_0" pad="2"/>
-<connect gate="G$1" pin="NFDIO1/IO0_1" pad="3"/>
-<connect gate="G$1" pin="NFDIO2/IO0_2" pad="4"/>
-<connect gate="G$1" pin="NFDIO3/IO0_3" pad="5"/>
-<connect gate="G$1" pin="NFDIO4/IO0_4" pad="9"/>
-<connect gate="G$1" pin="NFDIO5/IO0_5" pad="10"/>
-<connect gate="G$1" pin="NFDIO6/IO0_6" pad="11"/>
-<connect gate="G$1" pin="NFDIO7/IO0_7" pad="12"/>
-<connect gate="G$1" pin="NFRD/GPIO0_9" pad="14"/>
-<connect gate="G$1" pin="NFRDY/GPIO0_8" pad="13"/>
-<connect gate="G$1" pin="NFWR/GPIO0_11" pad="20"/>
-<connect gate="G$1" pin="POWBTN" pad="37"/>
-<connect gate="G$1" pin="RCAP" pad="45"/>
-<connect gate="G$1" pin="RIGHT" pad="40"/>
-<connect gate="G$1" pin="RX/GPIO1_4" pad="27"/>
-<connect gate="G$1" pin="SCLK/GPIO1_1" pad="23"/>
-<connect gate="G$1" pin="SI/GPIO1_2" pad="24"/>
-<connect gate="G$1" pin="SO/GPIO1_3" pad="25"/>
-<connect gate="G$1" pin="TEST" pad="8"/>
-<connect gate="G$1" pin="TX/GPIO1_5" pad="26"/>
-<connect gate="G$1" pin="USBN" pad="36"/>
-<connect gate="G$1" pin="USBP" pad="35"/>
-<connect gate="G$1" pin="VHIGH" pad="33"/>
-<connect gate="G$1" pin="XCS/GPIO1_0" pad="22"/>
-<connect gate="G$1" pin="XRESET" pad="1"/>
-<connect gate="G$1" pin="XTAL0" pad="29"/>
-<connect gate="G$1" pin="XTAL1" pad="28"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="IC-08955"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -11998,27 +11880,37 @@ We've spent an enormous amount of time creating and checking these footprints an
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
 <package name="SOD-323">
-<wire x1="-0.9" y1="0.65" x2="-0.5" y2="0.65" width="0.2032" layer="21"/>
-<wire x1="-0.5" y1="0.65" x2="0.9" y2="0.65" width="0.2032" layer="21"/>
-<wire x1="-0.9" y1="-0.65" x2="-0.5" y2="-0.65" width="0.2032" layer="21"/>
-<wire x1="-0.5" y1="-0.65" x2="0.9" y2="-0.65" width="0.2032" layer="21"/>
-<wire x1="-0.5" y1="0.65" x2="-0.5" y2="-0.65" width="0.2032" layer="21"/>
+<description>SOD-323 (Small Outline Diode)</description>
+<wire x1="-1.77" y1="0.625" x2="-1.77" y2="-0.625" width="0.2032" layer="21"/>
 <smd name="C" x="-1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
 <smd name="A" x="1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
-<text x="-0.889" y="1.016" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-1.397" size="0.4064" layer="27">&gt;VALUE</text>
+<text x="0" y="0.762" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="-0.9" y1="0.625" x2="0.9" y2="0.625" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="-0.625" x2="0.9" y2="-0.625" width="0.2032" layer="21"/>
+</package>
+<package name="SOT23-3">
+<description>SOT23-3</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-0.8" y1="0.7" x2="-1.4" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="0.7" x2="-1.4" y2="-0.1" width="0.2032" layer="21"/>
+<wire x1="0.8" y1="0.7" x2="1.4" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="1.4" y1="0.7" x2="1.4" y2="-0.1" width="0.2032" layer="21"/>
+<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
+<text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
 </package>
 <package name="SOD-523">
+<description>SOD-523 (Small Outline Diode)</description>
 <smd name="C" x="0.7" y="0" dx="0.4" dy="0.4" layer="1"/>
 <smd name="A" x="-0.7" y="0" dx="0.4" dy="0.4" layer="1"/>
-<wire x1="-0.6" y1="-0.4" x2="0.4" y2="-0.4" width="0.127" layer="21"/>
-<wire x1="0.4" y1="-0.4" x2="0.6" y2="-0.4" width="0.127" layer="21"/>
-<wire x1="0.6" y1="0.4" x2="0.4" y2="0.4" width="0.127" layer="21"/>
-<wire x1="0.4" y1="0.4" x2="-0.6" y2="0.4" width="0.127" layer="21"/>
-<wire x1="0.6" y1="0.4" x2="0.4" y2="0.6" width="0.127" layer="21"/>
-<wire x1="0.6" y1="-0.4" x2="0.4" y2="-0.6" width="0.127" layer="21"/>
-<wire x1="0.4" y1="-0.6" x2="0.4" y2="-0.4" width="0.127" layer="21"/>
-<wire x1="0.4" y1="0.6" x2="0.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.625" y1="-0.425" x2="0.625" y2="-0.425" width="0.127" layer="21"/>
+<wire x1="0.625" y1="0.425" x2="-0.625" y2="0.425" width="0.127" layer="21"/>
 <wire x1="-0.6" y1="-0.4" x2="0.3" y2="-0.4" width="0.127" layer="51"/>
 <wire x1="0.3" y1="-0.4" x2="0.6" y2="-0.4" width="0.127" layer="51"/>
 <wire x1="0.6" y1="-0.4" x2="0.6" y2="-0.1" width="0.127" layer="51"/>
@@ -12036,111 +11928,108 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-0.6" y1="0.1" x2="-0.8" y2="0.1" width="0.127" layer="51"/>
 <wire x1="-0.8" y1="0.1" x2="-0.8" y2="-0.1" width="0.127" layer="51"/>
 <wire x1="0.3" y1="0.4" x2="0.3" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="1.1176" y1="0.3048" x2="1.1176" y2="-0.3048" width="0.2032" layer="21"/>
 </package>
 <package name="SMA-DIODE">
-<description>&lt;B&gt;Diode&lt;/B&gt;&lt;p&gt;
-Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140</description>
+<description>&lt;B&gt;Diode&lt;/B&gt;
+&lt;p&gt;Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140&lt;/p&gt;
+&lt;p&gt;SMA is the smallest package in the DO-214 standard (DO-214AC)&lt;/p&gt;</description>
 <wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
 <wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
 <wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
 <wire x1="2.3" y1="-1" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
 <wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
 <wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="1" y2="-1" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="1" x2="3.175" y2="-1" width="0.2032" layer="21"/>
 <smd name="A" x="-2.15" y="0" dx="1.27" dy="1.47" layer="1" rot="R180"/>
 <smd name="C" x="2.15" y="0" dx="1.27" dy="1.47" layer="1"/>
-<text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
-<text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="SOT23-3">
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-0.8" y1="0.7" x2="-1.4" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="-1.4" y1="0.7" x2="-1.4" y2="-0.1" width="0.2032" layer="21"/>
-<wire x1="0.8" y1="0.7" x2="1.4" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="1.4" y1="0.7" x2="1.4" y2="-0.1" width="0.2032" layer="21"/>
-<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
-<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
-<smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
-<text x="-0.8255" y="1.778" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-0.1905" size="0.4064" layer="27">&gt;VALUE</text>
+<text x="0" y="1.651" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.651" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
 <symbol name="DIODE-SCHOTTKY">
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.778" y2="1.524" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.524" width="0.254" layer="94"/>
-<text x="2.54" y="0.4826" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-2.3114" size="1.778" layer="96">&gt;VALUE</text>
+<description>&lt;h3&gt; Schottky Diode&lt;/h3&gt;
+Diode with low voltage drop</description>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.778" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.27" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.032" size="1.778" layer="95" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-2.032" size="1.778" layer="96" font="vector" align="top-left">&gt;VALUE</text>
 <pin name="A" x="-2.54" y="0" visible="off" length="point" direction="pas"/>
 <pin name="C" x="2.54" y="0" visible="off" length="point" direction="pas" rot="R180"/>
 <wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
 <wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-1.27" x2="0.762" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="1.27" x2="1.778" y2="1.016" width="0.1524" layer="94"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-1.27" y="1.27"/>
+<vertex x="1.27" y="0"/>
+<vertex x="-1.27" y="-1.27"/>
+</polygon>
 </symbol>
 <symbol name="PESD1CAN_DIODE">
-<wire x1="0" y1="0" x2="10.16" y2="0" width="0.254" layer="94"/>
-<wire x1="10.16" y1="0" x2="10.16" y2="10.16" width="0.254" layer="94"/>
-<wire x1="10.16" y1="10.16" x2="0" y2="10.16" width="0.254" layer="94"/>
-<wire x1="0" y1="10.16" x2="0" y2="7.62" width="0.254" layer="94"/>
-<text x="0" y="11.43" size="1.778" layer="95">&gt;Name</text>
-<text x="0" y="-2.54" size="1.778" layer="96">&gt;Value</text>
-<wire x1="0" y1="7.62" x2="0" y2="2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="1.27" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="6.35" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="2.54" x2="7.62" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="0" y1="7.62" x2="1.27" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="7.62" x2="6.35" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="7.62" x2="7.62" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="7.62" y1="7.62" x2="7.62" y2="5.08" width="0.2032" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="7.62" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="3.81" x2="1.27" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="1.27" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="1.27" x2="6.35" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="2.54" x2="6.35" y2="3.81" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="8.89" x2="1.27" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="7.62" x2="1.27" y2="6.35" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="6.35" x2="6.35" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="7.62" x2="6.35" y2="8.89" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="6.35" x2="1.905" y2="6.35" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.905" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="3.81" x2="5.715" y2="3.81" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="8.89" x2="5.715" y2="8.89" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="7.62" x2="2.54" y2="8.89" width="0.2032" layer="94"/>
-<wire x1="2.54" y1="8.89" x2="2.54" y2="6.35" width="0.2032" layer="94"/>
-<wire x1="2.54" y1="6.35" x2="1.27" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="7.62" x2="5.08" y2="8.89" width="0.2032" layer="94"/>
-<wire x1="5.08" y1="8.89" x2="5.08" y2="6.35" width="0.2032" layer="94"/>
-<wire x1="5.08" y1="6.35" x2="6.35" y2="7.62" width="0.2032" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="2.54" y2="3.81" width="0.2032" layer="94"/>
-<wire x1="2.54" y1="3.81" x2="2.54" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="2.54" y1="1.27" x2="1.27" y2="2.54" width="0.2032" layer="94"/>
-<wire x1="6.35" y1="2.54" x2="5.08" y2="3.81" width="0.2032" layer="94"/>
-<wire x1="5.08" y1="3.81" x2="5.08" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="5.08" y1="1.27" x2="6.35" y2="2.54" width="0.2032" layer="94"/>
-<pin name="1" x="-5.08" y="7.62" length="middle"/>
-<pin name="2" x="-5.08" y="2.54" length="middle"/>
-<pin name="3" x="15.24" y="5.08" length="middle" rot="R180"/>
-<wire x1="7.62" y1="5.08" x2="10.16" y2="5.08" width="0.2032" layer="94"/>
+<description>&lt;h3&gt;Two channel CAN BUS Diode &lt;/h3&gt;
+Provides ESD protection</description>
+<wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<text x="-5.08" y="5.334" size="1.778" layer="95" font="vector">&gt;Name</text>
+<text x="-5.08" y="-5.334" size="1.778" layer="96" font="vector" align="top-left">&gt;Value</text>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="-3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-3.81" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="2.54" x2="1.27" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="-1.27" x2="-3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="-2.54" x2="-3.81" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-3.81" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="3.81" x2="-3.81" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="2.54" x2="-3.81" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="1.27" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="1.27" x2="-3.175" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="-3.81" x2="-3.175" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="3.81" x2="0.635" y2="3.81" width="0.1524" layer="94"/>
+<pin name="1" x="-7.62" y="2.54" visible="pad" length="short"/>
+<pin name="2" x="-7.62" y="-2.54" visible="pad" length="short"/>
+<pin name="3" x="7.62" y="0" visible="pad" length="short" rot="R180"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-2.54" y="3.81"/>
+<vertex x="-3.81" y="2.54"/>
+<vertex x="-2.54" y="1.27"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="0" y="3.81"/>
+<vertex x="1.27" y="2.54"/>
+<vertex x="0" y="1.27"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="0" y="-1.27"/>
+<vertex x="1.27" y="-2.54"/>
+<vertex x="0" y="-3.81"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="-2.54" y="-1.27"/>
+<vertex x="-2.54" y="-3.81"/>
+<vertex x="-3.81" y="-2.54"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
 <deviceset name="DIODE-SCHOTTKY" prefix="D">
-<description>Schottky diodes in SFE's production catalog&lt;p&gt;
-
-BAT20J 1A 23V 0.62Vf&lt;br&gt;
-RB751 120mA 40V 0.37Vf&lt;br&gt;
-PMEG4005EJ 0.5A 40V 0.42Vf&lt;br&gt;
-MBRA140 1A 40V 0.5Vf&lt;br&gt;
-B340A  3A 40V SMA &lt;br&gt;</description>
+<description>&lt;h3&gt;Schottky diode&lt;/h3&gt;
+&lt;p&gt;A Schottky diode is a semiconductor diode which has a low forward voltage drop and a very fast switching action.&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="DIODE-SCHOTTKY" x="0" y="0"/>
 </gates>
@@ -12152,32 +12041,32 @@ B340A  3A 40V SMA &lt;br&gt;</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="DIO-11623" constant="no"/>
-<attribute name="VALUE" value="BAT20J" constant="no"/>
+<attribute name="PROD_ID" value="DIO-11623"/>
+<attribute name="VALUE" value="1A/23V/620mV"/>
 </technology>
 </technologies>
 </device>
-<device name="-RB751" package="SOD-523">
+<device name="-RB751S40" package="SOD-523">
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="DIO-11018" constant="no"/>
-<attribute name="VALUE" value="RB751" constant="no"/>
+<attribute name="PROD_ID" value="DIO-11018"/>
+<attribute name="VALUE" value="120mA/40V/370mV"/>
 </technology>
 </technologies>
 </device>
-<device name="-MBRA140" package="SMA-DIODE">
+<device name="-SS14" package="SMA-DIODE">
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="DIO-08053" constant="no"/>
-<attribute name="VALUE" value="MBRA140" constant="no"/>
+<attribute name="PROD_ID" value="DIO-08053"/>
+<attribute name="VALUE" value="1A/40V/500mV"/>
 </technology>
 </technologies>
 </device>
@@ -12188,8 +12077,8 @@ B340A  3A 40V SMA &lt;br&gt;</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="DIO-10955" constant="no"/>
-<attribute name="VALUE" value="PMEG4005EJ" constant="no"/>
+<attribute name="PROD_ID" value="DIO-10955"/>
+<attribute name="VALUE" value="0.5A/40V/420mV"/>
 </technology>
 </technologies>
 </device>
@@ -12201,14 +12090,31 @@ B340A  3A 40V SMA &lt;br&gt;</description>
 <technologies>
 <technology name="">
 <attribute name="PROD_ID" value="DIO-09886"/>
-<attribute name="VALUE" value="B340A" constant="no"/>
+<attribute name="VALUE" value="3A/40V/500mV"/>
+</technology>
+</technologies>
+</device>
+<device name="-ZLLS500" package="SOT23-3">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="C" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-08411"/>
+<attribute name="VALUE" value="700mA/40V/533mV"/>
 </technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
 <deviceset name="PESD1CAN" prefix="D">
-<description>PESD1CAN is used to protect two automotive CAN bus lines from ESD.</description>
+<description>&lt;h3&gt;CAN bus ESD protection diode&lt;/h3&gt;
+&lt;p&gt;PESD1CAN is used to protect two CAN bus lines from ESD.&lt;/p&gt;
+&lt;p&gt;Link to &lt;a href='http://www.nxp.com/documents/data_sheet/PESD1CAN-U.pdf'&gt;datasheet&lt;/a&gt;
+&lt;p&gt;&lt;b&gt;SparkFun Products:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/13262”&gt;SparkFun CAN-BUS Shield&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="PESD1CAN_DIODE" x="0" y="0"/>
 </gates>
@@ -12239,45 +12145,60 @@ We've spent an enormous amount of time creating and checking these footprints an
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
 <package name="LED-0603">
-<wire x1="0.46" y1="0.17" x2="0" y2="0.17" width="0.2032" layer="21"/>
-<wire x1="-0.46" y1="0.17" x2="0" y2="0.17" width="0.2032" layer="21"/>
-<wire x1="0" y1="0.17" x2="0.2338" y2="-0.14" width="0.2032" layer="21"/>
-<wire x1="-0.0254" y1="0.1546" x2="-0.2184" y2="-0.14" width="0.2032" layer="21"/>
-<smd name="C" x="0" y="0.877" dx="1" dy="1" layer="1" roundness="30"/>
-<smd name="A" x="0" y="-0.877" dx="1" dy="1" layer="1" roundness="30"/>
-<text x="-0.6985" y="-0.889" size="0.4064" layer="25" rot="R90">&gt;NAME</text>
-<text x="1.0795" y="-1.016" size="0.4064" layer="27" rot="R90">&gt;VALUE</text>
+<description>&lt;B&gt;LED 0603 SMT&lt;/B&gt;&lt;p&gt;
+0603, surface mount.
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 2&lt;/li&gt;
+&lt;li&gt;Pin pitch:0.075inch &lt;/li&gt;
+&lt;li&gt;Area: 0.06" x 0.03"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;LED - BLUE&lt;/li&gt;</description>
+<smd name="C" x="0.877" y="0" dx="1" dy="1" layer="1" roundness="30" rot="R270"/>
+<smd name="A" x="-0.877" y="0" dx="1" dy="1" layer="1" roundness="30" rot="R270"/>
+<text x="0" y="0.635" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.635" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="1.5875" y1="0.47625" x2="1.5875" y2="-0.47625" width="0.127" layer="21"/>
+<wire x1="0.15875" y1="0.47625" x2="0.15875" y2="0" width="0.127" layer="51"/>
+<wire x1="0.15875" y1="0" x2="0.15875" y2="-0.47625" width="0.127" layer="51"/>
+<wire x1="0.15875" y1="0" x2="-0.15875" y2="0.3175" width="0.127" layer="51"/>
+<wire x1="0.15875" y1="0" x2="-0.15875" y2="-0.3175" width="0.127" layer="51"/>
 </package>
 <package name="LED-1206">
-<wire x1="-1" y1="1" x2="-2.4" y2="1" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="1" x2="-2.4" y2="-1" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="-1" x2="-1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="2.4" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="1" x2="2.4" y2="-1" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="-1" x2="1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0.7" x2="0.3" y2="0" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0" x2="0.3" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0" x2="-0.3" y2="0.6" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="0.6" x2="-0.3" y2="-0.6" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="-0.6" x2="0.3" y2="0" width="0.2032" layer="21"/>
+<description>&lt;h3&gt;LED 1206 SMT&lt;/h3&gt;
+
+1206, surface mount. 
+
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 2&lt;/li&gt;
+&lt;li&gt;Pin pitch: &lt;/li&gt;
+&lt;li&gt;Area: 0.125" x 0.06"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;LED&lt;/li&gt;&lt;/ul&gt;</description>
+<wire x1="2.4" y1="0.6825" x2="2.4" y2="-0.6825" width="0.2032" layer="21"/>
 <smd name="A" x="-1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
 <smd name="C" x="1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
-<text x="-0.889" y="1.397" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-1.778" size="0.4064" layer="27">&gt;VALUE</text>
+<text x="0" y="0.9525" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.9525" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="0.65375" y1="0.6825" x2="0.65375" y2="-0.6825" width="0.2032" layer="51"/>
+<wire x1="0.635" y1="0" x2="0.15875" y2="0.47625" width="0.2032" layer="51"/>
+<wire x1="0.635" y1="0" x2="0.15875" y2="-0.47625" width="0.2032" layer="51"/>
 </package>
 </packages>
 <symbols>
 <symbol name="LED">
+<description>&lt;h3&gt;LED&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;</description>
 <wire x1="1.27" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="-2.54" x2="-1.27" y2="0" width="0.254" layer="94"/>
 <wire x1="1.27" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
 <wire x1="-2.032" y1="-0.762" x2="-3.429" y2="-2.159" width="0.1524" layer="94"/>
 <wire x1="-1.905" y1="-1.905" x2="-3.302" y2="-3.302" width="0.1524" layer="94"/>
-<text x="3.556" y="-4.572" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="5.715" y="-4.572" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<text x="-3.429" y="-4.572" size="1.778" layer="95" font="vector" rot="R90">&gt;NAME</text>
+<text x="1.905" y="-4.572" size="1.778" layer="96" font="vector" rot="R90" align="top-left">&gt;VALUE</text>
 <pin name="C" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="A" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
 <polygon width="0.1524" layer="94">
@@ -12294,11 +12215,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbols>
 <devicesets>
 <deviceset name="LED-RED" prefix="D" uservalue="yes">
-<description>Assorted Red LEDs&lt;br&gt;
-LilyPad 1206- DIO-09912&lt;br&gt;
-1206- DIO-00809&lt;br&gt;
-0603- DIO-00819&lt;br&gt;
-"SMART" means more efficient and expensive</description>
+<description>&lt;h3&gt;Red SMD LED&lt;/h3&gt;
+&lt;p&gt;Used in manufacturing of most products at SparkFun&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Packages:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;&lt;b&gt;0603&lt;/b&gt; - SMD 0603 package &lt;a href="http://docs.avagotech.com/docs/AV02-0551EN"&gt;[Product Link]&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;0603 SMART&lt;/b&gt; - SMD 0603 SMART package ( more efficient and expensive)&lt;a href="http://www.osram-os.com/Graphics/XPic2/00077099_0.pdf"&gt;[Product Link]&lt;/li&gt;
+&lt;li&gt;&lt;b&gt; 1206&lt;/b&gt; - SMD1206  package &lt;a href="https://www.sparkfun.com/datasheets/DevTools/LilyPad/Q150OVS4.pdff"&gt;[Product Link]&lt;/li&gt;
+&lt;ul&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;SparkFun Products:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/821”&gt;Pro Mini 328 -5V&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/12757”&gt;RedBoard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/13613”&gt;IOIO-OTG&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="LED" x="0" y="0"/>
 </gates>
@@ -12316,18 +12246,6 @@ LilyPad 1206- DIO-09912&lt;br&gt;
 </technologies>
 </device>
 <device name="1206" package="LED-1206">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="DIO-09912"/>
-<attribute name="VALUE" value="RED" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="LILYPAD" package="LED-1206">
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
@@ -12462,6 +12380,280 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-IC-Conversion">
+<description>&lt;h3&gt;SparkFun Conversion ICs&lt;/h3&gt;
+This library is for ICs that perform analog to digital conversion, as well as digital to analog.  This includes not only strict ADCs, but audio in and out converters, decoders, thermocouple measurement ics the like.  Anything that is a single part that works between the two domains goes here.
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="LQFP-48">
+<description>&lt;h3&gt;LQFP -48&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 48&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;VS1000&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="-3.375" y1="3.1" x2="-3.1" y2="3.375" width="0.254" layer="21"/>
+<wire x1="-3.1" y1="3.375" x2="3.1" y2="3.375" width="0.254" layer="21"/>
+<wire x1="3.1" y1="3.375" x2="3.375" y2="3.1" width="0.254" layer="21"/>
+<wire x1="3.375" y1="3.1" x2="3.375" y2="-3.1" width="0.254" layer="21"/>
+<wire x1="3.375" y1="-3.1" x2="3.1" y2="-3.375" width="0.254" layer="21"/>
+<wire x1="3.1" y1="-3.375" x2="-3.1" y2="-3.375" width="0.254" layer="21"/>
+<wire x1="-3.1" y1="-3.375" x2="-3.375" y2="-3.1" width="0.254" layer="21"/>
+<wire x1="-3.375" y1="-3.1" x2="-3.375" y2="3.1" width="0.254" layer="21"/>
+<smd name="1" x="-2.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="2" x="-2.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="3" x="-1.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="4" x="-1.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="5" x="-0.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="6" x="-0.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="7" x="0.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="8" x="0.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="9" x="1.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="10" x="1.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="11" x="2.25" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="12" x="2.75" y="-4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="13" x="4.25" y="-2.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="14" x="4.25" y="-2.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="15" x="4.25" y="-1.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="16" x="4.25" y="-1.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="17" x="4.25" y="-0.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="18" x="4.25" y="-0.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="19" x="4.25" y="0.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="20" x="4.25" y="0.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="21" x="4.25" y="1.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="22" x="4.25" y="1.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="23" x="4.25" y="2.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="24" x="4.25" y="2.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="25" x="2.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="26" x="2.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="27" x="1.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="28" x="1.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="29" x="0.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="30" x="0.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="31" x="-0.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="32" x="-0.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="33" x="-1.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="34" x="-1.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="35" x="-2.25" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="36" x="-2.75" y="4.25" dx="0.254" dy="1.143" layer="1"/>
+<smd name="37" x="-4.25" y="2.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="38" x="-4.25" y="2.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="39" x="-4.25" y="1.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="40" x="-4.25" y="1.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="41" x="-4.25" y="0.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="42" x="-4.25" y="0.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="43" x="-4.25" y="-0.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="44" x="-4.25" y="-0.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="45" x="-4.25" y="-1.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="46" x="-4.25" y="-1.75" dx="1.143" dy="0.254" layer="1"/>
+<smd name="47" x="-4.25" y="-2.25" dx="1.143" dy="0.254" layer="1"/>
+<smd name="48" x="-4.25" y="-2.75" dx="1.143" dy="0.254" layer="1"/>
+<rectangle x1="-2.85" y1="-4.5" x2="-2.65" y2="-3.45" layer="51"/>
+<rectangle x1="-2.35" y1="-4.5" x2="-2.15" y2="-3.45" layer="51"/>
+<rectangle x1="-1.85" y1="-4.5" x2="-1.65" y2="-3.45" layer="51"/>
+<rectangle x1="-1.35" y1="-4.5" x2="-1.15" y2="-3.45" layer="51"/>
+<rectangle x1="-0.85" y1="-4.5" x2="-0.65" y2="-3.45" layer="51"/>
+<rectangle x1="-0.35" y1="-4.5" x2="-0.15" y2="-3.45" layer="51"/>
+<rectangle x1="0.15" y1="-4.5" x2="0.35" y2="-3.45" layer="51"/>
+<rectangle x1="0.65" y1="-4.5" x2="0.85" y2="-3.45" layer="51"/>
+<rectangle x1="1.15" y1="-4.5" x2="1.35" y2="-3.45" layer="51"/>
+<rectangle x1="1.65" y1="-4.5" x2="1.85" y2="-3.45" layer="51"/>
+<rectangle x1="2.15" y1="-4.5" x2="2.35" y2="-3.45" layer="51"/>
+<rectangle x1="2.65" y1="-4.5" x2="2.85" y2="-3.45" layer="51"/>
+<rectangle x1="3.45" y1="-2.85" x2="4.5" y2="-2.65" layer="51"/>
+<rectangle x1="3.45" y1="-2.35" x2="4.5" y2="-2.15" layer="51"/>
+<rectangle x1="3.45" y1="-1.85" x2="4.5" y2="-1.65" layer="51"/>
+<rectangle x1="3.45" y1="-1.35" x2="4.5" y2="-1.15" layer="51"/>
+<rectangle x1="3.45" y1="-0.85" x2="4.5" y2="-0.65" layer="51"/>
+<rectangle x1="3.45" y1="-0.35" x2="4.5" y2="-0.15" layer="51"/>
+<rectangle x1="3.45" y1="0.15" x2="4.5" y2="0.35" layer="51"/>
+<rectangle x1="3.45" y1="0.65" x2="4.5" y2="0.85" layer="51"/>
+<rectangle x1="3.45" y1="1.15" x2="4.5" y2="1.35" layer="51"/>
+<rectangle x1="3.45" y1="1.65" x2="4.5" y2="1.85" layer="51"/>
+<rectangle x1="3.45" y1="2.15" x2="4.5" y2="2.35" layer="51"/>
+<rectangle x1="3.45" y1="2.65" x2="4.5" y2="2.85" layer="51"/>
+<rectangle x1="2.65" y1="3.45" x2="2.85" y2="4.5" layer="51"/>
+<rectangle x1="2.15" y1="3.45" x2="2.35" y2="4.5" layer="51"/>
+<rectangle x1="1.65" y1="3.45" x2="1.85" y2="4.5" layer="51"/>
+<rectangle x1="1.15" y1="3.45" x2="1.35" y2="4.5" layer="51"/>
+<rectangle x1="0.65" y1="3.45" x2="0.85" y2="4.5" layer="51"/>
+<rectangle x1="0.15" y1="3.45" x2="0.35" y2="4.5" layer="51"/>
+<rectangle x1="-0.35" y1="3.45" x2="-0.15" y2="4.5" layer="51"/>
+<rectangle x1="-0.85" y1="3.45" x2="-0.65" y2="4.5" layer="51"/>
+<rectangle x1="-1.35" y1="3.45" x2="-1.15" y2="4.5" layer="51"/>
+<rectangle x1="-1.85" y1="3.45" x2="-1.65" y2="4.5" layer="51"/>
+<rectangle x1="-2.35" y1="3.45" x2="-2.15" y2="4.5" layer="51"/>
+<rectangle x1="-2.85" y1="3.45" x2="-2.65" y2="4.5" layer="51"/>
+<rectangle x1="-4.5" y1="2.65" x2="-3.45" y2="2.85" layer="51"/>
+<rectangle x1="-4.5" y1="2.15" x2="-3.45" y2="2.35" layer="51"/>
+<rectangle x1="-4.5" y1="1.65" x2="-3.45" y2="1.85" layer="51"/>
+<rectangle x1="-4.5" y1="1.15" x2="-3.45" y2="1.35" layer="51"/>
+<rectangle x1="-4.5" y1="0.65" x2="-3.45" y2="0.85" layer="51"/>
+<rectangle x1="-4.5" y1="0.15" x2="-3.45" y2="0.35" layer="51"/>
+<rectangle x1="-4.5" y1="-0.35" x2="-3.45" y2="-0.15" layer="51"/>
+<rectangle x1="-4.5" y1="-0.85" x2="-3.45" y2="-0.65" layer="51"/>
+<rectangle x1="-4.5" y1="-1.35" x2="-3.45" y2="-1.15" layer="51"/>
+<rectangle x1="-4.5" y1="-1.85" x2="-3.45" y2="-1.65" layer="51"/>
+<rectangle x1="-4.5" y1="-2.35" x2="-3.45" y2="-2.15" layer="51"/>
+<rectangle x1="-4.5" y1="-2.85" x2="-3.45" y2="-2.65" layer="51"/>
+<rectangle x1="3.5814" y1="1.4732" x2="4.9276" y2="1.524" layer="41"/>
+<rectangle x1="3.5814" y1="0.9652" x2="4.9276" y2="1.016" layer="41"/>
+<rectangle x1="-4.9276" y1="0.9652" x2="-3.556" y2="1.016" layer="41"/>
+<text x="-5.715" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="6.35" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;VALUE</text>
+<polygon width="0.002540625" layer="21">
+<vertex x="-3.4925" y="-3.81" curve="90"/>
+<vertex x="-3.81" y="-3.4925" curve="90"/>
+<vertex x="-4.1275" y="-3.81" curve="90"/>
+<vertex x="-3.81" y="-4.1275" curve="90"/>
+</polygon>
+</package>
+</packages>
+<symbols>
+<symbol name="VS1000">
+<wire x1="-10.16" y1="-33.02" x2="-10.16" y2="40.64" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="40.64" x2="35.56" y2="40.64" width="0.254" layer="94"/>
+<wire x1="35.56" y1="40.64" x2="35.56" y2="-33.02" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-33.02" x2="-10.16" y2="-33.02" width="0.254" layer="94"/>
+<pin name="XRESET" x="-15.24" y="30.48" length="middle"/>
+<pin name="TEST" x="-15.24" y="27.94" length="middle"/>
+<pin name="XTAL1" x="-15.24" y="22.86" length="middle"/>
+<pin name="XTAL0" x="-15.24" y="20.32" length="middle"/>
+<pin name="NFDIO0/IO0_0" x="-15.24" y="15.24" length="middle"/>
+<pin name="NFDIO1/IO0_1" x="-15.24" y="12.7" length="middle"/>
+<pin name="NFDIO2/IO0_2" x="-15.24" y="10.16" length="middle"/>
+<pin name="NFDIO3/IO0_3" x="-15.24" y="7.62" length="middle"/>
+<pin name="NFDIO4/IO0_4" x="-15.24" y="5.08" length="middle"/>
+<pin name="NFDIO5/IO0_5" x="-15.24" y="2.54" length="middle"/>
+<pin name="NFDIO6/IO0_6" x="-15.24" y="0" length="middle"/>
+<pin name="NFDIO7/IO0_7" x="-15.24" y="-2.54" length="middle"/>
+<pin name="NFRDY/GPIO0_8" x="-15.24" y="-7.62" length="middle"/>
+<pin name="NFRD/GPIO0_9" x="-15.24" y="-10.16" length="middle"/>
+<pin name="CS1/GPIO0_10" x="-15.24" y="-12.7" length="middle"/>
+<pin name="NFCLE/GPIO0_12" x="-15.24" y="-15.24" length="middle"/>
+<pin name="NFALE/GPIO0_13" x="-15.24" y="-17.78" length="middle"/>
+<pin name="NFWR/GPIO0_11" x="-15.24" y="-20.32" length="middle"/>
+<pin name="CS2/GPIO0_14" x="-15.24" y="-22.86" length="middle"/>
+<pin name="DGND2" x="22.86" y="-38.1" length="middle" rot="R90"/>
+<pin name="DGND3" x="25.4" y="-38.1" length="middle" rot="R90"/>
+<pin name="AGND1" x="2.54" y="-38.1" length="middle" rot="R90"/>
+<pin name="AGND2" x="5.08" y="-38.1" length="middle" rot="R90"/>
+<pin name="AGND3" x="7.62" y="-38.1" length="middle" rot="R90"/>
+<pin name="AGND4" x="10.16" y="-38.1" length="middle" rot="R90"/>
+<pin name="DGND1" x="20.32" y="-38.1" length="middle" rot="R90"/>
+<pin name="VHIGH" x="40.64" y="30.48" length="middle" rot="R180"/>
+<pin name="POWBTN" x="40.64" y="25.4" length="middle" rot="R180"/>
+<pin name="LEFT" x="40.64" y="20.32" length="middle" rot="R180"/>
+<pin name="RIGHT" x="40.64" y="17.78" length="middle" rot="R180"/>
+<pin name="GBUF" x="40.64" y="15.24" length="middle" rot="R180"/>
+<pin name="RCAP" x="40.64" y="10.16" length="middle" rot="R180"/>
+<pin name="XCS/GPIO1_0" x="40.64" y="5.08" length="middle" rot="R180"/>
+<pin name="SCLK/GPIO1_1" x="40.64" y="2.54" length="middle" rot="R180"/>
+<pin name="SI/GPIO1_2" x="40.64" y="0" length="middle" rot="R180"/>
+<pin name="SO/GPIO1_3" x="40.64" y="-2.54" length="middle" rot="R180"/>
+<pin name="RX/GPIO1_4" x="40.64" y="-7.62" length="middle" rot="R180"/>
+<pin name="TX/GPIO1_5" x="40.64" y="-10.16" length="middle" rot="R180"/>
+<pin name="USBN" x="40.64" y="-15.24" length="middle" rot="R180"/>
+<pin name="USBP" x="40.64" y="-17.78" length="middle" rot="R180"/>
+<pin name="CVDD" x="0" y="45.72" length="middle" rot="R270"/>
+<pin name="IOVDD2" x="22.86" y="45.72" length="middle" rot="R270"/>
+<pin name="AVDD1" x="5.08" y="45.72" length="middle" rot="R270"/>
+<pin name="AVDD2" x="7.62" y="45.72" length="middle" rot="R270"/>
+<pin name="AVDD3" x="10.16" y="45.72" length="middle" rot="R270"/>
+<pin name="AVDD4" x="12.7" y="45.72" length="middle" rot="R270"/>
+<pin name="IOVDD3" x="25.4" y="45.72" length="middle" rot="R270"/>
+<pin name="IOVDD1" x="20.32" y="45.72" length="middle" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="VS1000">
+<description>&lt;h3&gt;VS1000D&lt;/h3&gt;
+&lt;p&gt;Ogg Vorbis Player IC with USB and NAND FLASH Interface 12 MHz LQFP-48&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=""&gt;Datasheet&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;SparkFun Products&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/8300"&gt;Storefront component: Ogg Vorbis Codec IC - VS1000D&lt;/a&gt; (COM-08300)&lt;/li&gt;
+
+&lt;/ul&gt;</description>
+<gates>
+<gate name="G$1" symbol="VS1000" x="-10.16" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="LQFP-48">
+<connects>
+<connect gate="G$1" pin="AGND1" pad="38"/>
+<connect gate="G$1" pin="AGND2" pad="41"/>
+<connect gate="G$1" pin="AGND3" pad="42"/>
+<connect gate="G$1" pin="AGND4" pad="48"/>
+<connect gate="G$1" pin="AVDD1" pad="34"/>
+<connect gate="G$1" pin="AVDD2" pad="39"/>
+<connect gate="G$1" pin="AVDD3" pad="44"/>
+<connect gate="G$1" pin="AVDD4" pad="46"/>
+<connect gate="G$1" pin="CS1/GPIO0_10" pad="15"/>
+<connect gate="G$1" pin="CS2/GPIO0_14" pad="21"/>
+<connect gate="G$1" pin="CVDD" pad="32"/>
+<connect gate="G$1" pin="DGND1" pad="6"/>
+<connect gate="G$1" pin="DGND2" pad="18"/>
+<connect gate="G$1" pin="DGND3" pad="31"/>
+<connect gate="G$1" pin="GBUF" pad="43"/>
+<connect gate="G$1" pin="IOVDD1" pad="30"/>
+<connect gate="G$1" pin="IOVDD2" pad="19"/>
+<connect gate="G$1" pin="IOVDD3" pad="7"/>
+<connect gate="G$1" pin="LEFT" pad="47"/>
+<connect gate="G$1" pin="NFALE/GPIO0_13" pad="17"/>
+<connect gate="G$1" pin="NFCLE/GPIO0_12" pad="16"/>
+<connect gate="G$1" pin="NFDIO0/IO0_0" pad="2"/>
+<connect gate="G$1" pin="NFDIO1/IO0_1" pad="3"/>
+<connect gate="G$1" pin="NFDIO2/IO0_2" pad="4"/>
+<connect gate="G$1" pin="NFDIO3/IO0_3" pad="5"/>
+<connect gate="G$1" pin="NFDIO4/IO0_4" pad="9"/>
+<connect gate="G$1" pin="NFDIO5/IO0_5" pad="10"/>
+<connect gate="G$1" pin="NFDIO6/IO0_6" pad="11"/>
+<connect gate="G$1" pin="NFDIO7/IO0_7" pad="12"/>
+<connect gate="G$1" pin="NFRD/GPIO0_9" pad="14"/>
+<connect gate="G$1" pin="NFRDY/GPIO0_8" pad="13"/>
+<connect gate="G$1" pin="NFWR/GPIO0_11" pad="20"/>
+<connect gate="G$1" pin="POWBTN" pad="37"/>
+<connect gate="G$1" pin="RCAP" pad="45"/>
+<connect gate="G$1" pin="RIGHT" pad="40"/>
+<connect gate="G$1" pin="RX/GPIO1_4" pad="27"/>
+<connect gate="G$1" pin="SCLK/GPIO1_1" pad="23"/>
+<connect gate="G$1" pin="SI/GPIO1_2" pad="24"/>
+<connect gate="G$1" pin="SO/GPIO1_3" pad="25"/>
+<connect gate="G$1" pin="TEST" pad="8"/>
+<connect gate="G$1" pin="TX/GPIO1_5" pad="26"/>
+<connect gate="G$1" pin="USBN" pad="36"/>
+<connect gate="G$1" pin="USBP" pad="35"/>
+<connect gate="G$1" pin="VHIGH" pad="33"/>
+<connect gate="G$1" pin="XCS/GPIO1_0" pad="22"/>
+<connect gate="G$1" pin="XRESET" pad="1"/>
+<connect gate="G$1" pin="XTAL0" pad="29"/>
+<connect gate="G$1" pin="XTAL1" pad="28"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="LPA-12743 " constant="no"/>
+<attribute name="VALUE" value="VS1000D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12473,8 +12665,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </classes>
 <parts>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
-<part name="U2" library="SparkFun-DigitalIC" deviceset="VS1000" device="">
-<attribute name="PROD_ID" value="IC-08955"/>
+<part name="U2" library="SparkFun-IC-Conversion" deviceset="VS1000" device="" value="VS1000D">
+<attribute name="PROD_ID" value="LPA-12743"/>
 </part>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="L" value="OSHW-LOGOL"/>
 <part name="LOGO2" library="SparkFun-Aesthetics" deviceset="SFE_LOGO_FLAME" device=".4_INCH" value="SFE_LOGO_FLAME.4_INCH"/>
@@ -12533,8 +12725,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R16" library="SparkFun-Resistors" deviceset="68.1KOHM1/10W1%(0603)" device="" value="68.1k"/>
 <part name="R17" library="SparkFun-Resistors" deviceset="150KOHM1/10W1%(0603)" device="" value="150K"/>
 <part name="GND22" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE-SCHOTTKY" device="-BAT20J" value="BAT20J"/>
-<part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE-SCHOTTKY" device="-BAT20J" value="BAT20J"/>
+<part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE-SCHOTTKY" device="-BAT20J" value="1A/23V/620mV"/>
+<part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE-SCHOTTKY" device="-BAT20J" value="1A/23V/620mV"/>
 <part name="D3" library="SparkFun-LED" deviceset="LED-RED" device="0603" value="RED"/>
 <part name="GND23" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND24" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -12731,7 +12923,7 @@ I/O not 5V tolerant!!</text>
 <attribute name="VALUE" x="197.104" y="125.476" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND25" gate="1" x="160.02" y="104.14"/>
-<instance part="D4" gate="G$1" x="203.2" y="59.182" rot="R270"/>
+<instance part="D4" gate="G$1" x="208.28" y="59.182" rot="R270"/>
 <instance part="GND28" gate="1" x="208.28" y="38.862"/>
 <instance part="R8" gate="G$1" x="185.42" y="121.412" rot="R90"/>
 <instance part="R10" gate="G$1" x="160.02" y="121.412" rot="R90"/>
@@ -12911,7 +13103,7 @@ I/O not 5V tolerant!!</text>
 <segment>
 <pinref part="D4" gate="G$1" pin="3"/>
 <pinref part="GND28" gate="1" pin="GND"/>
-<wire x1="208.28" y1="43.942" x2="208.28" y2="41.402" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="51.562" x2="208.28" y2="41.402" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND21" gate="1" pin="GND"/>
@@ -13190,7 +13382,7 @@ I/O not 5V tolerant!!</text>
 <label x="180.34" y="69.342" size="1.27" layer="95" rot="R180" xref="yes"/>
 <junction x="185.42" y="69.342"/>
 <pinref part="D4" gate="G$1" pin="1"/>
-<wire x1="210.82" y1="64.262" x2="210.82" y2="69.342" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="66.802" x2="210.82" y2="69.342" width="0.1524" layer="91"/>
 <junction x="210.82" y="69.342"/>
 </segment>
 </net>
@@ -13210,7 +13402,7 @@ I/O not 5V tolerant!!</text>
 <junction x="200.66" y="71.882"/>
 <label x="195.58" y="71.882" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="D4" gate="G$1" pin="2"/>
-<wire x1="205.74" y1="64.262" x2="205.74" y2="71.882" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="66.802" x2="205.74" y2="71.882" width="0.1524" layer="91"/>
 <junction x="205.74" y="71.882"/>
 </segment>
 </net>
