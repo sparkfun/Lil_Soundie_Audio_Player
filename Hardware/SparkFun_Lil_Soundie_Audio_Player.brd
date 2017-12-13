@@ -2464,8 +2464,8 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="D2" library="SparkFun-DiscreteSemi" package="SOD-323" value="1A/23V/620mV" x="3.7465" y="12.2555" rot="R270">
 <attribute name="PROD_ID" value="DIO-11623" x="3.7465" y="12.2555" size="1.778" layer="27" font="vector" ratio="15" rot="R270" display="off"/>
 </element>
-<element name="D3" library="SparkFun-LED" package="LED-0603" value="RED" x="17.4625" y="52.5145">
-<attribute name="PROD_ID" value="DIO-00819" x="17.4625" y="52.5145" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
+<element name="D3" library="SparkFun-LED" package="LED-0603" value="RED" x="17.93875" y="52.5145">
+<attribute name="PROD_ID" value="DIO-00819" x="17.93875" y="52.5145" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
 <element name="R4" library="SparkFun-Resistors" package="0603-RES" value="10K" x="13.81125" y="6.6675" rot="MR180">
 <attribute name="PROD_ID" value="RES-00824" x="13.81125" y="6.6675" size="1.778" layer="28" font="vector" ratio="15" rot="MR180" display="off"/>
@@ -2606,8 +2606,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="12.00875" y1="45.44875" x2="13.48375" y2="45.44875" width="0.2032" layer="1"/>
 <wire x1="13.48375" y1="45.44875" x2="13.59625" y2="45.56125" width="0.2032" layer="1"/>
 <wire x1="13.59625" y1="46.83125" x2="13.59625" y2="45.56125" width="0.2032" layer="1"/>
-<wire x1="18.3395" y1="52.5145" x2="18.3635" y2="53.3915" width="0.2032" layer="1"/>
-<wire x1="18.3635" y1="53.3915" x2="18.89125" y2="52.86375" width="0.2032" layer="1"/>
 <wire x1="18.89125" y1="52.86375" x2="18.89125" y2="50.00625" width="0.2032" layer="1"/>
 <wire x1="18.89125" y1="50.00625" x2="18.89125" y2="46.7775" width="0.2032" layer="1"/>
 <wire x1="18.89125" y1="46.7775" x2="18.98" y2="46.68875" width="0.2032" layer="1"/>
@@ -3226,7 +3224,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <signal name="N$19">
 <contactref element="D3" pad="A"/>
 <contactref element="R14" pad="2"/>
-<wire x1="16.5855" y1="52.5145" x2="17.4625" y2="50.15775" width="0.2032" layer="1"/>
+<wire x1="17.06175" y1="52.5145" x2="17.06175" y2="51.83575" width="0.2032" layer="1"/>
+<wire x1="17.06175" y1="51.83575" x2="17.4625" y2="51.435" width="0.2032" layer="1"/>
+<wire x1="17.4625" y1="51.435" x2="17.4625" y2="50.15775" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="C13" pad="1"/>
@@ -3675,15 +3675,15 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <approved hash="2,20,6d6a98563495ff83"/>
 <approved hash="4,1,30dd40b1710e4bfc"/>
 <approved hash="4,1,6392f68d67b3a4cd"/>
-<approved hash="4,1,6bde9bab60fbf4eb"/>
 <approved hash="4,1,60431d664cc9cdbc"/>
+<approved hash="4,1,6bde9bab60fbf4eb"/>
 <approved hash="19,1,6a65ee6bee7e6a70"/>
-<approved hash="4,1,b96232563fb0b484"/>
 <approved hash="4,1,b93e320a3da0b694"/>
+<approved hash="4,1,b96232563fb0b484"/>
 <approved hash="4,1,c3665b525632ce06"/>
 <approved hash="4,1,c7de5aea5a02c736"/>
-<approved hash="4,1,b96232563fb0b484"/>
 <approved hash="4,1,b93e320a3da0b694"/>
+<approved hash="4,1,b96232563fb0b484"/>
 <approved hash="4,1,c3665b525632ce06"/>
 <approved hash="4,1,c7de5aea5a02c736"/>
 <approved hash="19,1,a47bf275f261a46f"/>
@@ -3695,8 +3695,8 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <approved hash="4,1,493e760a79b24686"/>
 <approved hash="4,1,c76637523a22ca16"/>
 <approved hash="4,1,cbde66ea6612cb26"/>
-<approved hash="4,1,81e08360aea14db8"/>
 <approved hash="4,1,65366e3779c5b8eb"/>
+<approved hash="4,1,81e08360aea14db8"/>
 <approved hash="4,1,7dca930e155a9912"/>
 <approved hash="4,1,f6923de487c7b0fc"/>
 <approved hash="4,16,61709a1694836fe5"/>
