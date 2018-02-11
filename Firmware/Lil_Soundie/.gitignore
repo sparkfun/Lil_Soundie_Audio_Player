@@ -1,3 +1,4 @@
+*.sw*
 Emulation-Debug/
 debug_use_all.mem
 hw_desc
