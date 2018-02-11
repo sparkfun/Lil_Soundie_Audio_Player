@@ -361,7 +361,11 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
       {
 	u_int16 n;
 	for (n=0; n<128; n++){
+#if USE_INVERTED_DISK_DATA
+	  SpiSendReceive(~(*dptr++));
+#else
 	  SpiSendReceive((*dptr++));
+#endif
 	}
       }
       SPI_MASTER_8BIT_CSHI;
@@ -378,7 +382,11 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
       {
 	u_int16 n;
 	for (n=0; n<128; n++){
+#if USE_INVERTED_DISK_DATA
+	  SpiSendReceive(~(*dptr++));
+#else
 	  SpiSendReceive((*dptr++));
+#endif
 	}
       }
       SPI_MASTER_8BIT_CSHI;
@@ -403,7 +411,11 @@ u_int16 EeReadBlock(u_int16 blockn, u_int16 *dptr) {
   {
     int n;
     for (n=0; n<256; n++){
+#if USE_INVERTED_DISK_DATA
+      *dptr++ = ~SpiSendReceive(0);
+#else
       *dptr++ = SpiSendReceive(0);
+#endif
     }
   }
   SPI_MASTER_8BIT_CSHI;
@@ -418,10 +430,16 @@ u_int16 EeCompareBlock(u_int16 blockn, u_int16 *dptr) {
   {
     int n;
     for (n=0; n<256; n++){
-      if ((*dptr++) != (SpiSendReceive(0))){
-	SPI_MASTER_8BIT_CSHI;
-	return 1;
-      }
+
+#if USE_INVERTED_DISK_DATA
+      if ((*dptr++) != (~SpiSendReceive(0)))
+#else
+      if ((*dptr++) != (SpiSendReceive(0)))
+#endif
+	{
+	  SPI_MASTER_8BIT_CSHI;
+	  return 1;
+	}
     }
   }
   SPI_MASTER_8BIT_CSHI;
@@ -439,7 +457,11 @@ u_int16 EeRead4KSectorYToWorkspace(u_int16 blockn) {
   {
     int n;
     for (n=0; n<2048; n++){
+#if USE_INVERTED_DISK_DATA
+      *dptr++ = ~SpiSendReceive(0);
+#else
       *dptr++ = SpiSendReceive(0);
+#endif
     }
   }
   SPI_MASTER_8BIT_CSHI;
