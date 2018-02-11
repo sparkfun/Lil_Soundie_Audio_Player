@@ -59,11 +59,7 @@
 
 */
 
-#ifdef USE_WAV
-#define PLAYFILE PlayCurrentFile
-#else
-#define PLAYFILE PlayWavOrOggFile
-#endif
+
 
 // The number of 512-byte blocks totally available in the SPI Flash chip
 #define CHIP_TOTAL_BLOCKS 4096  /* 4096 * 512 bytes = 2M (Winbond 25X16) */
@@ -87,8 +83,6 @@
 // storing the disk data uninverted (as is) makes it easier to debug the SPI image
 #define USE_INVERTED_DISK_DATA 1
 
-#include "system.h"
-
 #include <stdio.h> //Standard io
 #include <stdlib.h> // VS_DSP Standard Library
 #include <vs1000.h> // VS1000B register definitions
@@ -102,6 +96,14 @@
 #include <vsNand.h>
 #include <mappertiny.h>
 #include <usb.h>
+
+#include "system.h"
+
+#if USE_WAV
+#define PLAYFILE PlayWavOrOggFile
+#else
+#define PLAYFILE PlayCurrentFile
+#endif
 
 #define DT_LANGUAGES 0
 #define DT_VENDOR 1

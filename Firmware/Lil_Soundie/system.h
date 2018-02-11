@@ -2,6 +2,6 @@
 #define _SYSTEM_H_
 
 // Turn on WAV Playback
-#define USE_WAV
+#define USE_WAV 1
 
 #endif
