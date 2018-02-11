@@ -1,0 +1,18 @@
+MEMORY {
+    page 0:
+ 	ram_prog: origin = 0x0000, length = 0x0800
+	irom: origin = 0x4000, length = 0x4a80, option = "ROM"
+    page 1:
+	bss_x:    origin =      0, length = 0x3400
+	xrom: origin = 0x4000, length = 0x0c00, option = "ROM"
+	xio:  origin = 0xc000, length = 0x100
+    page 2:
+	bss_y:    origin = 0x0000, length = 0x4000
+	yrom: origin = 0x4000, length = 0x2800, option = "ROM"
+}
+
+CORE {
+	frequency = 12MHz
+	bootaddr = 0x4000
+}
+

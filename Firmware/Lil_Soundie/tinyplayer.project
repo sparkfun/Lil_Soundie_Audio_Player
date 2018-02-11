@@ -10,7 +10,7 @@ ParentSolutionType             = "vs1000_solution"
 LibPath                        = "libvs1000"
 ActiveConfiguration            = "Emulation-Debug"
 Folders                        = "Source files", "Header files", "ASM files", "Other"
-Files                          = "spiusb.c", "fat12subdirpatch.s"
+Files                          = "spiusb.c", "fat12subdirpatch.s", "playwavorogg.c", "system.h"
 Configurations                 = "Emulation-Debug"
 
 [FILE_spiusb.c]
@@ -22,6 +22,16 @@ ObjFile                        = "spiusb.o"
 RelativePath                   = "."
 ProjectFolder                  = "ASM files"
 ObjFile                        = "fat12subdirpatch.o"
+
+[FILE_playwavorogg.c]
+RelativePath                   = "."
+ProjectFolder                  = "Source files"
+ObjFile                        = "playwavorogg.o"
+
+[FILE_system.h]
+RelativePath                   = "."
+ProjectFolder                  = "Header files"
+ObjFile                        = ""
 
 [CFG_Emulation-Debug]
 TargetType                     = "Executable"
@@ -43,7 +53,7 @@ CExtraFlags                    = "-fsmall-code"
 AsmListFileName                = ""
 AsmExtraFlags                  = ""
 LibPaths                       = "lib"
-Libs                           = "-lc"
+Libs                           = "-lc -ldev1000"
 StartupModule                  = "$(HOMEPATH)/libvs1000/c-spi.o"
 LinkMemDescFileName            = "mem_user"
 LinkCmdFileName                = ""

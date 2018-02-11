@@ -59,6 +59,11 @@
 
 */
 
+#ifdef USE_WAV
+#define PLAYFILE PlayCurrentFile
+#else
+#define PLAYFILE PlayWavOrOggFile
+#endif
 
 // The number of 512-byte blocks totally available in the SPI Flash chip
 #define CHIP_TOTAL_BLOCKS 4096  /* 4096 * 512 bytes = 2M (Winbond 25X16) */
@@ -82,7 +87,7 @@
 // storing the disk data uninverted (as is) makes it easier to debug the SPI image
 #define USE_INVERTED_DISK_DATA 1
 
-
+#include "system.h"
 
 #include <stdio.h> //Standard io
 #include <stdlib.h> // VS_DSP Standard Library
@@ -97,7 +102,6 @@
 #include <vsNand.h>
 #include <mappertiny.h>
 #include <usb.h>
-
 
 #define DT_LANGUAGES 0
 #define DT_VENDOR 1
@@ -201,6 +205,7 @@ u_int16 blockAddress[CACHE_BLOCKS];
 s_int16 lastFoundBlock = -1;
 u_int16 shouldFlush = 0;
 
+enum CodecError PlayWavOrOggFile(void);
 
 // Do we want to get debug screen output? It's available if the code
 // is loaded with vs3emu (build script) with RS-232 cable.
@@ -777,8 +782,8 @@ void main(void) {
 
     // Try to use a FAT filesystem on logical disk
     if (InitFileSystem() == 0) {
-      minifatInfo.supportedSuffixes = supportedFiles; //.ogg
-
+      minifatInfo.supportedSuffixes = defSupportedFiles;
+      
       // Look for playable files
       player.totalFiles = OpenFile(0xffffU);
       do__not__puthex(player.totalFiles);
@@ -819,7 +824,7 @@ void main(void) {
       do__not__puts("Current playing file");
       do__not__puthex(player.currentFile);
       do__not__puts("");
-	    ret = PlayCurrentFile(); // Decode and Play.
+	    ret = PLAYFILE(); // Decode and Play.
       do__not__puts("Player return value");
       do__not__puthex(ret);
       do__not__puts("");
