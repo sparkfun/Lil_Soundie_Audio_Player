@@ -811,6 +811,9 @@ void main(void) {
         while(player.currentFile == 0xffffU) {
           memset(tmpBuf, 0, sizeof(tmpBuf));
           AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
+          if (USBIsAttached()) {
+            break;
+          }
         }
         if (OpenFile(player.currentFile) < 0) {
 

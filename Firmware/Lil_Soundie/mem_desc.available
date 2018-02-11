@@ -1,7 +1,7 @@
 MEMORY {
-#### Free 0 1912 136 ####
+#### Free 0 1916 132 ####
   page 0:
-    I_1912: origin = 1912, length = 136
+    I_1916: origin = 1916, length = 132
 #### Free 1 8233 983 ####
   page 1:
     X_8233: origin = 8233, length = 983
