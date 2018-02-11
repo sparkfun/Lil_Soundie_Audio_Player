@@ -19,7 +19,7 @@
 #include "gpioctrl.h"
 
 extern struct CodecServices cs;
-
+void puthex(u_int16 a);
 /*
   We currently allow two GPIO controls:
   1) GPIO_MASK for binary-encoded file number, all-zero means idle.
@@ -64,6 +64,7 @@ err 'Both GPIO_MASK and GPIO_PRIORITIES can not be defined at the same time'
 
 
 void GPIOCtrlIdleHook(void) {
+
     if (uiTrigger) {
         uiTrigger = 0;
 
@@ -108,15 +109,16 @@ void GPIOCtrlIdleHook(void) {
             for (mask = 0;mask<10000;mask++)
         	USEX(0);
             mask = (PERIP(GPIO0_IDATA) ^ GPIO0_PULLUPS) & GPIO_MASK;
+            
 #endif
 //putch(mask);
+
             if (mask) {
-        	if (player.currentFile != mask - 1) {
-        	    player.currentFile = player.nextFile = mask - 1;
-        	    cs.cancel = 1;
-        	    player.pauseOn = 0;
-        	}
-            }
+		player.currentFile = player.nextFile = mask - 1;
+		player.pauseOn = 0;
+            } else {
+               player.currentFile = 0xffffU;
+	     }
         }
 #endif /*GPIO_MASK*/
 #ifdef GPIO_PRIORITIES

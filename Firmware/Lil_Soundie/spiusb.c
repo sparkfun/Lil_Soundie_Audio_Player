@@ -62,7 +62,7 @@
 
 
 // The number of 512-byte blocks totally available in the SPI Flash chip
-#define CHIP_TOTAL_BLOCKS 4096  /* 4096 * 512 bytes = 2M (Winbond 25X16) */
+#define CHIP_TOTAL_BLOCKS 8192  /* 4096 * 512 bytes = 2M (Winbond 25X16) */
 
 // Set aside some blocks for VS1000 boot code (and optional parameter data)
 #define RESERVED_BLOCKS 32
@@ -98,6 +98,7 @@
 #include <usb.h>
 
 #include "system.h"
+#include "gpioctrl.h"
 
 #if USE_WAV
 #define PLAYFILE PlayWavOrOggFile
@@ -212,7 +213,6 @@ enum CodecError PlayWavOrOggFile(void);
 // Do we want to get debug screen output? It's available if the code
 // is loaded with vs3emu (build script) with RS-232 cable.
 
-#if PRINT_VS3EMU_DEBUG_MESSAGES
 __y const char hex[] = "0123456789abcdef";
 void puthex(u_int16 a) {
   char tmp[6];
@@ -224,6 +224,8 @@ void puthex(u_int16 a) {
   tmp[5] = '\0';
   fputs(tmp, stdout);
 }
+
+#if PRINT_VS3EMU_DEBUG_MESSAGES
 void PrintCache(){
   register u_int16 i;
   for (i=0; i<CACHE_BLOCKS; i++){
@@ -708,6 +710,7 @@ auto void MyMassStorage(void) {
   SetRate(44100U);
 
   SetHookFunction((u_int16)InitUSBDescriptors, MyInitUSBDescriptors);
+
   do__not__puts("before usb init");
   InitUSB(USB_MASS_STORAGE);
   do__not__puts("after usb init");
@@ -747,6 +750,7 @@ void main(void) {
   do__not__puts("Hello.");
 
   InitAudio();
+  GPIOInit();
 
   PERIP(INT_ENABLEL) = INTF_RX | INTF_TIM0;
   PERIP(INT_ENABLEH) = INTF_DAC;
@@ -765,8 +769,9 @@ void main(void) {
   keyOldTime = -32767;
 
   SetHookFunction((u_int16)OpenFile, Fat12OpenFile);
-  SetHookFunction((u_int16)IdleHook, NullHook); //Disable keyboard scanning
-
+  
+  // Set the GPIO hook to look at GPIO pins
+  SetHookFunction((u_int16)IdleHook, GPIOCtrlIdleHook);
 
   // Use our SPI flash mapper as logical disk
   map = FsMapSpiFlashCreate(NULL, 0);
@@ -788,6 +793,7 @@ void main(void) {
       
       // Look for playable files
       player.totalFiles = OpenFile(0xffffU);
+      player.currentFile = 0xffffU;
       do__not__puthex(player.totalFiles);
       do__not__puts("");
       if (player.totalFiles == 0) {
@@ -798,22 +804,16 @@ void main(void) {
       player.nextStep = 1;
       player.nextFile = 0;
       while (1) {
-	if (player.randomOn) {
-	  register s_int16 nxt;
-	retoss:
-	  nxt = rand() % player.totalFiles;
-	  if (nxt == player.currentFile && player.totalFiles > 1)
-	    goto retoss;
-	  player.currentFile = nxt;
-	} else {
-	  player.currentFile = player.nextFile;
-	}
-	if (player.currentFile < 0)
-	  player.currentFile += player.totalFiles;
-	if (player.currentFile >= player.totalFiles)
-	  player.currentFile -= player.totalFiles;
-	player.nextFile = player.currentFile + 1;
+      GPIOCtrlIdleHook();
+      puts("While loop");
+      puthex(player.currentFile);
+      puts("");
+        while(player.currentFile == 0xffffU) {
+           memset(tmpBuf, 0, sizeof(tmpBuf));
+           AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
+        }
 	if (OpenFile(player.currentFile) < 0) {
+
 	  player.ffCount = 0;
 	  cs.cancel = 0;
 	  cs.goTo = -1;
@@ -831,14 +831,7 @@ void main(void) {
       do__not__puthex(ret);
       do__not__puts("");
 	    // See separate examples about keyboard handling.
-
-	    if (ret == ceFormatNotFound)
-	      player.nextFile = player.currentFile + player.nextStep;
-	    if (ret == ceOk && oldStep == -1)
-	      player.nextStep = 1;
 	  }
-	} else {
-	  player.nextFile = 0;
 	}
 
 	// If USB is attached, return to main loop
