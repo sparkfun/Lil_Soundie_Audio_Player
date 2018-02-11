@@ -2,19 +2,19 @@
 /*
 
   Copyright 2008 VLSI Solution, Tampere, Finland. Absolutely no warranty.
-  
+
 
   S P I   F L A S H   U S B   D R I V E  +  P L A Y E R   E X A M P L E
   ---------------------------------------------------------------------
 
   This example code uses the 18 kilobytes of mallocAreaY to implement
-  a disk read/write cache and work area that is capable of erasing and 
-  programming an SPI flash chip such as the Winbond 25X16 in 4 kilobyte 
+  a disk read/write cache and work area that is capable of erasing and
+  programming an SPI flash chip such as the Winbond 25X16 in 4 kilobyte
   chunks when the VS1000B is connected to USB. Tested with Windows XP.
-   
+
   Note: The SPI flash is quite slow to write to (about the speed of
   a floppy disk). Writing small files (a few kilobytes) is fast due
-  to the cache system. Large files may cause occasional timeouts with 
+  to the cache system. Large files may cause occasional timeouts with
   slow flash chips.
 
   Requirements: An SPI flash eeprom with 4 kilobyte erasable blocks.
@@ -27,11 +27,11 @@
   Builds with vskit133 build script (BUILD SPIUSB)
   eeprom.img can be then prommed to the eeprom for bootable system.
   Then you can use your development board to make a master EEPROM image,
-  which you can copy to the production units using an eeprommer. 
+  which you can copy to the production units using an eeprommer.
 
   At first connect the USB disk is unformatted.
   Suggestion: use "Quick Format" when formatting the disk with WinXP.
-  
+
 
   FAT12 Subdirectory ("Folder") Limitations
   -----------------------------------------
@@ -39,7 +39,7 @@
   forces all disks smaller than 16 megabytes to be FAT12. VLSI has
   a binary fix for the problem, but it is not distributable in C code form.
   You can request the FAT12 fix library from support@vlsi.fi for deployment
-  of your product. 
+  of your product.
 
   The pre-compiled example image (vs1000b_25X16_spiflash_usb_player.img)
   on VLSI web page has the fix installed.
@@ -56,19 +56,19 @@
     subdirectories without crashing. Vorbis files are playable from
     the root directory.
 
-     
-*/  
+
+*/
 
 
 // The number of 512-byte blocks totally available in the SPI Flash chip
 #define CHIP_TOTAL_BLOCKS 4096  /* 4096 * 512 bytes = 2M (Winbond 25X16) */
 
-// Set aside some blocks for VS1000 boot code (and optional parameter data) 
+// Set aside some blocks for VS1000 boot code (and optional parameter data)
 #define RESERVED_BLOCKS 32
 
 #define LOGICAL_DISK_BLOCKS  (CHIP_TOTAL_BLOCKS-RESERVED_BLOCKS)
 
-#define PRINT_VS3EMU_DEBUG_MESSAGES 0
+#define PRINT_VS3EMU_DEBUG_MESSAGES 1
 
 #define SPI_CLOCK_DIVIDER 2
 
@@ -78,6 +78,9 @@
 // Position of workspace in Y ram, do not change.
 #define WORKSPACE (mallocAreaY + 6144)
 
+// storing the disk data inverted is optimal for the system.
+// storing the disk data uninverted (as is) makes it easier to debug the SPI image
+#define USE_INVERTED_DISK_DATA 1
 
 
 
@@ -130,7 +133,7 @@ u_int16 mySerialNumberStr[] = {
   '1'<<8, // Serial number should be unique for each unit
 };
 
-// This is the new Device Descriptor. See the USB specification! 
+// This is the new Device Descriptor. See the USB specification!
 const u_int16  myDeviceDescriptor [] = "\p"
   "\x12" // Length
   "\x01" // Type (Device Descriptor)
@@ -155,7 +158,7 @@ const u_int16  myDeviceDescriptor [] = "\p"
   "\x01" // Number of configurations (1)
 ;
 
-// When a USB setup packet is received, install our descriptors 
+// When a USB setup packet is received, install our descriptors
 // and then proceed to the ROM function RealDecodeSetupPacket.
 void RealInitUSBDescriptors(u_int16 initDescriptors);
 void MyInitUSBDescriptors(u_int16 initDescriptors){
@@ -223,7 +226,7 @@ void PrintCache(){
       fputs("- ",stdout);
     }
   }
-  puts ("=cache");    
+  puts ("=cache");
 }
 #define do__not__puts(x) puts(x)
 #define do__not__puthex(x) puthex(x)
@@ -257,7 +260,7 @@ void PrintCache(){
         SPI_CF_MASTER | SPI_CF_DLEN16 | SPI_CF_FSIDLE0
 
 void SingleCycleCommand(u_int16 cmd){
-  SPI_MASTER_8BIT_CSHI; 
+  SPI_MASTER_8BIT_CSHI;
   SPI_MASTER_8BIT_CSLO;
   SpiSendReceive(cmd);
   SPI_MASTER_8BIT_CSHI;
@@ -280,7 +283,7 @@ u_int16 SpiWaitStatus(void) {
     ; //Wait until chip is ready or return -1 if USB bus reset
 
   SPI_MASTER_8BIT_CSHI;
-  
+
   return status;
 }
 
@@ -305,7 +308,7 @@ void EePutReadBlockAddress(register u_int16 blockn){
 }
 
 // Check is a 4K block completely blank
-u_int16 EeIsBlockErased(u_int16 blockn){  
+u_int16 EeIsBlockErased(u_int16 blockn){
   SpiWaitStatus();
   EePutReadBlockAddress(blockn);
   {
@@ -318,7 +321,7 @@ u_int16 EeIsBlockErased(u_int16 blockn){
     }
     SPI_MASTER_8BIT_CSHI;
     return 1;
-  }  
+  }
 }
 
 s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
@@ -343,10 +346,10 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
 
   if (SpiWaitStatus() == -1) return -1; /* USB HAS BEEN RESET */
   // Write 8 512-byte sectors
-  { 
+  {
     u_int16 i;
     for (i=0; i<8; i++){
-      
+
       // Put first page (256 bytes) of sector.
       EeUnprotect();
       SPI_MASTER_8BIT_CSLO;
@@ -363,7 +366,7 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
       }
       SPI_MASTER_8BIT_CSHI;
       if (SpiWaitStatus() == -1) return -1; /* USB HAS BEEN RESET */
-       
+
       // Put second page (256 bytes) of sector.
       EeUnprotect();
       SPI_MASTER_8BIT_CSLO;
@@ -384,7 +387,7 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
     }
   }
   do__not__puts("written");
-  
+
   PERIP(USB_EP_ST3) &= ~(0x0001); //Un-Force NAK on EP3
   return 0;
 
@@ -392,10 +395,10 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
 
 
 
-// Block Read for SPI EEPROMS with 24-bit address e.g. up to 16MB 
+// Block Read for SPI EEPROMS with 24-bit address e.g. up to 16MB
 u_int16 EeReadBlock(u_int16 blockn, u_int16 *dptr) {
   SpiWaitStatus();
-  
+
   EePutReadBlockAddress(blockn);
   {
     int n;
@@ -473,18 +476,18 @@ u_int16 WriteContinuous4K(){
 	if (blockAddress[i+k] != blockAddress[i]+k) goto ohi;
       }
       do__not__puthex(blockAddress[i]); do__not__puts(" starts continuous 4K ");
-      
+
       if (-1 != EeProgram4K (blockAddress[i], mallocAreaY+256*i)){
 	for (k=0; k<8; k++){
 	  blockPresent &= ~(1/*was L*/<<(i+k));
 	}
       } else {
 	return 0; /* USB HAS BEEN RESET */
-      }      
+      }
       return 1;
     }
   ohi:
-    {}    
+    {}
   }
   return 0;
 }
@@ -530,7 +533,7 @@ struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
 				     u_int16 cacheSize) {
 
   do__not__puts("CREATE");
-  InitSpi(SPI_CLOCK_DIVIDER);  
+  InitSpi(SPI_CLOCK_DIVIDER);
   blockPresent = 0;
   shouldFlush = 0;
   return &spiFlashMapper;
@@ -547,15 +550,17 @@ s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
 
   while (bl < blocks) {
     __y u_int16 *source = FindCachedBlock(firstBlock);
-    do__not__puthex(firstBlock); 
-    do__not__puthex((u_int16)source); 
+#if 0
+    do__not__puthex(firstBlock);
+    do__not__puthex((u_int16)source);
     do__not__puts("=rd_lba, addr");
+#endif
     if (source) {
       memcpyYX(data, source, 256);
     } else {
       EeReadBlock(firstBlock, data);
       //memset(data, 0, 256);
-    }      
+    }
     data += 256;
     firstBlock++;
     bl++;
@@ -574,28 +579,28 @@ s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
     do__not__puts("flush-reject");
     return 0; // don't accept write while flushing
   }
-  while (bl < blocks) {           
+  while (bl < blocks) {
     // Is the block to be written different than data already in EEPROM?
-    if (EeCompareBlock(firstBlock, data)){        
+    if (EeCompareBlock(firstBlock, data)){
       __y u_int16 *target = FindCachedBlock(firstBlock);
       if (target) {
-	do__not__puthex(firstBlock); 
-	do__not__puthex((u_int16)target); 
+	do__not__puthex(firstBlock);
+	do__not__puthex((u_int16)target);
 	do__not__puts("=rewrite_lba");
       } else {
 	target = GetEmptyBlock(firstBlock);
-	do__not__puthex(firstBlock); 
+	do__not__puthex(firstBlock);
 	do__not__puts("=write_lba");
       }
       if (!target){ //cache is full
 	//must do a cache flush to get cache space
 	FsMapSpiFlashFlush(NULL,1);
 	target = GetEmptyBlock(firstBlock);
-      }      
+      }
       if (target){
-	memcpyXY(target, data, 256);	
+	memcpyXY(target, data, 256);
 	PrintCache();
-      }else{       		
+      }else{
 	puts("FATAL ERROR: NO CACHE SPACE. THIS NEVER HAPPENS.");
 	while(1)
 	  ;
@@ -605,7 +610,7 @@ s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
       do__not__puthex(firstBlock);
       do__not__puts("=lba; Redundant write skipped");
     }
-    
+
     if (PERIP(USB_STATUS) & USB_STF_BUS_RESET){
       do__not__puts("USB: Reset");
     };
@@ -636,7 +641,7 @@ s_int16 FsMapSpiFlashFlush(struct FsMapper *map, u_int16 hard){
       newBlockPresent = blockPresent;
       for (j=0; j<8; j++) {
 	do__not__puthex (lba+j);
-	if (dptr = FindCachedBlock(lba+j)){	  
+	if (dptr = FindCachedBlock(lba+j)){
 	  memcpyYY (WORKSPACE+(256*j), dptr, 256);
 	  newBlockPresent &= ~(1/*was L*/<<lastFoundBlock);
 
@@ -657,7 +662,7 @@ s_int16 FsMapSpiFlashFlush(struct FsMapper *map, u_int16 hard){
   shouldFlush = 0;
   return 0;
 
-}      
+}
 
 
 auto void MyMassStorage(void) {
@@ -680,7 +685,7 @@ auto void MyMassStorage(void) {
 
   while (USBIsAttached()) {
     USBHandler();
-    if (shouldFlush){      
+    if (shouldFlush){
 	FsMapSpiFlashFlush(NULL,1);
     }
     if (USBWantsSuspend()) {
@@ -713,51 +718,53 @@ void main(void) {
   do__not__puts("Hello.");
 
   InitAudio();
-  
+
   PERIP(INT_ENABLEL) = INTF_RX | INTF_TIM0;
   PERIP(INT_ENABLEH) = INTF_DAC;
-  
+
   PERIP(SCI_STATUS) &= ~SCISTF_USB_PULLUP_ENA;
   PERIP(USB_CONFIG) = 0x8000U;
-  
+
   PERIP(GPIO1_ODATA) |=  LED1|LED2;
   PERIP(GPIO1_DDR)   |=  LED1|LED2;
   PERIP(GPIO1_MODE)  &= ~(LED1|LED2);
-  
+
   player.volumeOffset = -24;
   player.pauseOn = 0;
-  
+
   keyOld = KEY_POWER;
   keyOldTime = -32767;
 
   SetHookFunction((u_int16)OpenFile, Fat12OpenFile);
   SetHookFunction((u_int16)IdleHook, NullHook); //Disable keyboard scanning
 
-  
+
   // Use our SPI flash mapper as logical disk
-  map = FsMapSpiFlashCreate(NULL, 0); 
+  map = FsMapSpiFlashCreate(NULL, 0);
   player.volume = 0;
   PlayerVolume();
 
   // Use custom main loop to take over total control of chip
   while (1) {
     // When USB is attached, go to mass storage handler
-    if (USBIsAttached()) {                 
+    if (USBIsAttached()) {
       do__not__puts("MassStorage");
       MyMassStorage();
       do__not__puts("From MassStorage");
     }
-    
+
     // Try to use a FAT filesystem on logical disk
     if (InitFileSystem() == 0) {
       minifatInfo.supportedSuffixes = supportedFiles; //.ogg
 
       // Look for playable files
       player.totalFiles = OpenFile(0xffffU);
+      do__not__puthex(player.totalFiles);
+      do__not__puts("");
       if (player.totalFiles == 0) {
 	goto noFSnorFiles;
       }
-           
+
       // Playable file(s) found. Play.
       player.nextStep = 1;
       player.nextFile = 0;
@@ -787,7 +794,13 @@ void main(void) {
 	    register s_int16 oldStep = player.nextStep;
 	    register s_int16 ret;
 
+      do__not__puts("Current playing file");
+      do__not__puthex(player.currentFile);
+      do__not__puts("");
 	    ret = PlayCurrentFile(); // Decode and Play.
+      do__not__puts("Player return value");
+      do__not__puthex(ret);
+      do__not__puts("");
 	    // See separate examples about keyboard handling.
 
 	    if (ret == ceFormatNotFound)
@@ -798,7 +811,7 @@ void main(void) {
 	} else {
 	  player.nextFile = 0;
 	}
-	
+
 	// If USB is attached, return to main loop
 	if (USBIsAttached()) {
 	  break;
