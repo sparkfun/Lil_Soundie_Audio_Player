@@ -10,7 +10,7 @@ ParentSolutionType             = "vs1000_solution"
 LibPath                        = "libvs1000"
 ActiveConfiguration            = "Emulation-Debug"
 Folders                        = "Source files", "Header files", "ASM files", "Other"
-Files                          = "spiusb.c", "fat12subdirpatch.s", "playwavorogg.c", "system.h"
+Files                          = "spiusb.c", "fat12subdirpatch.s", "playwavorogg.c", "system.h", "gpioctrl.c", "gpioctrl.h"
 Configurations                 = "Emulation-Debug"
 
 [FILE_spiusb.c]
@@ -29,6 +29,16 @@ ProjectFolder                  = "Source files"
 ObjFile                        = "playwavorogg.o"
 
 [FILE_system.h]
+RelativePath                   = "."
+ProjectFolder                  = "Header files"
+ObjFile                        = ""
+
+[FILE_gpioctrl.c]
+RelativePath                   = "."
+ProjectFolder                  = "Source files"
+ObjFile                        = "gpioctrl.o"
+
+[FILE_gpioctrl.h]
 RelativePath                   = "."
 ProjectFolder                  = "Header files"
 ObjFile                        = ""
