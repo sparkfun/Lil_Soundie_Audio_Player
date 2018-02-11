@@ -213,6 +213,7 @@ enum CodecError PlayWavOrOggFile(void);
 // Do we want to get debug screen output? It's available if the code
 // is loaded with vs3emu (build script) with RS-232 cable.
 
+#if PRINT_VS3EMU_DEBUG_MESSAGES
 __y const char hex[] = "0123456789abcdef";
 void puthex(u_int16 a) {
   char tmp[6];
@@ -225,7 +226,6 @@ void puthex(u_int16 a) {
   fputs(tmp, stdout);
 }
 
-#if PRINT_VS3EMU_DEBUG_MESSAGES
 void PrintCache(){
   register u_int16 i;
   for (i=0; i<CACHE_BLOCKS; i++){
@@ -786,6 +786,7 @@ void main(void) {
       MyMassStorage();
       do__not__puts("From MassStorage");
     }
+    //puts("Test");
 
     // Try to use a FAT filesystem on logical disk
     if (InitFileSystem() == 0) {
@@ -805,9 +806,6 @@ void main(void) {
       player.nextFile = 0;
       while (1) {
         GPIOCtrlIdleHook();
-        puts("While loop");
-        puthex(player.currentFile);
-        puts("");
         while(player.currentFile == 0xffffU) {
           memset(tmpBuf, 0, sizeof(tmpBuf));
           AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
