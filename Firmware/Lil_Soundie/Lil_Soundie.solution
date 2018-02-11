@@ -5,22 +5,22 @@
 
 [Solution]
 Version                        = "0.30"
-Name                           = "tinyplayer"
+Name                           = "Lil_Soundie"
 ActiveConfiguration            = "Emulation-Debug"
 ParentSolution                 = "VS1000_Solution"
-ActiveProject                  = "tinyplayer"
-Projects                       = "tinyplayer"
+ActiveProject                  = "Lil_Soundie"
+Projects                       = "Lil_Soundie"
 Configurations                 = "Emulation-Debug"
 OverlaySupport                 = "0"
 
-[PROJ_tinyplayer]
-ProjectFile                    = "tinyplayer.project"
+[PROJ_Lil_Soundie]
+ProjectFile                    = "Lil_Soundie.project"
 
 [CFG_Emulation-Debug]
 DebugMode                      = "HW Emulation"
 PostBuildCmd                   = ""
 SimulationCores                = 
-ProjActiveConfigs              = "tinyplayer:Emulation-Debug"
+ProjActiveConfigs              = "Lil_Soundie:Emulation-Debug"
 EmuSerialPort                  = "COM1"
 EmuInitSpeed                   = "115200"
 EmuTargetSpeed                 = "115200"

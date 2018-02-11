@@ -4,7 +4,7 @@
 
 
 [Project]
-Name                           = "tinyplayer"
+Name                           = "Lil_Soundie"
 Version                        = "1.10"
 ParentSolutionType             = "vs1000_solution"
 LibPath                        = "libvs1000"
@@ -45,7 +45,7 @@ ObjFile                        = ""
 
 [CFG_Emulation-Debug]
 TargetType                     = "Executable"
-TargetFilename                 = "tinyplayer.coff"
+TargetFilename                 = "Lil_Soundie.coff"
 TargetRelativePath             = "Emulation-Debug"
 HWDescFile                     = "hw_desc"
 PreBuildCmd                    = ""
