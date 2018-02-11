@@ -5,25 +5,31 @@
 
 [Project]
 Name                           = "tinyplayer"
-Version                        = "1.00"
+Version                        = "1.10"
+ParentSolutionType             = "vs1000_solution"
+LibPath                        = "libvs1000"
 ActiveConfiguration            = "Emulation-Debug"
 Folders                        = "Source files", "Header files", "ASM files", "Other"
-Files                          = "spiusb.c"
+Files                          = "spiusb.c", "fat12subdirpatch.s"
 Configurations                 = "Emulation-Debug"
-ParentSolutionType             = "vs1000_solution"
-LibPath						   = "libvs1000"
-Description                    = "Example for using SPI serial flash as the memory for an Ogg Vorbis music player and USB memory stick. Tested boards: VS1000 Developer Board with 2M or 4M SPI Flash memory connected to the DIP-8 SPI boot memory socket, VS1000 TinyPlayer board."
 
 [FILE_spiusb.c]
 RelativePath                   = "."
 ProjectFolder                  = "Source files"
 ObjFile                        = "spiusb.o"
 
+[FILE_fat12subdirpatch.s]
+RelativePath                   = "."
+ProjectFolder                  = "ASM files"
+ObjFile                        = "fat12subdirpatch.o"
+
 [CFG_Emulation-Debug]
 TargetType                     = "Executable"
 TargetFilename                 = "tinyplayer.coff"
 TargetRelativePath             = "Emulation-Debug"
 HWDescFile                     = "hw_desc"
+PreBuildCmd                    = ""
+PostBuildCmd                   = ""
 CCompiler                      = "lcc"
 Assembler                      = "vsa"
 Linker                         = "vslink"

@@ -705,6 +705,8 @@ auto void MyMassStorage(void) {
 
 
 
+// FAT12 binary patch
+auto u_int16 Fat12OpenFile(register __c0 u_int16 n);
 
 void main(void) {
 
@@ -727,9 +729,14 @@ void main(void) {
   
   keyOld = KEY_POWER;
   keyOldTime = -32767;
+
+  SetHookFunction((u_int16)OpenFile, Fat12OpenFile);
+  SetHookFunction((u_int16)IdleHook, NullHook); //Disable keyboard scanning
+
   
   // Use our SPI flash mapper as logical disk
   map = FsMapSpiFlashCreate(NULL, 0); 
+  player.volume = 0;
   PlayerVolume();
 
   // Use custom main loop to take over total control of chip
