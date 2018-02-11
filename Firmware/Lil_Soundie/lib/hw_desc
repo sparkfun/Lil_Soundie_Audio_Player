@@ -1,0 +1,22 @@
+# core parameters for default version
+dataword		16
+dataaddress             16
+programword    		32
+programaddress 		16
+multiplierwidth		16
+indexregs                8
+#accumulators             4
+modifieronly		 0
+loopregs                 1
+
+guardbits 8
+
+#extra parameters for gsa/gsim, hardcoded in HW (?)
+alubase                  0
+#aluregs      accumulators + 4
+controlbase              8
+#addressregs  synonym for indexregs
+#modifiertype synonym for addmodes
+addressmode             3
+
+version 4
