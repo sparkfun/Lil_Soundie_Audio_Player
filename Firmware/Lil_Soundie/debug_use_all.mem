@@ -1,0 +1,14 @@
+MEMORY
+{
+page 0:
+	i_mem: origin = 0x0, length = 0x10000
+page 1:
+	x_mem: origin = 0x0, length = 0x10000
+page 2:
+	y_mem: origin = 0x0, length = 0x10000
+}
+
+CORE {
+	frequency = 12.288MHz
+	bootaddr = 0x4000
+}
