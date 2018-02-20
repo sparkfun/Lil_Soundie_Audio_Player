@@ -20288,7 +20288,7 @@ I/O not 5V tolerant!!</text>
 <wire x1="147.32" y1="93.98" x2="248.92" y2="93.98" width="0.4064" layer="97" style="shortdash"/>
 <text x="151.384" y="86.106" size="3.048" layer="97" font="vector">USB</text>
 <text x="150.114" y="138.43" size="3.048" layer="97" font="vector">Audio Out</text>
-<text x="103.632" y="177.546" size="3.81" layer="97" font="vector" align="center"> Lil' Soundie
+<text x="103.632" y="177.546" size="3.81" layer="97" font="vector" align="center"> Little Soundie
 Audio Breakout Board</text>
 <wire x1="2.54" y1="121.92" x2="2.54" y2="114.3" width="0.3048" layer="97" style="shortdash"/>
 <wire x1="2.54" y1="114.3" x2="27.94" y2="114.3" width="0.3048" layer="97" style="shortdash"/>
