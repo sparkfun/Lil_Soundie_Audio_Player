@@ -7,7 +7,7 @@ extern const u_int16 fontData[];
 #define SYMBOL_SPACE 32
 #define SYMBOL_NUMBER 48
 #define SYMBOL_ALPHA 65
-#define SYMBOL_ALPHA_LOW 97 
+#define SYMBOL_ALPHA_LOW 97
 #define SYMBOL_LEFTSPK 128
 #define SYMBOL_RIGHTSPK 129
 #define SYMBOL_USB 130

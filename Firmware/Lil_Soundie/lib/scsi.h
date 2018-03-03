@@ -3,7 +3,8 @@
 #ifndef SCSI_H
 #define SCSI_H
 
-typedef enum {
+typedef enum
+{
   SCSI_UNINITIALIZED = -1,
   SCSI_READY_FOR_COMMAND = 0,
   SCSI_DATA_TO_HOST,
@@ -13,111 +14,120 @@ typedef enum {
   SCSI_INVALID_CBW
 } SCSIStageEnum;
 
-typedef enum {
+typedef enum
+{
   SCSI_OK = 0,
   SCSI_REQUEST_ERROR = 1,
   SCSI_PHASE_ERROR = 2
 } SCSIStatusEnum;
 
-typedef struct scsicdb6variant1 {
+typedef struct scsicdb6variant1
+{
   u_int16 length__opcode;
   u_int16 flags__pageCode;
-  u_int16 allocationLength; //OK BIG-ENDIAN! :)
+  u_int16 allocationLength;     // OK BIG-ENDIAN! :)
   u_int16 control__null;
 } ScsiInquiryCdb;
 
-typedef struct scsicdb6variant2 {
+typedef struct scsicdb6variant2
+{
   u_int16 length__opcode;
   u_int16 flags__pageCode;
   u_int16 res__allocationLength;
   u_int16 control__null;
 } ScsiModeSense6Cdb;
 
-typedef struct scsicdb6variant3 {
+typedef struct scsicdb6variant3
+{
   u_int16 length__opcode;
   u_int16 flags__res;
   u_int16 res__allocationLength;
   u_int16 control__null;
 } ScsiRequestSenseCdb;
 
-typedef struct scsicdb10variant1 {
+typedef struct scsicdb10variant1
+{
   u_int16 length__opcode;
   u_int16 res__lbab3;
   u_int16 lbab2__lbab1;
   u_int16 lbab0__res;
-  u_int16 wLength; //OK BIG-ENDIAN :)
+  u_int16 wLength;              // OK BIG-ENDIAN :)
   u_int16 control__null;
 } ScsiRead10Cdb;
-      
-typedef struct scsicdb10variant2 {
+
+typedef struct scsicdb10variant2
+{
   u_int16 length__opcode;
   u_int16 flags__lbab3;
   u_int16 lbab2__lbab1;
   u_int16 lbab0__res;
-  u_int16 wLength; //OK BIG-ENDIAN :)
+  u_int16 wLength;              // OK BIG-ENDIAN :)
   u_int16 control__null;
 } ScsiWrite10Cdb;
 
 /** SCSI variable structures. The space can be used for other uses
     when mass storage is not used. */
-extern struct SCSIVARS {
-  /// Current SCSI State
+extern struct SCSIVARS
+{
+  // / Current SCSI State
   SCSIStageEnum State;
 
-  /// Current SCSI Status
+  // / Current SCSI Status
   SCSIStatusEnum Status;
 
-  /// Buffer Pointer for sending SCSI data out to the host
+  // / Buffer Pointer for sending SCSI data out to the host
   u_int16 *DataOutBuffer;
 
-  /// Bytes left for sending in the DATA OUT stage
+  // / Bytes left for sending in the DATA OUT stage
   u_int16 DataOutSize;
 
-  /// Generic SCSI data buffer
+  // / Generic SCSI data buffer
   u_int16 DataBuffer[32];
 
-  /// Buffer Pointer for receiving SCSI data from the host
+  // / Buffer Pointer for receiving SCSI data from the host
   u_int16 *DataInBuffer;
 
-  /// Number of bytes received into the data in buffer
+  // / Number of bytes received into the data in buffer
   u_int16 DataInSize;
 
-  /// Number of disk blocks that need sending
+  // / Number of disk blocks that need sending
   unsigned int BlocksLeftToSend;
 
-  /// Number of disk blocks that need sending
+  // / Number of disk blocks that need sending
   unsigned int BlocksLeftToReceive;
 
-  /// Current disk sector number
+  // / Current disk sector number
   u_int32 CurrentDiskSector;
 
   u_int32 mapperNextFlushed;
 
   /** MSC variables */
-  u_int16 cswPacket[7];  /*< command reply (Command Status Wrapper) data */
+  u_int16 cswPacket[7];         /* < command reply (Command Status Wrapper)
+                                 * data */
 
-  u_int32 DataTransferLength; /*< what is expected by CBW */
-  s_int32 Residue; /*< difference of what is actually transmitted by SCSI */
+  u_int32 DataTransferLength;   /* < what is expected by CBW */
+  s_int32 Residue;              /* < difference of what is actually transmitted 
+                                 * by SCSI */
   s_int16 DataDirection;
 } SCSI;
-      
+
 
 /// Handle any pending SCSI operation
 /** \function ScsiTaskHandler
  */
-void ScsiTaskHandler(void);
+void ScsiTaskHandler (void);
 /** \function RealScsiTaskHandler
  */
-void RealScsiTaskHandler(void);
+void RealScsiTaskHandler (void);
 
 /// Process a SCSI command block
-void DiskProtocolCommand(u_int16 *cmd);
+void DiskProtocolCommand (u_int16 * cmd);
 
 /// Reset SCSI state
-void ScsiReset();
+void ScsiReset ();
 
 /// Process data from host
-void DiskDataReceived(int length, u_int16 *datablock);
+void DiskDataReceived (int length, u_int16 * datablock);
 
 #define OPERATION_CODE 0
 
@@ -165,12 +175,11 @@ void DiskDataReceived(int length, u_int16 *datablock);
 #define SK_VOLUME_OVERFLOW 13
 #define SK_MISCOMPARE 14
 
-enum SCSIStageEnum ScsiState(void);
+enum SCSIStageEnum ScsiState (void);
 
 /* support */
-u_int16 ScsiOrBlock(register __i0 u_int16 *buffer, register __a0 s_int16 size);
+u_int16 ScsiOrBlock (register __i0 u_int16 * buffer,
+                     register __a0 s_int16 size);
 
 
 #endif
-
-

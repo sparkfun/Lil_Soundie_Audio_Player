@@ -5,11 +5,11 @@
 
 #include "usblowlib.h"
 
-void USBHandler(void);
-void RealUSBHandler(void);
-void DecodeSetupPacket(void);
-void RealDecodeSetupPacket(void);
-void MSCPacketFromPC(USBPacket *inPacket);
-void RealMSCPacketFromPC(USBPacket *inPacket);
+void USBHandler (void);
+void RealUSBHandler (void);
+void DecodeSetupPacket (void);
+void RealDecodeSetupPacket (void);
+void MSCPacketFromPC (USBPacket * inPacket);
+void RealMSCPacketFromPC (USBPacket * inPacket);
 
 #endif

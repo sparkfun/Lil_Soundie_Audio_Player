@@ -27,13 +27,14 @@
 struct FsPhysical;
 
 /** Meta data */
-struct FmfMeta {
+struct FmfMeta
+{
   u_int16 ecc01;
   u_int16 ecc2AndType;
   u_int16 reservedAndBadBlock;
   u_int16 unused;
-  u_int32 logicalPageNo;	/* For root node, this is last used */
-  s_int32 newBranch;		/* Page # for root node, non- -1 for others */
+  u_int32 logicalPageNo;        /* For root node, this is last used */
+  s_int32 newBranch;            /* Page # for root node, non- -1 for others */
 };
 
 
@@ -43,7 +44,8 @@ struct FmfMeta {
    A Flash Mapper specific structure that contains required
    extensions to the basic Mapper structure.
 */
-struct FsMapperFlash {
+struct FsMapperFlash
+{
   /** Public structure that is common to all mappers. */
   struct FsMapper m;
   /** Root node physical address. */
@@ -72,33 +74,33 @@ struct FsMapperFlash {
 
 #ifndef ASM
 /** Create a mapper */
-struct FsMapper *FsMapFlCreate(struct FsPhysical *physical, u_int16 format);
+struct FsMapper *FsMapFlCreate (struct FsPhysical *physical, u_int16 format);
 /** Delete a mapper */
-s_int16 FsMapFlDelete(struct FsMapper *map);
+s_int16 FsMapFlDelete (struct FsMapper *map);
 /** Read blocks */
-s_int16 FsMapFlRead(struct FsMapper *map, u_int32 firstLogicalBlock,
-		    u_int16 logicalBlocks, u_int16 *data);
+s_int16 FsMapFlRead (struct FsMapper *map, u_int32 firstLogicalBlock,
+                     u_int16 logicalBlocks, u_int16 * data);
 /** Write blocks */
-s_int16 FsMapFlWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
-		     u_int16 logicalBlocks, u_int16 *data);
+s_int16 FsMapFlWrite (struct FsMapper *map, u_int32 firstLogicalBlock,
+                      u_int16 logicalBlocks, u_int16 * data);
 /** Flush all cached data. if \e hard is non-zero, all potential journals are
     also flushed. */
-s_int16 FsMapFlFlush(struct FsMapper *map, u_int16 hard);
+s_int16 FsMapFlFlush (struct FsMapper *map, u_int16 hard);
 /** Free blocks. */
-s_int16 FsMapFlFree(struct FsMapper *m, u_int32 logicalBlockNo,
-		    u_int32 logicalBlocks);
+s_int16 FsMapFlFree (struct FsMapper *m, u_int32 logicalBlockNo,
+                     u_int32 logicalBlocks);
 
 /* Debug functions (fsMapFlDebug.h) */
-void FsMapFlDump(struct FsMapper *map, s_int32 maxBlocks);
-void FsMapFlCacheDump(struct FsMapper *map);
-void FsMapFlPrint(s_int32 page); /* If page == 0, print from root node */
+void FsMapFlDump (struct FsMapper *map, s_int32 maxBlocks);
+void FsMapFlCacheDump (struct FsMapper *map);
+void FsMapFlPrint (s_int32 page); /* If page == 0, print from root node */
 
 #ifndef __VSDSP__
-#  define memcpyXY memcpy
-#  define memcpyYX memcpy
-#  define memcpyYY memcpy
-#  define memsetY memset
-#  define qsorty qsort
+#define memcpyXY memcpy
+#define memcpyYX memcpy
+#define memcpyYY memcpy
+#define memsetY memset
+#define qsorty qsort
 #endif
 
 #endif /* !ASM */

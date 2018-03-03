@@ -13,7 +13,8 @@
 #define MAX_SOURCE_CHANNELS 6
 #ifndef __VSDSP__
 /** Channel positions */
-enum ChannelMatrix {
+enum ChannelMatrix
+{
   cmUnknown,
   cmLeft,
   cmCenter,
@@ -23,7 +24,7 @@ enum ChannelMatrix {
   cmRearLeft,
   cmLFE
 };
-#endif/*!__VSDSP__*/
+#endif /* !__VSDSP__ */
 #endif
 #endif /* !ASM */
 
@@ -63,7 +64,8 @@ enum ChannelMatrix {
    are on purpose the same as they are for stdio.h functions
    \a fread(), \a fseek() and \a ftell().
  */
-struct CodecServices {
+struct CodecServices
+{
   /** Version number. 8 MSBs contain version number, 8 LSBs size of
       the structure in words. */
   u_int16 version;
@@ -71,27 +73,27 @@ struct CodecServices {
       first word is filled. If the last word is not completely filled
       (either \a firstOdd set or \a bytes is odd, but not both),
       only the MSB is changed. */
-  u_int16 (*Read)(struct CodecServices *cs, u_int16 *ptr,
-		  u_int16 firstOdd, u_int16 bytes);
+    u_int16 (*Read) (struct CodecServices * cs, u_int16 * ptr,
+                     u_int16 firstOdd, u_int16 bytes);
   /** Skip data in a file. This should also be supported for streams. */
-  u_int32 (*Skip)(struct CodecServices *cs, u_int32 bytes);
+    u_int32 (*Skip) (struct CodecServices * cs, u_int32 bytes);
   /** Seek in a file. \a offset and \a whence are equivalent with their
       fseek() counterparts.
       If \a Seek is NULL, the input is a stream and cannot be seeked. */
-  s_int16 (*Seek)(struct CodecServices *cs, s_int32 offset, s_int16 whence);
+    s_int16 (*Seek) (struct CodecServices * cs, s_int32 offset, s_int16 whence);
   /** Tell location in a file (in bytes). */
-  s_int32 (*Tell)(struct CodecServices *cs);
+    s_int32 (*Tell) (struct CodecServices * cs);
   /** Output to audio file.
       \a data is a pointer to the data. There are \a n \a chan channel samples
       (Example: \a n = 32, \a cs->chan = 2, there are a total of 64 samples in
       \a data). */
-  s_int16 (*Output)(struct CodecServices *cs, s_int16 *data, s_int16 n);
+    s_int16 (*Output) (struct CodecServices * cs, s_int16 * data, s_int16 n);
   /** Offers comments fields one character at the time. Special code
       0x4000U is reserved for end-of-line. 0xC000U means end of comments. */
-  void (*Comment)(struct CodecServices *cs, u_int16 c);
+  void (*Comment) (struct CodecServices * cs, u_int16 c);
   /** Spectrum analyzer hook. */
-  void (*Spectrum)(struct CodecServices *cs, s_int16 __y *data, s_int16 n,
-		   s_int16 ch);
+  void (*Spectrum) (struct CodecServices * cs, s_int16 __y * data, s_int16 n,
+                    s_int16 ch);
   /** File size in bytes. If set to 0xFFFFFFFFU, then the file is a
       stream and the file size is not known. */
   u_int32 fileSize;
@@ -152,31 +154,33 @@ struct CodecServices {
 
 
 /** Codec error codes. */
-enum CodecError {
-  ceFastForward = -1,	/**< Fast forwarded through file end */
-  ceOk = 0,		/**< No errors. */
-  ceFormatNotFound,	/**< Data file was not in known format for the codec */
-  ceFormatNotSupported,	/**< Data file subformat is not supported. */
-  ceUnexpectedFileEnd,	/**< Unexpectedly early end of file */
-  ceCancelled,		/**< Playback cancel was requested */
-  ceOtherError		/**< Unspecific error */
+enum CodecError
+{
+  ceFastForward = -1, /**< Fast forwarded through file end */
+  ceOk = 0,   /**< No errors. */
+  ceFormatNotFound, /**< Data file was not in known format for the codec */
+  ceFormatNotSupported, /**< Data file subformat is not supported. */
+  ceUnexpectedFileEnd,  /**< Unexpectedly early end of file */
+  ceCancelled,    /**< Playback cancel was requested */
+  ceOtherError    /**< Unspecific error */
 };
 
 
 /** Standard Codec wrap-up structure */
-struct Codec {
+struct Codec
+{
   /** Version number. 8 MSBs contain version number, 8 LSBs size of
       the structure in words. */
   u_int16 version;
   /** Create and allocate space for codec. */
-  struct Codec *(*Create)(void);
+  struct Codec *(*Create) (void);
   /** Decode file. Upon success or a negative number, Codec has succeeded.
       With a positive number, there has been an error. Upon return, an
       error string is also returned. */
-  enum CodecError (*Decode)(struct Codec *cod, struct CodecServices *cs,
-			    const char **errorString);
+  enum CodecError (*Decode) (struct Codec * cod, struct CodecServices * cs,
+                             const char **errorString);
   /** Free all resources allocated for codec. */
-  void (*Delete)(struct Codec *cod);
+  void (*Delete) (struct Codec * cod);
   /** A pointer that the codec may or may not fill or use. */
   struct CodecServices *cs;
 };
@@ -195,9 +199,9 @@ struct Codec {
 #define CS_FILE_LEFT_OFFSET		10
 #define CS_GO_TO_OFFSET			12
 #define CS_CANCEL_OFFSET		13
-#define CS_PLAY_TIME_SECONDS_OFFSET	14	
-#define CS_PLAY_TIME_SAMPLES_OFFSET	16	
-#define CS_PLAY_TIME_TOTAL_OFFSET	18	
+#define CS_PLAY_TIME_SECONDS_OFFSET	14
+#define CS_PLAY_TIME_SAMPLES_OFFSET	16
+#define CS_PLAY_TIME_TOTAL_OFFSET	18
 #define CS_SAMPLE_RATE_OFFSET		20
 #define CS_CHANNELS_OFFSET		22
 #define CS_MATRIX_OFFSET		23

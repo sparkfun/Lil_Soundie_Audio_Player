@@ -18,7 +18,7 @@ extern __y volatile u_int32 timeCount;
 /** ReadTimeCount Reads the timecount variable safely,
     no interrupt disable is needed.
  */
-u_int32 ReadTimeCount(void);
+u_int32 ReadTimeCount (void);
 #endif
 #endif
 
@@ -32,7 +32,7 @@ u_int32 ReadTimeCount(void);
 
 
 #ifdef ASM
-	.import _audioPtr
+.import _audioPtr
 #define AUDIOPTR_WR 0
 #define AUDIOPTR_RD 1
 #define AUDIOPTR_FORWARD_MODULO 2
@@ -49,22 +49,23 @@ u_int32 ReadTimeCount(void);
    \param n    Number of stereo samples
    \return For APPL_AUDIO the number of output stereo samples, return n otherwise.
  */
-extern s_int16 (*applAddr)(s_int16 register __i0 **d,
-			   s_int16 register __a1 mode,
-			   s_int16 register __a0 n);
+extern s_int16 (*applAddr) (s_int16 register __i0 ** d,
+                            s_int16 register __a1 mode,
+                            s_int16 register __a0 n);
 /**
    Audio FIFO. The length of the area used for audio can change
    depending on the state of the earSpeaker setting. Earspeaker
    can not be active when long vorbis frames are used.
  */
-extern __y s_int16 audioBuffer[2*DEFAULT_AUDIO_BUFFER_SAMPLES];
-struct AUDIOPTR {
-    __y s_int16 *wr;       /* 0: write pointer */
-    __y s_int16 *rd;       /* 1: read pointer */
-    u_int16 forwardModulo; /* 2: 0x8000 + size - 1 */
-    s_int16 leftVol;       /* 3: left volume,  default     -32768 =  1.0 */
-    s_int16 rightVol;      /* 4: right volume, differential 32767 = -1.0 */
-    s_int16 underflow;     /* 5: set if underflow in dac interrupt */
+extern __y s_int16 audioBuffer[2 * DEFAULT_AUDIO_BUFFER_SAMPLES];
+struct AUDIOPTR
+{
+  __y s_int16 *wr;              /* 0: write pointer */
+  __y s_int16 *rd;              /* 1: read pointer */
+  u_int16 forwardModulo;        /* 2: 0x8000 + size - 1 */
+  s_int16 leftVol;              /* 3: left volume, default -32768 = 1.0 */
+  s_int16 rightVol;             /* 4: right volume, differential 32767 = -1.0 */
+  s_int16 underflow;            /* 5: set if underflow in dac interrupt */
 };
 /**
    Audio structure containing the audio FIFO read and write pointers,
@@ -91,18 +92,19 @@ extern __y u_int16 uartByteSpeed; /**< UART speed in bps / 10. UART divider is a
 extern u_int16 bassTrebleFreq; /**< bassTrebleFreq = hwSampleRate; must be always set in SetVolume() */
 
 
-extern __y struct EARSPEAKER {
-    u_int16 Freq;
-    u_int16 Disable;
-    u_int16 Setting;
-    s_int16 Old;
-    u_int16 longFrames;
+extern __y struct EARSPEAKER
+{
+  u_int16 Freq;
+  u_int16 Disable;
+  u_int16 Setting;
+  s_int16 Old;
+  u_int16 longFrames;
 } earSpeaker;
 
 
 /** Initializes audio structures and configures the PLL.
  */
-void InitAudio(void);
+void InitAudio (void);
 /** Internal low-level audio output routine that puts samples into the
     audio buffer. Applies audioPtr.leftVol and audioPtr.rightVol to
     the data. Setting audioPtr.rightVol to -audioPtr.leftVol
@@ -113,47 +115,46 @@ void InitAudio(void);
     \param s Pointer to interleaved stereo samples
     \param n The number of stereo samples
  */
-auto void StereoCopy(register __i2 s_int16 *s, register __a0 u_int16 n);
+auto void StereoCopy (register __i2 s_int16 * s, register __a0 u_int16 n);
 /** Tells the fill state of audio buffer in stereo samples.
  */
-s_int16 AudioBufFill(void); /* how many STEREO samples to play */
+s_int16 AudioBufFill (void);    /* how many STEREO samples to play */
 /** Tells how many stereo samples still fits into the audio buffer without
     waiting. Note: the buffer should never be completely filled because
     the same state means empty.
  */
-s_int16 AudioBufFree(void); /* how many STEREO samples fit */
+s_int16 AudioBufFree (void);    /* how many STEREO samples fit */
 
 /** Hook: Sets new samplerate and/or new PLL setting. Default: RealSetRate.
     \param rate New samplerate.
  */
-auto void SetRate(register __c1 u_int16 rate);
+auto void SetRate (register __c1 u_int16 rate);
 /** Sets new samplerate and/or new PLL setting (according to clockX variable).
     \param rate New samplerate.
  */
-auto void RealSetRate(register __c1 u_int16 rate);
+auto void RealSetRate (register __c1 u_int16 rate);
 /** Hook: Sets the hardware volume according to volumeReg. Default: RealSetVolume
  */
-auto void SetVolume(void);
+auto void SetVolume (void);
 /** Sets the hardware volume according to volumeReg.
  */
-auto void RealSetVolume(void);
+auto void RealSetVolume (void);
 /** High-level audio output routine. If the samples do not fit into
     the audio buffer, this routine automatically waits for some room
     (calls Sleep()).
     \param p Pointer to interleaved stereo samples.
     \param samples The number of stereo samples.
 */
-auto void AudioOutputSamples(s_int16 *p, s_int16 samples);
+auto void AudioOutputSamples (s_int16 * p, s_int16 samples);
 
 /** Calculates UART divider from clockX and uartByteSpeed.
     When SetRate() changes PLL settings, the uart divider
     is automatically changed.
     \return UART divider for the current clockX and uartByteSpeed.
  */
-u_int16 UartDiv(void);
+u_int16 UartDiv (void);
 
-#endif/*!ASM*/
+#endif /* !ASM */
 
 
 #endif/*__AUDIO_H__*/
-
