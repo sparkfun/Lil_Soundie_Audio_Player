@@ -19,7 +19,7 @@
 
    \return A Wav Codec structure.
 */
-struct Codec *CodMicroWavCreate(void);
+struct Codec *CodMicroWavCreate (void);
 
 /**
    Decode file. Upon success or a negative number, Codec has succeeded.
@@ -35,8 +35,8 @@ struct Codec *CodMicroWavCreate(void);
 
    \return Error code.
  */
-enum CodecError CodMicroWavDecode(struct Codec *cod, struct CodecServices *cs,
-				  const char **errorString);
+enum CodecError CodMicroWavDecode (struct Codec *cod, struct CodecServices *cs,
+                                   const char **errorString);
 
 
 #endif

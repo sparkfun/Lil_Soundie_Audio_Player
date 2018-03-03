@@ -16,14 +16,14 @@
 
    \return A Wav Codec structure.
 */
-struct Codec *CodMiniWavCreate(void);
+struct Codec *CodMiniWavCreate (void);
 
 /**
    Free all resources allocated for codec.
 
    \param cod A Wav Codec structure.
 */
-void CodMiniWavDelete(struct Codec *cod);
+void CodMiniWavDelete (struct Codec *cod);
 
 /**
    Decode file. Upon success or a negative number, Codec has succeeded.
@@ -39,8 +39,8 @@ void CodMiniWavDelete(struct Codec *cod);
 
    \return Error code.
  */
-enum CodecError CodMiniWavDecode(struct Codec *cod, struct CodecServices *cs,
-				 const char **errorString);
+enum CodecError CodMiniWavDecode (struct Codec *cod, struct CodecServices *cs,
+                                  const char **errorString);
 
 
 #endif

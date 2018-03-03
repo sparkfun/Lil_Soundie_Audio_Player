@@ -10,11 +10,11 @@
 #ifdef ASM
 
 #else /*ASM*/
-
 /* Key structure */
-typedef struct RC4_KEYSTRUCT {
-    u_int16 S[RC4_TABLESIZE]; /* only low 8 bits are used/valid */
-    s_int16 i, j;
+  typedef struct RC4_KEYSTRUCT
+{
+  u_int16 S[RC4_TABLESIZE];     /* only low 8 bits are used/valid */
+  s_int16 i, j;
 } RC4_KEYSTRUCT;
 
 #ifdef RC4KS_IN_Y
@@ -25,8 +25,8 @@ typedef struct RC4_KEYSTRUCT {
   \param szKey  - Size of the key, in bytes.
   \param bKey   - Pointer to the key (bytes).
 */
-void RC4_KeySetup(register __i2 __mem_y RC4_KEYSTRUCT  *rc4KS,
-		  s_int16 szKey, const unsigned char *bKey );
+void RC4_KeySetup (register __i2 __mem_y RC4_KEYSTRUCT * rc4KS,
+                   s_int16 szKey, const unsigned char *bKey);
 /**
   \function RC4_KeySetupPacked
   Generate the key control structure.  Key can be any size.
@@ -34,8 +34,8 @@ void RC4_KeySetup(register __i2 __mem_y RC4_KEYSTRUCT  *rc4KS,
   \param szKey     - Size of the key, in bytes.
   \param packedKey - Pointer to the key.
 */
-void RC4_KeySetupPacked(register __i2 __mem_y RC4_KEYSTRUCT  *rc4KS,
-			s_int16 szKey, const u_int16 *packedKey);
+void RC4_KeySetupPacked (register __i2 __mem_y RC4_KEYSTRUCT * rc4KS,
+                         s_int16 szKey, const u_int16 * packedKey);
 /**
    \function RC4_Cipher
    \param rc4KS    - the KEYSTRUCT created using RC4_KeySetup.
@@ -43,8 +43,8 @@ void RC4_KeySetupPacked(register __i2 __mem_y RC4_KEYSTRUCT  *rc4KS,
    \param buffer   - Buffer to be encrypted in place.
    \param bufInd   - start byte offset to the buffer
 */
-void RC4_Cipher(register __i2 __mem_y RC4_KEYSTRUCT *rc4KS, s_int16 szBuffer,
-		unsigned char *bBuffer, s_int16 bufInd);
+void RC4_Cipher (register __i2 __mem_y RC4_KEYSTRUCT * rc4KS, s_int16 szBuffer,
+                 unsigned char *bBuffer, s_int16 bufInd);
 /**
    \function RC4_CipherPacked
    \param rc4KS    - the KEYSTRUCT created using RC4_KeySetup.
@@ -52,10 +52,10 @@ void RC4_Cipher(register __i2 __mem_y RC4_KEYSTRUCT *rc4KS, s_int16 szBuffer,
    \param wBuffer  - Packed buffer to be encrypted in place.
    \param bufInd   - start byte offset to the buffer
 */
-void RC4_CipherPacked(register __i2 __mem_y RC4_KEYSTRUCT *rc4KS,
-		      s_int16 szBuffer, u_int16 *wBuffer, s_int16 bufInd);
+void RC4_CipherPacked (register __i2 __mem_y RC4_KEYSTRUCT * rc4KS,
+                       s_int16 szBuffer, u_int16 * wBuffer, s_int16 bufInd);
 /* Returns the next 8-bit pseudo-random value. */
-s_int16 RC4_Output(register __i2 __mem_y RC4_KEYSTRUCT *rc4KS);
+s_int16 RC4_Output (register __i2 __mem_y RC4_KEYSTRUCT * rc4KS);
 #else
 /**
   \function RC4_KeySetup
@@ -64,8 +64,8 @@ s_int16 RC4_Output(register __i2 __mem_y RC4_KEYSTRUCT *rc4KS);
   \param szKey  - Size of the key, in bytes.
   \param bKey   - Pointer to the key (bytes).
 */
-void RC4_KeySetup(register __i2 RC4_KEYSTRUCT  *rc4KS,
-		  s_int16 szKey, const unsigned char *bKey );
+void RC4_KeySetup (register __i2 RC4_KEYSTRUCT * rc4KS,
+                   s_int16 szKey, const unsigned char *bKey);
 /**
   \function RC4_KeySetupPacked
   Generate the key control structure.  Key can be any size.
@@ -73,8 +73,8 @@ void RC4_KeySetup(register __i2 RC4_KEYSTRUCT  *rc4KS,
   \param szKey     - Size of the key, in bytes.
   \param packedKey - Pointer to the key.
 */
-void RC4_KeySetupPacked(register __i2 RC4_KEYSTRUCT  *rc4KS,
-			s_int16 szKey, const u_int16 *packedKey);
+void RC4_KeySetupPacked (register __i2 RC4_KEYSTRUCT * rc4KS,
+                         s_int16 szKey, const u_int16 * packedKey);
 /**
    \function RC4_Cipher
    \param rc4KS    -- the KEYSTRUCT created using RC4_KeySetup.
@@ -82,8 +82,8 @@ void RC4_KeySetupPacked(register __i2 RC4_KEYSTRUCT  *rc4KS,
    \param bBuffer  -- Buffer to be encrypted in place (bytes).
    \param bufInd   -- start byte offset to the buffer
 */
-void RC4_Cipher(register __i2 RC4_KEYSTRUCT *rc4KS, s_int16 szBuffer,
-		unsigned char *bBuffer, s_int16 bufInd);
+void RC4_Cipher (register __i2 RC4_KEYSTRUCT * rc4KS, s_int16 szBuffer,
+                 unsigned char *bBuffer, s_int16 bufInd);
 /**
    \function RC4_CipherPacked
    \param rc4KS    - the KEYSTRUCT created using RC4_KeySetup.
@@ -91,15 +91,15 @@ void RC4_Cipher(register __i2 RC4_KEYSTRUCT *rc4KS, s_int16 szBuffer,
    \param wBuffer  - Packed buffer to be encrypted in place.
    \param bufInd   - start byte offset to the buffer
 */
-void RC4_CipherPacked(register __i2 RC4_KEYSTRUCT *rc4KS,
-		      s_int16 szBuffer, u_int16 *wBuffer, s_int16 bufInd);
+void RC4_CipherPacked (register __i2 RC4_KEYSTRUCT * rc4KS,
+                       s_int16 szBuffer, u_int16 * wBuffer, s_int16 bufInd);
 
 /* Returns the next 8-bit pseudo-random value. */
-s_int16 RC4_Output(register __i2 RC4_KEYSTRUCT *rc4KS);
+s_int16 RC4_Output (register __i2 RC4_KEYSTRUCT * rc4KS);
 #endif
 
 
 
-#endif/*elseASM*/
+#endif /* elseASM */
 
 #endif /* __VS_RC4_H__ */
