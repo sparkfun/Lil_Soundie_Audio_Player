@@ -895,6 +895,7 @@ void main (void)
       // Look for playable files
       player.totalFiles = OpenFile (0xffffU);
       player.currentFile = 0xffffU;
+      do__not__puts ("Total Files");
       do__not__puthex (player.totalFiles);
       do__not__puts ("");
       if (player.totalFiles == 0)
@@ -907,7 +908,10 @@ void main (void)
       player.nextFile = 0;
       while (1)
       {
+        // Check the current pin settings
         GPIOCtrlIdleHook ();
+
+        // If current file is empty play silence
         while (player.currentFile == 0xffffU)
         {
           memset (tmpBuf, 0, sizeof (tmpBuf));
@@ -917,9 +921,9 @@ void main (void)
             break;
           }
         }
-        if (OpenFile (player.currentFile) < 0)
-        {
 
+        if (player.currentFile < player.totalFiles && OpenFile (player.currentFile) < 0)
+        {
           player.ffCount = 0;
           cs.cancel = 0;
           cs.goTo = -1;
@@ -938,6 +942,11 @@ void main (void)
             do__not__puts ("");
             // See separate examples about keyboard handling.
           }
+        }
+        else
+        {
+          player.currentFile = 0xffffU;
+          continue;
         }
 
         // If USB is attached, return to main loop
