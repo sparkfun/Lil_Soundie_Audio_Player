@@ -83,16 +83,16 @@ the root directory.
 // storing the disk data uninverted (as is) makes it easier to debug the SPI image
 #define USE_INVERTED_DISK_DATA 1
 
-#include <stdio.h> //Standard io
+#include <stdio.h>  // Standard io
 #include <stdlib.h> // VS_DSP Standard Library
 #include <vs1000.h> // VS1000B register definitions
-#include <vectors.h> // VS1000B vectors (interrupts and services)
-#include <minifat.h> // Read Only Fat Filesystem
+#include <vectors.h>  // VS1000B vectors (interrupts and services)
+#include <minifat.h>  // Read Only Fat Filesystem
 #include <mapper.h> // Logical Disk
 #include <string.h> // memcpy etc
 #include <player.h> // VS1000B default ROM player
-#include <audio.h> // DAC output
-#include <codec.h> // CODEC interface
+#include <audio.h>  // DAC output
+#include <codec.h>  // CODEC interface
 #include <vsNand.h>
 #include <mappertiny.h>
 #include <usb.h>
@@ -115,81 +115,83 @@ the root directory.
 
 #define VENDOR_NAME_LENGTH 7
 const u_int16 myVendorNameStr[] = {
-  ((VENDOR_NAME_LENGTH * 2 + 2)<<8) | 0x03,
-  'V'<<8,'l'<<8,'s'<<8,'i'<<8,'F'<<8,'i'<<8,'n'<<8};
+  ((VENDOR_NAME_LENGTH * 2 + 2) << 8) | 0x03,
+  'V' << 8, 'l' << 8, 's' << 8, 'i' << 8, 'F' << 8, 'i' << 8, 'n' << 8
+};
 
 #define MODEL_NAME_LENGTH 8
 const u_int16 myModelNameStr[] = {
-  ((MODEL_NAME_LENGTH * 2 + 2)<<8) | 0x03,
-  'S'<<8,'P'<<8,'I'<<8,'S'<<8,'t'<<8,'o'<<8,'r'<<8,'e'<<8};
+  ((MODEL_NAME_LENGTH * 2 + 2) << 8) | 0x03,
+  'S' << 8, 'P' << 8, 'I' << 8, 'S' << 8, 't' << 8, 'o' << 8, 'r' << 8, 'e' << 8
+};
 
 #define SERIAL_NUMBER_LENGTH 12
 u_int16 mySerialNumberStr[] = {
-  ((SERIAL_NUMBER_LENGTH * 2 + 2)<<8) | 0x03,
-  '0'<<8, // You should put your own serial number here
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '0'<<8,
-  '1'<<8, // Serial number should be unique for each unit
+  ((SERIAL_NUMBER_LENGTH * 2 + 2) << 8) | 0x03,
+  '0' << 8, // You should put your own serial number here
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '0' << 8,
+  '1' << 8, // Serial number should be unique for each unit
 };
 
 // This is the new Device Descriptor. See the USB specification!
-const u_int16  myDeviceDescriptor [] = "\p"
-"\x12" // Length
-"\x01" // Type (Device Descriptor)
-"\x10" // LO(bcd USB Specification version) (.10)
-"\x01" // HI(bcd USB Specification version) (1.)
-"\x00" // Device Class (will be specified in configuration descriptor)
-"\x00" // Device Subclass
-"\x00" // Device Protocol
-"\x40" // Endpoint 0 size (64 bytes)
-
-"\xfb" // LO(Vendor ID) (0x19fb=VLSI Solution Oy)
-"\x19" // HI(Vendor ID)
-
-"\xe0" // LO(Product ID) (0xeee0 - 0xeeef : VLSI Customer Testing)
-"\xee" // HI(Product ID) (customers can request an ID from VLSI)
-
-"\x00" // LO(Release Number)
-"\x00" // HI(Release Number)
-"\x01" // Index of Vendor (manufacturer) name string
-"\x02" // Index of Product (model) name string (most shown by windows)
-"\x03" // Index of serial number string
-"\x01" // Number of configurations (1)
-;
+const u_int16 myDeviceDescriptor[] = "\p" "\x12"  // Length
+  "\x01"  // Type (Device Descriptor)
+  "\x10"  // LO(bcd USB Specification version) (.10)
+  "\x01"  // HI(bcd USB Specification version) (1.)
+  "\x00"  // Device Class (will be specified in configuration descriptor)
+  "\x00"  // Device Subclass
+  "\x00"  // Device Protocol
+  "\x40"  // Endpoint 0 size (64 bytes)
+  "\xfb"  // LO(Vendor ID) (0x19fb=VLSI Solution Oy)
+  "\x19"  // HI(Vendor ID)
+  "\xe0"  // LO(Product ID) (0xeee0 - 0xeeef : VLSI Customer Testing)
+  "\xee"  // HI(Product ID) (customers can request an ID from VLSI)
+  "\x00"  // LO(Release Number)
+  "\x00"  // HI(Release Number)
+  "\x01"  // Index of Vendor (manufacturer) name string
+  "\x02"  // Index of Product (model) name string (most shown by windows)
+  "\x03"  // Index of serial number string
+  "\x01"  // Number of configurations (1)
+  ;
 
 // When a USB setup packet is received, install our descriptors
 // and then proceed to the ROM function RealDecodeSetupPacket.
-void RealInitUSBDescriptors(u_int16 initDescriptors);
-void MyInitUSBDescriptors(u_int16 initDescriptors){
-  RealInitUSBDescriptors(1); // ROM set descriptors for mass storage
+void RealInitUSBDescriptors (u_int16 initDescriptors);
+void MyInitUSBDescriptors (u_int16 initDescriptors)
+{
+  RealInitUSBDescriptors (1); // ROM set descriptors for mass storage
   USB.descriptorTable[DT_VENDOR] = myVendorNameStr;
-  USB.descriptorTable[DT_MODEL]  = myModelNameStr;
+  USB.descriptorTable[DT_MODEL] = myModelNameStr;
   USB.descriptorTable[DT_SERIAL] = mySerialNumberStr;
   USB.descriptorTable[DT_DEVICE] = myDeviceDescriptor;
-  //USB.descriptorTable[DT_CONFIGURATION] = myConfigurationDescriptor;
-  //USB.configurationDescriptorSize = CONFIG_DESC_SIZE;
+  // USB.descriptorTable[DT_CONFIGURATION] = myConfigurationDescriptor;
+  // USB.configurationDescriptorSize = CONFIG_DESC_SIZE;
 }
 
 #if 0
 // this can be helpful in making a serial number
-const u_int16  bHexChar16[] = { // swapped Unicode hex characters
+const u_int16 bHexChar16[] = {  // swapped Unicode hex characters
   0x3000, 0x3100, 0x3200, 0x3300, 0x3400, 0x3500, 0x3600, 0x3700,
   0x3800, 0x3900, 0x4100, 0x4200, 0x4300, 0x4400, 0x4400, 0x4500
-};My
-void MakeSerialNumber(u_int32 newSerialNumber){
+};
+
+My void MakeSerialNumber (u_int32 newSerialNumber)
+{
   u_int16 i;
   u_int32 mySerialNumber = newSerialNumber;
   // Put unique serial number to serial number descriptor
-  for (i=5; i<13; i++){
-    mySerialNumberStr[i]=bHexChar16[mySerialNumber>>28];
+  for (i = 5; i < 13; i++)
+  {
+    mySerialNumberStr[i] = bHexChar16[mySerialNumber >> 28];
     mySerialNumber <<= 4;
   }
 }
@@ -208,35 +210,42 @@ u_int16 blockAddress[CACHE_BLOCKS];
 s_int16 lastFoundBlock = -1;
 u_int16 shouldFlush = 0;
 
-enum CodecError PlayWavOrOggFile(void);
+enum CodecError PlayWavOrOggFile (void);
 
 // Do we want to get debug screen output? It's available if the code
 // is loaded with vs3emu (build script) with RS-232 cable.
 
 #if PRINT_VS3EMU_DEBUG_MESSAGES
 __y const char hex[] = "0123456789abcdef";
-void puthex(u_int16 a) {
+void puthex (u_int16 a)
+{
   char tmp[6];
-  tmp[0] = hex[(a>>12)&15];
-  tmp[1] = hex[(a>>8)&15];
-  tmp[2] = hex[(a>>4)&15];
-  tmp[3] = hex[(a>>0)&15];
+  tmp[0] = hex[(a >> 12) & 15];
+  tmp[1] = hex[(a >> 8) & 15];
+  tmp[2] = hex[(a >> 4) & 15];
+  tmp[3] = hex[(a >> 0) & 15];
   tmp[4] = ' ';
   tmp[5] = '\0';
-  fputs(tmp, stdout);
+  fputs (tmp, stdout);
 }
 
-void PrintCache(){
+void PrintCache ()
+{
   register u_int16 i;
-  for (i=0; i<CACHE_BLOCKS; i++){
-    if (blockPresent & 1 << i){
-      puthex(blockAddress[i]);
-    }else{
-      fputs("- ",stdout);
+  for (i = 0; i < CACHE_BLOCKS; i++)
+  {
+    if (blockPresent & 1 << i)
+    {
+      puthex (blockAddress[i]);
+    }
+    else
+    {
+      fputs ("- ", stdout);
     }
   }
   puts ("=cache");
 }
+
 #define do__not__puts(x) puts(x)
 #define do__not__puthex(x) puthex(x)
 #else
@@ -268,28 +277,33 @@ void PrintCache(){
 #define SPI_MASTER_16BIT_CSLO  PERIP(SPI0_CONFIG) = \
                                                     SPI_CF_MASTER | SPI_CF_DLEN16 | SPI_CF_FSIDLE0
 
-void SingleCycleCommand(u_int16 cmd){
+void SingleCycleCommand (u_int16 cmd)
+{
   SPI_MASTER_8BIT_CSHI;
   SPI_MASTER_8BIT_CSLO;
-  SpiSendReceive(cmd);
+  SpiSendReceive (cmd);
   SPI_MASTER_8BIT_CSHI;
 }
 
 /// Wait for not_busy (status[0] = 0) and return status
-u_int16 SpiWaitStatus(void) {
+u_int16 SpiWaitStatus (void)
+{
   u_int16 status;
   SPI_MASTER_8BIT_CSHI;
   SPI_MASTER_8BIT_CSLO;
-  SpiSendReceive(SPI_EEPROM_COMMAND_READ_STATUS_REGISTER);
-  do {
-    status = SpiSendReceive(0);
-    if (PERIP(USB_STATUS) & USB_STF_BUS_RESET){
-      USBHandler();
+  SpiSendReceive (SPI_EEPROM_COMMAND_READ_STATUS_REGISTER);
+  do
+  {
+    status = SpiSendReceive (0);
+    if (PERIP (USB_STATUS) & USB_STF_BUS_RESET)
+    {
+      USBHandler ();
       SPI_MASTER_8BIT_CSHI;
-      return -1; /* USB HAS BEEN RESET */
+      return -1;  /* USB HAS BEEN RESET */
     }
-  } while (status & 0x01);
-  ; //Wait until chip is ready or return -1 if USB bus reset
+  }
+  while (status & 0x01);
+  ; // Wait until chip is ready or return -1 if USB bus reset
 
   SPI_MASTER_8BIT_CSHI;
 
@@ -297,33 +311,38 @@ u_int16 SpiWaitStatus(void) {
 }
 
 
-void EeUnprotect(){
-  SingleCycleCommand(SPI_EEPROM_COMMAND_WRITE_ENABLE);
+void EeUnprotect ()
+{
+  SingleCycleCommand (SPI_EEPROM_COMMAND_WRITE_ENABLE);
   SPI_MASTER_8BIT_CSLO;
-  SpiSendReceive(SPI_EEPROM_COMMAND_WRITE_STATUS_REGISTER);
-  SpiSendReceive(0x02); //Sector Protections Off
+  SpiSendReceive (SPI_EEPROM_COMMAND_WRITE_STATUS_REGISTER);
+  SpiSendReceive (0x02);  // Sector Protections Off
   SPI_MASTER_8BIT_CSHI;
-  SpiWaitStatus();
-  SingleCycleCommand(SPI_EEPROM_COMMAND_WRITE_ENABLE);
+  SpiWaitStatus ();
+  SingleCycleCommand (SPI_EEPROM_COMMAND_WRITE_ENABLE);
 }
 
-void EePutReadBlockAddress(register u_int16 blockn){
+void EePutReadBlockAddress (register u_int16 blockn)
+{
   SPI_MASTER_8BIT_CSLO;
-  SpiSendReceive(SPI_EEPROM_COMMAND_READ);
-  SpiSendReceive(blockn>>7);            // Address[23:16] = blockn[14:7]
-  SpiSendReceive((blockn<<1)&0xff);     // Address[15:8]  = blockn[6:0]0
-  SpiSendReceive(0);                    // Address[7:0]   = 00000000
+  SpiSendReceive (SPI_EEPROM_COMMAND_READ);
+  SpiSendReceive (blockn >> 7); // Address[23:16] = blockn[14:7]
+  SpiSendReceive ((blockn << 1) & 0xff);  // Address[15:8] = blockn[6:0]0
+  SpiSendReceive (0); // Address[7:0] = 00000000
   SPI_MASTER_16BIT_CSLO;
 }
 
 // Check is a 4K block completely blank
-u_int16 EeIsBlockErased(u_int16 blockn){
-  SpiWaitStatus();
-  EePutReadBlockAddress(blockn);
+u_int16 EeIsBlockErased (u_int16 blockn)
+{
+  SpiWaitStatus ();
+  EePutReadBlockAddress (blockn);
   {
     register u_int16 n;
-    for (n=0; n<2048; n++){
-      if (SpiSendReceive(0) != 0xffff) {
+    for (n = 0; n < 2048; n++)
+    {
+      if (SpiSendReceive (0) != 0xffff)
+      {
         SPI_MASTER_8BIT_CSHI;
         return 0;
       }
@@ -333,79 +352,88 @@ u_int16 EeIsBlockErased(u_int16 blockn){
   }
 }
 
-s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
+s_int16 EeProgram4K (u_int16 blockn, __y u_int16 * dptr)
+{
 
-  PERIP(USB_EP_ST3) |= (0x0001); //Force NAK on EP3 (perhaps not needed?)
+  PERIP (USB_EP_ST3) |= (0x0001); // Force NAK on EP3 (perhaps not needed?)
 
-  do__not__puthex(blockn);
-  do__not__puts("= write 4K");
+  do__not__puthex (blockn);
+  do__not__puts ("= write 4K");
 
-  if (!EeIsBlockErased(blockn)){ //don't erase if not needed
+  if (!EeIsBlockErased (blockn))
+  { // don't erase if not needed
     // Erase 4K sector
-    SingleCycleCommand(SPI_EEPROM_COMMAND_WRITE_ENABLE);
-    SingleCycleCommand(SPI_EEPROM_COMMAND_CLEAR_ERROR_FLAGS);
-    EeUnprotect();
+    SingleCycleCommand (SPI_EEPROM_COMMAND_WRITE_ENABLE);
+    SingleCycleCommand (SPI_EEPROM_COMMAND_CLEAR_ERROR_FLAGS);
+    EeUnprotect ();
     SPI_MASTER_8BIT_CSLO;
-    SpiSendReceive(SPI_EEPROM_COMMAND_ERASE_SECTOR);
-    SpiSendReceive(blockn>>7);            // Address[23:16] = blockn[14:7]
-    SpiSendReceive((blockn<<1)&0xff);     // Address[15:8]  = blockn[6:0]0
-    SpiSendReceive(0);                    // Address[7:0]   = 00000000
+    SpiSendReceive (SPI_EEPROM_COMMAND_ERASE_SECTOR);
+    SpiSendReceive (blockn >> 7); // Address[23:16] = blockn[14:7]
+    SpiSendReceive ((blockn << 1) & 0xff);  // Address[15:8] = blockn[6:0]0
+    SpiSendReceive (0); // Address[7:0] = 00000000
     SPI_MASTER_8BIT_CSHI;
   }
 
-  if (SpiWaitStatus() == -1) return -1; /* USB HAS BEEN RESET */
+  if (SpiWaitStatus () == -1)
+    return -1;  /* USB HAS BEEN RESET */
   // Write 8 512-byte sectors
   {
     u_int16 i;
-    for (i=0; i<8; i++){
+    for (i = 0; i < 8; i++)
+    {
 
       // Put first page (256 bytes) of sector.
-      EeUnprotect();
+      EeUnprotect ();
       SPI_MASTER_8BIT_CSLO;
-      SpiSendReceive(SPI_EEPROM_COMMAND_WRITE);
-      SpiSendReceive(blockn>>7);            // Address[23:16] = blockn[14:7]
-      SpiSendReceive((blockn<<1)&0xff);     // Address[15:8]  = blockn[6:0]0
-      SpiSendReceive(0);                    // Address[7:0]   = 00000000
+      SpiSendReceive (SPI_EEPROM_COMMAND_WRITE);
+      SpiSendReceive (blockn >> 7); // Address[23:16] = blockn[14:7]
+      SpiSendReceive ((blockn << 1) & 0xff);  // Address[15:8] = blockn[6:0]0
+      SpiSendReceive (0); // Address[7:0] = 00000000
       SPI_MASTER_16BIT_CSLO;
       {
         u_int16 n;
-        for (n=0; n<128; n++){
+        for (n = 0; n < 128; n++)
+        {
 #if USE_INVERTED_DISK_DATA
-          SpiSendReceive(~(*dptr++));
+          SpiSendReceive (~(*dptr++));
 #else
-          SpiSendReceive((*dptr++));
+          SpiSendReceive ((*dptr++));
 #endif
         }
       }
       SPI_MASTER_8BIT_CSHI;
-      if (SpiWaitStatus() == -1) return -1; /* USB HAS BEEN RESET */
+      if (SpiWaitStatus () == -1)
+        return -1;  /* USB HAS BEEN RESET */
 
       // Put second page (256 bytes) of sector.
-      EeUnprotect();
+      EeUnprotect ();
       SPI_MASTER_8BIT_CSLO;
-      SpiSendReceive(SPI_EEPROM_COMMAND_WRITE);
-      SpiSendReceive(blockn>>7);            // Address[23:16] = blockn[14:7]
-      SpiSendReceive(((blockn<<1)+1)&0xff);     // Address[15:8]  = blockn[6:0]1
-      SpiSendReceive(0);                    // Address[7:0]   = 00000000
+      SpiSendReceive (SPI_EEPROM_COMMAND_WRITE);
+      SpiSendReceive (blockn >> 7); // Address[23:16] = blockn[14:7]
+      SpiSendReceive (((blockn << 1) + 1) & 0xff);  // Address[15:8] =
+      // blockn[6:0]1
+      SpiSendReceive (0); // Address[7:0] = 00000000
       SPI_MASTER_16BIT_CSLO;
       {
         u_int16 n;
-        for (n=0; n<128; n++){
+        for (n = 0; n < 128; n++)
+        {
 #if USE_INVERTED_DISK_DATA
-          SpiSendReceive(~(*dptr++));
+          SpiSendReceive (~(*dptr++));
 #else
-          SpiSendReceive((*dptr++));
+          SpiSendReceive ((*dptr++));
 #endif
         }
       }
       SPI_MASTER_8BIT_CSHI;
-      if (SpiWaitStatus() == -1) return -1; /* USB HAS BEEN RESET */
+      if (SpiWaitStatus () == -1)
+        return -1;  /* USB HAS BEEN RESET */
       blockn++;
     }
   }
-  do__not__puts("written");
+  do__not__puts ("written");
 
-  PERIP(USB_EP_ST3) &= ~(0x0001); //Un-Force NAK on EP3
+  PERIP (USB_EP_ST3) &= ~(0x0001);  // Un-Force NAK on EP3
   return 0;
 
 }
@@ -413,17 +441,19 @@ s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
 
 
 // Block Read for SPI EEPROMS with 24-bit address e.g. up to 16MB
-u_int16 EeReadBlock(u_int16 blockn, u_int16 *dptr) {
-  SpiWaitStatus();
+u_int16 EeReadBlock (u_int16 blockn, u_int16 * dptr)
+{
+  SpiWaitStatus ();
 
-  EePutReadBlockAddress(blockn);
+  EePutReadBlockAddress (blockn);
   {
     int n;
-    for (n=0; n<256; n++){
+    for (n = 0; n < 256; n++)
+    {
 #if USE_INVERTED_DISK_DATA
-      *dptr++ = ~SpiSendReceive(0);
+      *dptr++ = ~SpiSendReceive (0);
 #else
-      *dptr++ = SpiSendReceive(0);
+      *dptr++ = SpiSendReceive (0);
 #endif
     }
   }
@@ -432,44 +462,48 @@ u_int16 EeReadBlock(u_int16 blockn, u_int16 *dptr) {
 }
 
 // Returns 1 if block differs from data, 0 if block is the same
-u_int16 EeCompareBlock(u_int16 blockn, u_int16 *dptr) {
-  SpiWaitStatus();
+u_int16 EeCompareBlock (u_int16 blockn, u_int16 * dptr)
+{
+  SpiWaitStatus ();
 
-  EePutReadBlockAddress(blockn);
+  EePutReadBlockAddress (blockn);
   {
     int n;
-    for (n=0; n<256; n++){
+    for (n = 0; n < 256; n++)
+    {
 
 #if USE_INVERTED_DISK_DATA
-      if ((*dptr++) != (~SpiSendReceive(0)))
+      if ((*dptr++) != (~SpiSendReceive (0)))
 #else
-        if ((*dptr++) != (SpiSendReceive(0)))
+      if ((*dptr++) != (SpiSendReceive (0)))
 #endif
-        {
-          SPI_MASTER_8BIT_CSHI;
-          return 1;
-        }
+      {
+        SPI_MASTER_8BIT_CSHI;
+        return 1;
+      }
     }
   }
   SPI_MASTER_8BIT_CSHI;
   return 0;
 }
 
-u_int16 EeRead4KSectorYToWorkspace(u_int16 blockn) {
+u_int16 EeRead4KSectorYToWorkspace (u_int16 blockn)
+{
   register __y u_int16 *dptr;
   dptr = WORKSPACE;
-  SpiWaitStatus();
-  blockn &= 0xfff8; //always point to first block of 4k sector
+  SpiWaitStatus ();
+  blockn &= 0xfff8; // always point to first block of 4k sector
 
 
-  EePutReadBlockAddress(blockn);
+  EePutReadBlockAddress (blockn);
   {
     int n;
-    for (n=0; n<2048; n++){
+    for (n = 0; n < 2048; n++)
+    {
 #if USE_INVERTED_DISK_DATA
-      *dptr++ = ~SpiSendReceive(0);
+      *dptr++ = ~SpiSendReceive (0);
 #else
-      *dptr++ = SpiSendReceive(0);
+      *dptr++ = SpiSendReceive (0);
 #endif
     }
   }
@@ -477,94 +511,116 @@ u_int16 EeRead4KSectorYToWorkspace(u_int16 blockn) {
   return 0;
 }
 
-void InitSpi(u_int16 clockDivider){
+void InitSpi (u_int16 clockDivider)
+{
   SPI_MASTER_8BIT_CSHI;
-  PERIP(SPI0_FSYNC) = 0;
-  PERIP(SPI0_CLKCONFIG) = SPI_CC_CLKDIV * (clockDivider-1);
-  PERIP(GPIO1_MODE) |= 0x1f; /* enable SPI pins */
+  PERIP (SPI0_FSYNC) = 0;
+  PERIP (SPI0_CLKCONFIG) = SPI_CC_CLKDIV * (clockDivider - 1);
+  PERIP (GPIO1_MODE) |= 0x1f; /* enable SPI pins */
 }
 
 
-__y u_int16 *FindCachedBlock(u_int16 blockNumber){
+__y u_int16 *FindCachedBlock (u_int16 blockNumber)
+{
   register int i;
   lastFoundBlock = -1;
-  for (i=0; i<CACHE_BLOCKS; i++){
-    if ((blockPresent & 1/*was L*/<<i) && (blockAddress[i] == blockNumber)){
+  for (i = 0; i < CACHE_BLOCKS; i++)
+  {
+    if ((blockPresent & 1 /* was L */  << i)
+        && (blockAddress[i] == blockNumber))
+    {
       lastFoundBlock = i;
-      return mallocAreaY+256*i;
+      return mallocAreaY + 256 * i;
     }
   }
   return NULL;
 }
 
 
-u_int16 WriteContinuous4K(){
-  u_int16 i,k;
-  for (i=0; i<CACHE_BLOCKS-7; i++){ //for all cached blocks...
-    if ((blockPresent & 1/*was L*/<<i) && ((blockAddress[i] & 0x0007) == 0)){
-      //cached block i contains first 512 of 4K
-      for (k=1; k<8; k++){
-        if (blockAddress[i+k] != blockAddress[i]+k) goto ohi;
+u_int16 WriteContinuous4K ()
+{
+  u_int16 i, k;
+  for (i = 0; i < CACHE_BLOCKS - 7; i++)
+  { // for all cached blocks...
+    if ((blockPresent & 1 /* was L */  << i)
+        && ((blockAddress[i] & 0x0007) == 0))
+    {
+      // cached block i contains first 512 of 4K
+      for (k = 1; k < 8; k++)
+      {
+        if (blockAddress[i + k] != blockAddress[i] + k)
+          goto ohi;
       }
-      do__not__puthex(blockAddress[i]); do__not__puts(" starts continuous 4K ");
+      do__not__puthex (blockAddress[i]);
+      do__not__puts (" starts continuous 4K ");
 
-      if (-1 != EeProgram4K (blockAddress[i], mallocAreaY+256*i)){
-        for (k=0; k<8; k++){
-          blockPresent &= ~(1/*was L*/<<(i+k));
+      if (-1 != EeProgram4K (blockAddress[i], mallocAreaY + 256 * i))
+      {
+        for (k = 0; k < 8; k++)
+        {
+          blockPresent &= ~(1 /* was L */  << (i + k));
         }
-      } else {
+      }
+      else
+      {
         return 0; /* USB HAS BEEN RESET */
       }
       return 1;
     }
-ohi:
-    {}
+  ohi:
+    {
+    }
   }
   return 0;
 }
 
-__y u_int16 *GetEmptyBlock(u_int16 blockNumber){
+__y u_int16 *GetEmptyBlock (u_int16 blockNumber)
+{
   register int i;
-  for (i=0; i<CACHE_BLOCKS; i++){
-    if (!(blockPresent & 1/*was L*/<<i)) {
-      blockPresent |= 1/*was L*/<<i;
+  for (i = 0; i < CACHE_BLOCKS; i++)
+  {
+    if (!(blockPresent & 1 /* was L */  << i))
+    {
+      blockPresent |= 1 /* was L */  << i;
       blockAddress[i] = blockNumber;
-      return mallocAreaY+256*i;
+      return mallocAreaY + 256 * i;
     }
   }
-  //do__not__puts("cannot allocate empty block");
+  // do__not__puts("cannot allocate empty block");
   return NULL;
 }
 
 
 
-struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
-    u_int16 cacheSize);
-s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
-    u_int16 blocks, u_int16 *data);
-s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
-    u_int16 blocks, u_int16 *data);
-s_int16 FsMapSpiFlashFlush(struct FsMapper *map, u_int16 hard);
+struct FsMapper *FsMapSpiFlashCreate (struct FsPhysical *physical,
+                                      u_int16 cacheSize);
+s_int16 FsMapSpiFlashRead (struct FsMapper *map, u_int32 firstBlock,
+                           u_int16 blocks, u_int16 * data);
+s_int16 FsMapSpiFlashWrite (struct FsMapper *map, u_int32 firstBlock,
+                            u_int16 blocks, u_int16 * data);
+s_int16 FsMapSpiFlashFlush (struct FsMapper *map, u_int16 hard);
 
 
 const struct FsMapper spiFlashMapper = {
-  0x010c, /*version*/
-  256,    /*blocksize*/
-  LOGICAL_DISK_BLOCKS,      /*blocks*/
-  0,      /*cacheBlocks*/
+  0x010c, /* version */
+  256,  /* blocksize */
+  LOGICAL_DISK_BLOCKS,  /* blocks */
+  0,  /* cacheBlocks */
   FsMapSpiFlashCreate,
-  FsMapFlNullOk,//RamMapperDelete,
+  FsMapFlNullOk,  // RamMapperDelete,
   FsMapSpiFlashRead,
   FsMapSpiFlashWrite,
-  NULL,//FsMapFlNullOk,//RamMapperFree,
-  FsMapSpiFlashFlush,//RamMapperFlush,
-  NULL /* no physical */
+  NULL, // FsMapFlNullOk,//RamMapperFree,
+  FsMapSpiFlashFlush, // RamMapperFlush,
+  NULL  /* no physical */
 };
-struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
-    u_int16 cacheSize) {
 
-  do__not__puts("CREATE");
-  InitSpi(SPI_CLOCK_DIVIDER);
+struct FsMapper *FsMapSpiFlashCreate (struct FsPhysical *physical,
+                                      u_int16 cacheSize)
+{
+
+  do__not__puts ("CREATE");
+  InitSpi (SPI_CLOCK_DIVIDER);
   blockPresent = 0;
   shouldFlush = 0;
   return &spiFlashMapper;
@@ -572,25 +628,31 @@ struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
 
 
 
-s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
-    u_int16 blocks, u_int16 *data) {
+s_int16 FsMapSpiFlashRead (struct FsMapper * map, u_int32 firstBlock,
+                           u_int16 blocks, u_int16 * data)
+{
   register s_int16 bl = 0;
 
-  if (shouldFlush) return 0;
+  if (shouldFlush)
+    return 0;
   firstBlock += RESERVED_BLOCKS;
 
-  while (bl < blocks) {
-    __y u_int16 *source = FindCachedBlock(firstBlock);
+  while (bl < blocks)
+  {
+    __y u_int16 *source = FindCachedBlock (firstBlock);
 #if 0
-    do__not__puthex(firstBlock);
-    do__not__puthex((u_int16)source);
-    do__not__puts("=rd_lba, addr");
+    do__not__puthex (firstBlock);
+    do__not__puthex ((u_int16) source);
+    do__not__puts ("=rd_lba, addr");
 #endif
-    if (source) {
-      memcpyYX(data, source, 256);
-    } else {
-      EeReadBlock(firstBlock, data);
-      //memset(data, 0, 256);
+    if (source)
+    {
+      memcpyYX (data, source, 256);
+    }
+    else
+    {
+      EeReadBlock (firstBlock, data);
+      // memset(data, 0, 256);
     }
     data += 256;
     firstBlock++;
@@ -600,50 +662,64 @@ s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
 }
 
 
-s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
-    u_int16 blocks, u_int16 *data) {
+s_int16 FsMapSpiFlashWrite (struct FsMapper * map, u_int32 firstBlock,
+                            u_int16 blocks, u_int16 * data)
+{
   s_int16 bl = 0;
 
   firstBlock += RESERVED_BLOCKS;
 
-  if (shouldFlush){
-    do__not__puts("flush-reject");
+  if (shouldFlush)
+  {
+    do__not__puts ("flush-reject");
     return 0; // don't accept write while flushing
   }
-  while (bl < blocks) {
+  while (bl < blocks)
+  {
     // Is the block to be written different than data already in EEPROM?
-    if (EeCompareBlock(firstBlock, data)){
-      __y u_int16 *target = FindCachedBlock(firstBlock);
-      if (target) {
-        do__not__puthex(firstBlock);
-        do__not__puthex((u_int16)target);
-        do__not__puts("=rewrite_lba");
-      } else {
-        target = GetEmptyBlock(firstBlock);
-        do__not__puthex(firstBlock);
-        do__not__puts("=write_lba");
+    if (EeCompareBlock (firstBlock, data))
+    {
+      __y u_int16 *target = FindCachedBlock (firstBlock);
+      if (target)
+      {
+        do__not__puthex (firstBlock);
+        do__not__puthex ((u_int16) target);
+        do__not__puts ("=rewrite_lba");
       }
-      if (!target){ //cache is full
-        //must do a cache flush to get cache space
-        FsMapSpiFlashFlush(NULL,1);
-        target = GetEmptyBlock(firstBlock);
+      else
+      {
+        target = GetEmptyBlock (firstBlock);
+        do__not__puthex (firstBlock);
+        do__not__puts ("=write_lba");
       }
-      if (target){
-        memcpyXY(target, data, 256);
-        PrintCache();
-      }else{
-        puts("FATAL ERROR: NO CACHE SPACE. THIS NEVER HAPPENS.");
-        while(1)
+      if (!target)
+      { // cache is full
+        // must do a cache flush to get cache space
+        FsMapSpiFlashFlush (NULL, 1);
+        target = GetEmptyBlock (firstBlock);
+      }
+      if (target)
+      {
+        memcpyXY (target, data, 256);
+        PrintCache ();
+      }
+      else
+      {
+        puts ("FATAL ERROR: NO CACHE SPACE. THIS NEVER HAPPENS.");
+        while (1)
           ;
       }
-      WriteContinuous4K();
-    } else {
-      do__not__puthex(firstBlock);
-      do__not__puts("=lba; Redundant write skipped");
+      WriteContinuous4K ();
+    }
+    else
+    {
+      do__not__puthex (firstBlock);
+      do__not__puts ("=lba; Redundant write skipped");
     }
 
-    if (PERIP(USB_STATUS) & USB_STF_BUS_RESET){
-      do__not__puts("USB: Reset");
+    if (PERIP (USB_STATUS) & USB_STF_BUS_RESET)
+    {
+      do__not__puts ("USB: Reset");
     };
     data += 256;
     firstBlock++;
@@ -653,38 +729,51 @@ s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
 }
 
 
-s_int16 FsMapSpiFlashFlush(struct FsMapper *map, u_int16 hard){
-  u_int16 i,j,lba;
+s_int16 FsMapSpiFlashFlush (struct FsMapper * map, u_int16 hard)
+{
+  u_int16 i, j, lba;
   u_int16 __y *dptr;
   u_int16 newBlockPresent;
 
-  do__not__puts("FLUSH");
-  PrintCache();
+  do__not__puts ("FLUSH");
+  PrintCache ();
 
-  if (shouldFlush>1) return 0;
-  shouldFlush = 2; //flushing
+  if (shouldFlush > 1)
+    return 0;
+  shouldFlush = 2;  // flushing
 
-  for (i=0; i<CACHE_BLOCKS; i++){
-    if (blockPresent & (1/*was L*/<<i)){
-      do__not__puthex(i);do__not__puthex(blockAddress[i]);do__not__puts("slot, lba  is dirty");
+  for (i = 0; i < CACHE_BLOCKS; i++)
+  {
+    if (blockPresent & (1 /* was L */  << i))
+    {
+      do__not__puthex (i);
+      do__not__puthex (blockAddress[i]);
+      do__not__puts ("slot, lba  is dirty");
       lba = blockAddress[i] & 0xfff8;
       EeRead4KSectorYToWorkspace (lba);
       newBlockPresent = blockPresent;
-      for (j=0; j<8; j++) {
-        do__not__puthex (lba+j);
-        if (dptr = FindCachedBlock(lba+j)){
-          memcpyYY (WORKSPACE+(256*j), dptr, 256);
-          newBlockPresent &= ~(1/*was L*/<<lastFoundBlock);
+      for (j = 0; j < 8; j++)
+      {
+        do__not__puthex (lba + j);
+        if (dptr = FindCachedBlock (lba + j))
+        {
+          memcpyYY (WORKSPACE + (256 * j), dptr, 256);
+          newBlockPresent &= ~(1 /* was L */  << lastFoundBlock);
 
-          do__not__puts("from cache");
-        } else {
-          do__not__puts("from disk");
+          do__not__puts ("from cache");
+        }
+        else
+        {
+          do__not__puts ("from disk");
         }
       }
-      if (-1 != EeProgram4K (lba, WORKSPACE)){
+      if (-1 != EeProgram4K (lba, WORKSPACE))
+      {
         blockPresent = newBlockPresent;
         shouldFlush = 0;
-      } else {
+      }
+      else
+      {
         shouldFlush = 1;
         return 0; /* USB HAS BEEN RESET */
       }
@@ -696,71 +785,79 @@ s_int16 FsMapSpiFlashFlush(struct FsMapper *map, u_int16 hard){
 }
 
 
-auto void MyMassStorage(void) {
+auto void MyMassStorage (void)
+{
   register __b0 int usbMode = 0;
-  do__not__puts("MyMassStorage");
+  do__not__puts ("MyMassStorage");
 
-  voltages[voltCoreUSB] = 31; //30:ok
+  voltages[voltCoreUSB] = 31; // 30:ok
   voltages[voltIoUSB] = 31; // set maximum IO voltage (about 3.6V)
   do__not__puthex (voltages[voltCoreUSB]);
-  do__not__puts("=USB Core Voltage"); //default:27
-  PowerSetVoltages(&voltages[voltCoreUSB]);
-  BusyWait10();
-  LoadCheck(NULL, 1); /* Set 48 MHz Clock */
-  SetRate(44100U);
+  do__not__puts ("=USB Core Voltage");  // default:27
+  PowerSetVoltages (&voltages[voltCoreUSB]);
+  BusyWait10 ();
+  LoadCheck (NULL, 1);  /* Set 48 MHz Clock */
+  SetRate (44100U);
 
-  SetHookFunction((u_int16)InitUSBDescriptors, MyInitUSBDescriptors);
+  SetHookFunction ((u_int16) InitUSBDescriptors, MyInitUSBDescriptors);
 
-  do__not__puts("before usb init");
-  InitUSB(USB_MASS_STORAGE);
-  do__not__puts("after usb init");
+  do__not__puts ("before usb init");
+  InitUSB (USB_MASS_STORAGE);
+  do__not__puts ("after usb init");
 
-  while (USBIsAttached()) {
-    USBHandler();
-    if (shouldFlush){
-      FsMapSpiFlashFlush(NULL,1);
+  while (USBIsAttached ())
+  {
+    USBHandler ();
+    if (shouldFlush)
+    {
+      FsMapSpiFlashFlush (NULL, 1);
     }
-    if (USBWantsSuspend()) {
-      if (USBIsDetached()) {
+    if (USBWantsSuspend ())
+    {
+      if (USBIsDetached ())
+      {
         break;
       }
     }
-    if (usbMode == 1) {
-      if (AudioBufFill() < 32) {
-        memset(tmpBuf, 0, sizeof(tmpBuf));
-        AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
+    if (usbMode == 1)
+    {
+      if (AudioBufFill () < 32)
+      {
+        memset (tmpBuf, 0, sizeof (tmpBuf));
+        AudioOutputSamples (tmpBuf, sizeof (tmpBuf) / 2);
       }
-      Sleep();
+      Sleep ();
     }
   }
   hwSampleRate = 1;
-  PERIP(SCI_STATUS) &= ~SCISTF_USB_PULLUP_ENA;
-  PERIP(USB_CONFIG) = 0x8000U;
-  map->Flush(map, 1);
-  PowerSetVoltages(&voltages[voltCorePlayer]);
+  PERIP (SCI_STATUS) &= ~SCISTF_USB_PULLUP_ENA;
+  PERIP (USB_CONFIG) = 0x8000U;
+  map->Flush (map, 1);
+  PowerSetVoltages (&voltages[voltCorePlayer]);
 }
 
 
 
 // FAT12 binary patch
-auto u_int16 Fat12OpenFile(register __c0 u_int16 n);
+auto u_int16 Fat12OpenFile (register __c0 u_int16 n);
 
-void main(void) {
+void main (void)
+{
 
-  do__not__puts("Hello.");
+  do__not__puts ("Hello.");
 
-  InitAudio();
-  GPIOInit();
+  InitAudio ();
+  GPIOInit ();
 
-  PERIP(INT_ENABLEL) = INTF_RX | INTF_TIM0;
-  PERIP(INT_ENABLEH) = INTF_DAC;
+  PERIP (INT_ENABLEL) = INTF_RX | INTF_TIM0;
+  PERIP (INT_ENABLEH) = INTF_DAC;
 
-  PERIP(SCI_STATUS) &= ~SCISTF_USB_PULLUP_ENA;
-  PERIP(USB_CONFIG) = 0x8000U;
+  PERIP (SCI_STATUS) &= ~SCISTF_USB_PULLUP_ENA;
+  PERIP (USB_CONFIG) = 0x8000U;
 
-  PERIP(GPIO1_ODATA) |=  LED1|LED2;
-  PERIP(GPIO1_DDR)   |=  LED1|LED2;
-  PERIP(GPIO1_MODE)  &= ~(LED1|LED2);
+  PERIP (GPIO1_ODATA) |= LED1 | LED2;
+  PERIP (GPIO1_DDR) |= LED1 | LED2;
+  PERIP (GPIO1_MODE) &= ~(LED1 | LED2);
 
   player.volumeOffset = -24;
   player.pauseOn = 0;
@@ -768,53 +865,65 @@ void main(void) {
   keyOld = KEY_POWER;
   keyOldTime = -32767;
 
-  SetHookFunction((u_int16)OpenFile, Fat12OpenFile);
+  SetHookFunction ((u_int16) OpenFile, Fat12OpenFile);
 
   // Set the GPIO hook to look at GPIO pins
-  SetHookFunction((u_int16)IdleHook, GPIOCtrlIdleHook);
+  SetHookFunction ((u_int16) IdleHook, GPIOCtrlIdleHook);
 
   // Use our SPI flash mapper as logical disk
-  map = FsMapSpiFlashCreate(NULL, 0);
+  map = FsMapSpiFlashCreate (NULL, 0);
   player.volume = 0;
-  PlayerVolume();
+  PlayerVolume ();
 
   // Use custom main loop to take over total control of chip
-  while (1) {
+  while (1)
+  {
     // When USB is attached, go to mass storage handler
-    if (USBIsAttached()) {
-      do__not__puts("MassStorage");
-      MyMassStorage();
-      do__not__puts("From MassStorage");
+    if (USBIsAttached ())
+    {
+      do__not__puts ("MassStorage");
+      MyMassStorage ();
+      do__not__puts ("From MassStorage");
     }
-    //puts("Test");
+    // puts("Test");
 
     // Try to use a FAT filesystem on logical disk
-    if (InitFileSystem() == 0) {
+    if (InitFileSystem () == 0)
+    {
       minifatInfo.supportedSuffixes = defSupportedFiles;
 
       // Look for playable files
-      player.totalFiles = OpenFile(0xffffU);
+      player.totalFiles = OpenFile (0xffffU);
       player.currentFile = 0xffffU;
-      do__not__puthex(player.totalFiles);
-      do__not__puts("");
-      if (player.totalFiles == 0) {
+      do__not__puts ("Total Files");
+      do__not__puthex (player.totalFiles);
+      do__not__puts ("");
+      if (player.totalFiles == 0)
+      {
         goto noFSnorFiles;
       }
 
       // Playable file(s) found. Play.
       player.nextStep = 1;
       player.nextFile = 0;
-      while (1) {
-        GPIOCtrlIdleHook();
-        while(player.currentFile == 0xffffU) {
-          memset(tmpBuf, 0, sizeof(tmpBuf));
-          AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
-          if (USBIsAttached()) {
+      while (1)
+      {
+        // Check the current pin settings
+        GPIOCtrlIdleHook ();
+
+        // If current file is empty play silence
+        while (player.currentFile == 0xffffU)
+        {
+          memset (tmpBuf, 0, sizeof (tmpBuf));
+          AudioOutputSamples (tmpBuf, sizeof (tmpBuf) / 2);
+          if (USBIsAttached ())
+          {
             break;
           }
         }
-        if (OpenFile(player.currentFile) < 0) {
 
+        if (player.currentFile < player.totalFiles && OpenFile (player.currentFile) < 0)
+        {
           player.ffCount = 0;
           cs.cancel = 0;
           cs.goTo = -1;
@@ -824,27 +933,35 @@ void main(void) {
             register s_int16 oldStep = player.nextStep;
             register s_int16 ret;
 
-            do__not__puts("Current playing file");
-            do__not__puthex(player.currentFile);
-            do__not__puts("");
-            ret = PLAYFILE(); // Decode and Play.
-            do__not__puts("Player return value");
-            do__not__puthex(ret);
-            do__not__puts("");
+            do__not__puts ("Current playing file");
+            do__not__puthex (player.currentFile);
+            do__not__puts ("");
+            ret = PLAYFILE ();  // Decode and Play.
+            do__not__puts ("Player return value");
+            do__not__puthex (ret);
+            do__not__puts ("");
             // See separate examples about keyboard handling.
           }
         }
+        else
+        {
+          player.currentFile = 0xffffU;
+          continue;
+        }
 
         // If USB is attached, return to main loop
-        if (USBIsAttached()) {
+        if (USBIsAttached ())
+        {
           break;
         }
       }
-    } else {
-noFSnorFiles:
-      LoadCheck(&cs, 32);
-      memset(tmpBuf, 0, sizeof(tmpBuf)); /* silence */
-      AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2); /* silence */
+    }
+    else
+    {
+    noFSnorFiles:
+      LoadCheck (&cs, 32);
+      memset (tmpBuf, 0, sizeof (tmpBuf));  /* silence */
+      AudioOutputSamples (tmpBuf, sizeof (tmpBuf) / 2); /* silence */
     }
   }
 }

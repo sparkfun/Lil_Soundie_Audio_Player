@@ -33,7 +33,8 @@ struct FsPhysical;
    of memory. For such a file performance is very good, but if
    several file are open, performance may be slow.
 */
-struct FsMapperTiny {
+struct FsMapperTiny
+{
   /** Public structure that is common to all mappers. */
   struct FsMapper m;
   /** Root node physical address. */
@@ -56,25 +57,24 @@ struct FsMapperTiny {
 
 #ifndef ASM
 /** Create a tiny mapper */
-struct FsMapper *FsMapTnCreate(struct FsPhysical *physical,
-			       u_int16 cacheSize);
+struct FsMapper *FsMapTnCreate (struct FsPhysical *physical, u_int16 cacheSize);
 /** Delete a tiny mapper */
-s_int16 FsMapTnDelete(struct FsMapper *map);
+s_int16 FsMapTnDelete (struct FsMapper *map);
 /** Read blocks */
-s_int16 FsMapTnRead(struct FsMapper *map, u_int32 firstLogicalBlock,
-		    u_int16 logicalBlocks, u_int16 *data);
+s_int16 FsMapTnRead (struct FsMapper *map, u_int32 firstLogicalBlock,
+                     u_int16 logicalBlocks, u_int16 * data);
 /** Write blocks */
-s_int16 FsMapTnWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
-		     u_int16 logicalBlocks, u_int16 *data);
+s_int16 FsMapTnWrite (struct FsMapper *map, u_int32 firstLogicalBlock,
+                      u_int16 logicalBlocks, u_int16 * data);
 /** Flush all cached data. if \e hard is non-zero, all potential journals are
     also flushed. */
-s_int16 FsMapTnFlush(struct FsMapper *map, u_int16 hard);
+s_int16 FsMapTnFlush (struct FsMapper *map, u_int16 hard);
 /** Free blocks. */
-s_int16 FsMapTnFree(struct FsMapper *m, u_int32 logicalBlockNo,
-		    u_int32 logicalBlocks);
+s_int16 FsMapTnFree (struct FsMapper *m, u_int32 logicalBlockNo,
+                     u_int32 logicalBlocks);
 
-s_int16 FsMapFlNullFail(); /*< intentionally incomplete prototype */
-s_int16 FsMapFlNullOk();   /*< intentionally incomplete prototype */
+s_int16 FsMapFlNullFail ();     /* < intentionally incomplete prototype */
+s_int16 FsMapFlNullOk ();       /* < intentionally incomplete prototype */
 #endif /* !ASM */
 
 #endif /* !FS_MAP_FLASH */

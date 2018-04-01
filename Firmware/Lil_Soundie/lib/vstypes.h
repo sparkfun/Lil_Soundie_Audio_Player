@@ -18,12 +18,12 @@
 /** Mode register: Saturation mode */
 #define MR_SAT  0x400
 
-#ifdef ASM	/* ASM definitions */
-#include <vsasm.h> /* hide preprocessor tokens that only vsa understands */
+#ifdef ASM  /* ASM definitions */
+#include <vsasm.h>  /* hide preprocessor tokens that only vsa understands */
 #endif /* ASM */
 
 
-#ifndef ASM	/* C only definitions */
+#ifndef ASM /* C only definitions */
 
 /** Default signed 16-bit integer type */
 typedef short s_int16;
@@ -81,7 +81,7 @@ typedef unsigned int u_int32;
 #define auto
 
 #if 0
-typedef float  f_int16;
+typedef float f_int16;
 typedef double f_int32;
 #else
 
@@ -124,7 +124,7 @@ typedef s_int32 f_int32;
 
 
 
-#else /*else !__VSDSP__*/
+#else /* else !__VSDSP__ */
 
 #define __mem_x __x
 #define __mem_y __y
@@ -159,15 +159,15 @@ typedef __fract long f_int32;
 #ifndef USEX
 /** Direct memory write to X memory */
 #define USEX(x) (*(__mem_x volatile u_int16 *)(u_int16)(x))
-#endif /*!USEX*/
+#endif /* !USEX */
 #ifndef USEY
 /** Direct memory write to Y memory */
 #define USEY(x) (*(__mem_y volatile u_int16 *)(u_int16)(x))
-#endif /*!USEY*/
+#endif /* !USEY */
 
 /** overlay entry function return value */
 typedef unsigned int entry_u_int16; // Las
 
-#endif /*!ASM*/
+#endif /* !ASM */
 
 #endif /*__VS_TYPES_H__*/

@@ -18,14 +18,14 @@
 
    \return A Vorbis Codec structure.
 */
-struct Codec *CodVorbisCreate(void);
+struct Codec *CodVorbisCreate (void);
 
 /**
    Free all resources allocated for codec.
 
    \param cod A Vorbis Codec structure.
 */
-void CodVorbisDelete(struct Codec *cod);
+void CodVorbisDelete (struct Codec *cod);
 
 /**
    Decode file. Upon success or a negative number, Codec has succeeded.
@@ -41,11 +41,11 @@ void CodVorbisDelete(struct Codec *cod);
 
    \return Error code.
  */
-enum CodecError CodVorbisDecode(struct Codec *cod, struct CodecServices *cs,
-			     const char **errorString);
+enum CodecError CodVorbisDecode (struct Codec *cod, struct CodecServices *cs,
+                                 const char **errorString);
 
-auto s_int16 CodVBlockSize(register __i0 struct Codec *c,
-			   register __a0 s_int16 bType);
+auto s_int16 CodVBlockSize (register __i0 struct Codec *c,
+                            register __a0 s_int16 bType);
 
 #endif /* !ASM */
 

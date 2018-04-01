@@ -36,9 +36,9 @@
 //#define DEBUG_STACK 0xe0
 
 #define DCT_START   0x1000
-#define STACK_START 0x1800 /* these may not be final.. */
+#define STACK_START 0x1800  /* these may not be final.. */
 #define STACK_SIZE  0x200 /* 0x100 is not quite enough! */
-#define DEBUG_STACK (STACK_START+STACK_SIZE-32)  /* 78..98.. need 18 + tmp */
+#define DEBUG_STACK (STACK_START+STACK_SIZE-32) /* 78..98.. need 18 + tmp */
 #define OTHERS_START 0x0800 /* 2048 */
 #define YPREV0_START 0x0000 /* 1024 */
 #define YPREV1_START 0x0400 /* 1024 */
@@ -48,7 +48,7 @@
 #define INTV_GPIO0 9
 #define INTV_REGU  8
 #define INTV_TIM1  7
-#define INTV_TIM0  6 
+#define INTV_TIM0  6
 #define INTV_RX    5
 #define INTV_TX    4
 #define INTV_NFLSH 3
@@ -98,10 +98,10 @@
 #define SCISTF_VCM_OVERLOAD   (1<<11) /* VCM in overload */
 #define SCISTF_VCM_DISABLE    (1<<10) /* Disable VCM protection */
 
-#define SCISTF_USB_DP         (1<<9) /* attached with  controllable pull-up */
-#define SCISTF_USB_DN         (1<<8) /* attached with fixed 100k-1M pull-up */
+#define SCISTF_USB_DP         (1<<9)  /* attached with controllable pull-up */
+#define SCISTF_USB_DN         (1<<8)  /* attached with fixed 100k-1M pull-up */
 #define SCISTF_USB_DIFF_ENA   (1<<7)
-#define SCISTF_USB_PULLUP_ENA (1<<6) /* control 1.5kOhm DP pull-up */
+#define SCISTF_USB_PULLUP_ENA (1<<6)  /* control 1.5kOhm DP pull-up */
 #define SCISTF_REGU_POWERLOW  (1<<5)
 #define SCISTF_REGU_POWERBUT  (1<<4)
 #define SCISTF_ANADRV_PDOWN   (1<<3)
@@ -109,9 +109,9 @@
 #define SCISTF_REGU_CLOCK     (1<<1)
 #define SCISTF_REGU_SHUTDOWN  (1<<0)
 
-#define SCI_DEBUG       0xC002 /* for debug outputs */
+#define SCI_DEBUG       0xC002  /* for debug outputs */
 
-#define GPIO0_MODE      0xC010 /*default='1' = PERIP*/
+#define GPIO0_MODE      0xC010  /* default='1' = PERIP */
 #define GPIO1_MODE      0xC011
 
 #define DAC_VOL         0xC012
@@ -172,7 +172,7 @@
 #define TIMER_T1CNTL    0xC03A
 #define TIMER_T1CNTH    0xC03B
 
-#define GPIO0_DDR       0xC040 /* GPIO0 15 bits */
+#define GPIO0_DDR       0xC040  /* GPIO0 15 bits */
 #define GPIO0_ODATA     0xC041
 #define GPIO0_IDATA     0xC042
 #define GPIO0_INT_FALL  0xC043
@@ -191,7 +191,7 @@
 #define GPIO0_CLE   0x1000
 #define GPIO0_ALE   0x2000
 
-#define GPIO1_DDR       0xC050 /* GPIO1 5 bits */
+#define GPIO1_DDR       0xC050  /* GPIO1 5 bits */
 #define GPIO1_ODATA     0xC051
 #define GPIO1_IDATA     0xC052
 #define GPIO1_INT_FALL  0xC053
@@ -210,9 +210,9 @@
 #define SPI0_FSYNC      0xC06C
 
 #define SPI_CF_SRESET     (1<<11)
-#define SPI_CF_RXFIFOMODE (1<<10) /*1=interrupt when fifo full or CS deassert*/
-#define SPI_CF_RXFIFO     (1<<9)  /*rx FIFO enable*/
-#define SPI_CF_TXFIFO     (1<<8)  /*tx FIFO enable*/
+#define SPI_CF_RXFIFOMODE (1<<10) /* 1=interrupt when fifo full or CS deassert */
+#define SPI_CF_RXFIFO     (1<<9)  /* rx FIFO enable */
+#define SPI_CF_TXFIFO     (1<<8)  /* tx FIFO enable */
 #define SPI_CF_INTXCS  (0<<6)
 #define SPI_CF_FALLXCS (2<<6)
 #define SPI_CF_RISEXCS (3<<6)
@@ -309,30 +309,30 @@
 /* SpiBoot() and SpiLoad() do not return!
    m24 = 0 for 16-bit SPI EEPROM address.
  */
-void SpiBoot(register __a0 short clkConf, register __i2 short addr,
-	     register __i0 short m24);
+void SpiBoot (register __a0 short clkConf, register __i2 short addr,
+              register __i0 short m24);
 /* SpiBoot(SPI_CC_CLKDIV*7 | SPI_CC_CLKOPOL, 0, 0); */
-void SpiLoad(register __i2 short startAddr, register __i0 short m24);
-void SpiDelay(register __a0 u_int16 wait);
-auto u_int16 SpiSendReceive(register __a0 u_int16 data);
+void SpiLoad (register __i2 short startAddr, register __i0 short m24);
+void SpiDelay (register __a0 u_int16 wait);
+auto u_int16 SpiSendReceive (register __a0 u_int16 data);
 
-void Restart(void);
+void Restart (void);
 
 /* These are called through IRAM vectors, by default FAT16/32. */
 /** Hook: Called by Sleep() before halt state is entered. Default: UserInterfaceIdleHook().
 */
-void IdleHook(void);
+void IdleHook (void);
 /**
   Hook: Initializes filesystem. Default: FatInitFileSystem().
   \return 0 for success.
 */
-auto u_int16 InitFileSystem(void);
+auto u_int16 InitFileSystem (void);
 /**
   Hook: Opens a specified file. Default: FatOpenFile().
   \param fileNum the number of the file to open.
   \return -1 for success, the number of files otherwise.
 */
-auto s_int16 OpenFile(register __c0 u_int16 fileNum);
+auto s_int16 OpenFile (register __c0 u_int16 fileNum);
 /**
   Hook: Reads bytes from the currently opened file. Default: FatReadFile().
   \param buf Packed buffer to read bytes to.
@@ -341,106 +341,107 @@ auto s_int16 OpenFile(register __c0 u_int16 fileNum);
   \return the number of bytes actually read.
   \example tmpBuf[0] = 0; FatReadFile(tmpBuf, 1, 1); reads one byte to the low part of tmpBuf[0].
 */
-auto s_int16 ReadFile(register __i3 u_int16 *buf,
-		      register __c1 s_int16 byteOff,
-		      register __c0 s_int16 byteSize
-		      /*<0 for little-endian target buffer order*/);
+auto s_int16 ReadFile (register __i3 u_int16 * buf,
+                       register __c1 s_int16 byteOff,
+                       register __c0 s_int16 byteSize
+                       /* <0 for little-endian target buffer order */ );
 /**
   Hook: Change the read position of a file. Default: FatSeek().
   \param pos Byte position to find.
   \return the FAT sector that corresponds to the pos.
 */
-u_int32 Seek(register __reg_a u_int32 pos); /**< Sets pos, returns old pos */
+u_int32 Seek (register __reg_a u_int32 pos);/**< Sets pos, returns old pos */
 /**
   Hook: Return the current read position. Default: FatTell().
   \return Current read position.
 */
-u_int32 Tell(void); /**< Gets pos */
+u_int32 Tell (void);/**< Gets pos */
 /**
   Hook: Read a sector. Default: MapperReadDiskSector().
   \param buffer the buffer for the sector data.
   \param sector the sector to read.
 */
-auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
-			    register __reg_a u_int32 sector);
+auto u_int16 ReadDiskSector (register __i0 u_int16 * buffer,
+                             register __reg_a u_int32 sector);
 
 /**
   Reads one sector through the mapper interface (map->Read()).
   \param buffer the buffer for the sector data.
   \param sector the sector to read.
 */
-auto u_int16 MapperReadDiskSector(register __i0 u_int16 *buffer,
-				  register __reg_a u_int32 sector);
+auto u_int16 MapperReadDiskSector (register __i0 u_int16 * buffer,
+                                   register __reg_a u_int32 sector);
 
 /** Disable interrupts.
     Call Enable() an equal number of time to enable interrupts.
     Should only be used for critical code sections when other exclusion
     methods are not possible.
  */
-void Disable(void);
+void Disable (void);
 /** Enable interrupts.
  */
-void Enable(void);
+void Enable (void);
 /** Call the idle hook, then wait for the next interrupt (HALT mode).
  */
-void Sleep(void);
+void Sleep (void);
 /** IdleHook that does nothing.
  */
-void NullHook(void);
+void NullHook (void);
 /** Sets new IRAM Hook function.
     \param hook    The address of the Hook in IRAM
     \param newFunc The new hook function address.
     \return The old hook function address is returned.
  */
-void *SetHookFunction(register __i0 u_int16 hook, register __a0 void *newFunc);
+void *SetHookFunction (register __i0 u_int16 hook, register __a0 void *newFunc);
 
 //void BootFromX(register __i0 u_int16 *start);
 /** Reads and handles I, X, Y, and execute records from X memory.
     \bug: B0 is destroyed if the call returns. The function prototype
           with a return register set to b0 provides a workaround.
  */
-register __b0 u_int16 BootFromX(register __i0 u_int16 *start);
+register __b0 u_int16 BootFromX (register __i0 u_int16 * start);
 //extern s_int16 __y const cos64NewTab[];
-void SinTest(void); /* uses g_yprev0 for parameters */
-void MemTests(register short __b0 muxTestResult);
+void SinTest (void);            /* uses g_yprev0 for parameters */
+void MemTests (register short __b0 muxTestResult);
 
 /** enumerations for voltage array members. */
-enum voltIdx {
-    /* for VS1000B */
-    voltCorePlayer = 0, /**< core voltage in player mode */
-    voltIoPlayer,       /**< IO voltage in player mode */
-    voltAnaPlayer,      /**< Analog voltage in player mode */
-    voltCoreUSB,        /**< core voltage in USB mode */
-    voltIoUSB,          /**< IO voltage in USB mode */
-    voltAnaUSB,         /**< Analog voltage in USB mode */
-    voltCoreSuspend,    /**< core voltage in suspend/low-power pause mode */
-    voltIoSuspend,      /**< IO voltage in suspend/low-power pause mode */
-    voltAnaSuspend,     /**< Analog voltage in suspend/low-power pause mode */
-    voltCoreUser,       /**< core voltage in user-defined mode */
-    voltIoUser,         /**< IO voltage in user-defined mode */
-    voltAnaUser,        /**< Analog voltage in user-defined mode */
-    voltEnd
+enum voltIdx
+{
+  /* for VS1000B */
+  voltCorePlayer = 0,   /**< core voltage in player mode */
+  voltIoPlayer,         /**< IO voltage in player mode */
+  voltAnaPlayer,        /**< Analog voltage in player mode */
+  voltCoreUSB,          /**< core voltage in USB mode */
+  voltIoUSB,            /**< IO voltage in USB mode */
+  voltAnaUSB,           /**< Analog voltage in USB mode */
+  voltCoreSuspend,      /**< core voltage in suspend/low-power pause mode */
+  voltIoSuspend,        /**< IO voltage in suspend/low-power pause mode */
+  voltAnaSuspend,       /**< Analog voltage in suspend/low-power pause mode */
+  voltCoreUser,         /**< core voltage in user-defined mode */
+  voltIoUser,           /**< IO voltage in user-defined mode */
+  voltAnaUser,          /**< Analog voltage in user-defined mode */
+  voltEnd
 };
 extern u_int16 voltages[voltEnd];
 /** Waits 120000 cycles, which is 10ms if clock is 1.0x.*/
-void BusyWait10(void);
+void BusyWait10 (void);
 /** VS1000D: Waits 12000 cycles, which is 1ms if clock is 1.0x.
     In VS1000B/C is the same as BusyWait10(). */
-void BusyWait1(void);
+void BusyWait1 (void);
 /** Sets voltages according to parameter values. */
-void PowerSetVoltages(u_int16 volt[3]);
+void PowerSetVoltages (u_int16 volt[3]);
 /** Hook: Turns power off. Default: RealPowerOff().
  */
-void PowerOff(void);
+void PowerOff (void);
 /** Power off routine.
     Sets 1.0x mode (PLL off), 100Hz samplerate, disables interrupts,
     turns off analog drivers and LED's. Then waits until the power
     button is released. Then shuts off the regulators.
  */
-void RealPowerOff(void);
+void RealPowerOff (void);
 /** Hook: play the currently open file. Default: RealPlayCurrentFile().
  */
-u_int16 PlayCurrentFile(void);
+u_int16 PlayCurrentFile (void);
 /** Tries to play the current file.
     Turns on maximum player mode clock (by default 3.5x),
     and tries to decode the file with the Ogg Vorbis decoder.
@@ -451,10 +452,10 @@ u_int16 PlayCurrentFile(void);
     locating the next file.
     See enum CodecError from codec.h for return values.
  */
-u_int16 RealPlayCurrentFile(void);
+u_int16 RealPlayCurrentFile (void);
 /** Hook: Decreases or increases the system clock. Default: RealLoadCheck().
  */
-void LoadCheck(struct CodecServices *cs, s_int16 n);
+void LoadCheck (struct CodecServices *cs, s_int16 n);
 /** Decreases or increases the system clock. Also handles Replay Gain.
     If cs == NULL turns on maximum allowed clock (if n is zero,
     player.maxClock for player mode, otherwise 4.0x for USB mode).
@@ -464,13 +465,13 @@ void LoadCheck(struct CodecServices *cs, s_int16 n);
     \param n The number of samples or 0 or 1.
     \example LoadCheck(NULL, 0); will turn on maximum player-mode clock.
  */
-void RealLoadCheck(struct CodecServices *cs, s_int16 n);
+void RealLoadCheck (struct CodecServices *cs, s_int16 n);
 /** Hook: called when file is not Ogg Vorbis. Default: DefUnsupportedFile().
  */
-u_int16 UnsupportedFile(struct CodecServices *cs);
+u_int16 UnsupportedFile (struct CodecServices *cs);
 /** Called when file is not Ogg Vorbis. Dummy function.
  */
-u_int16 DefUnsupportedFile(struct CodecServices *cs);
+u_int16 DefUnsupportedFile (struct CodecServices *cs);
 
 extern u_int16 g_dctlo[2048];
 extern __y u_int16 g_dcthi[2048];
@@ -483,13 +484,13 @@ extern s_int16 g_yprev1[1024];
     \param cacheSize not used, RAM disk is always 36 sectors.
     \return pointer to mapper structure
  */
-struct FsMapper *FsMapRamCreate(struct FsPhysical *physical,
-				u_int16 cacheSize);
+struct FsMapper *FsMapRamCreate (struct FsPhysical *physical,
+                                 u_int16 cacheSize);
 
-void putch(register __a0 s_int16 ch); /**< raw polled UART send */
-s_int16 getch(void);                  /**< raw polled UART receive */
-void putword(register __a0 s_int16 ch); /**< raw polled UART send, high byte first */
-s_int16 getword(void);                  /**< raw polled UART receive, high byte first */
+void putch (register __a0 s_int16 ch);/**< raw polled UART send */
+s_int16 getch (void);                 /**< raw polled UART receive */
+void putword (register __a0 s_int16 ch);/**< raw polled UART send, high byte first */
+s_int16 getword (void);                 /**< raw polled UART receive, high byte first */
 #endif
 
 
