@@ -6,7 +6,8 @@ SparkFun Little Soundie Audio Player
 [*SparkFun Little Soundie (14006)*](https://www.sparkfun.com/products/14006)
 
 The Little Soundie Audio Player is a breakout board for the VS1000D, an audio decoder capable of playing OGG and WAV type audio files. 
-The Little Soundie makes adding sound effects to your project, prop, or costume easily with the built-in USB mass storage for your audio files. 
+The Little Soundie makes adding sound effects to your project, prop, or costume easily with the built-in USB mass storage for your audio files
+and simple methods of triggering audio playback.  
 
 Repository Contents
 -------------------
