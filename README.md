@@ -1,41 +1,26 @@
-SparkFun <PRODUCT NAME>
+SparkFun Little Soundie Audio Player
 ========================================
 
-![SparkFun Part Name](URL for picture of part)
+![SparkFun Little Soundie Audio Player](https://www.sparkfun.com/products/14006)
 
-[*SparkFun Part Name (SKU)*](URL for product on Sparkfun.com)
+[*SparkFun Little Soundie (14006)*](https://www.sparkfun.com/products/14006)
 
-<Basic description of the part.>
+The Little Soundie Audio Player is a breakout board for the VS1000D, an audio decoder capable of playing OGG and WAV type audio files. 
+The Little Soundie makes adding sound effects to your project, prop, or costume easily with the built-in USB mass storage for your audio files. 
 
 Repository Contents
 -------------------
 
-* **/Documentation** - Data sheets, additional product information
-* **/Enclosure** - Enclosure files 
-* **/Firmware** - Example code 
+* **/Firmware** - VLSI - VS1000D Firmware
 * **/Hardware** - Eagle design files (.brd, .sch)
-* **/Libraries** - Libraries for use with the <PRODUCT NAME>
 * **/Production** - Production panel files (.brd)
-* **/Software** - Related software for the <PRODUCT NAME>
+* **/Software** - An easy to use Arduino Template in case you want to hook up your Little Soundie to a Redboard or any board programmed with Arduino.
 
 Documentation
 --------------
-* **[Library](GitHub library URL)** - <LANGUAGE> library for the <PRODUCT NAME>.
-* **[Hookup Guide](Learn.SparkFun URL)** - Basic hookup guide for the <PRODUCT NAME>.
-* **[SparkFun Fritzing repo](https://github.com/sparkfun/Fritzing_Parts)** - Fritzing diagrams for SparkFun products.
-* **[SparkFun 3D Model repo](https://github.com/sparkfun/3D_Models)** - 3D models of SparkFun products. 
-* **[SparkFun Graphical Datasheets](https://github.com/sparkfun/Graphical_Datasheets)** -Graphical Datasheets for various SparkFun products.
+* **[Hookup Guide](https://learn.sparkfun.com/tutorials/little-soundie-audio-player-hookup-guide)** - Basic hookup guide for the <PRODUCT NAME>.
+* **[SparkFun Fritzing repo](https://github.com/sparkfun/Fritzing_Parts)** - Fritzing diagrams for SparkFun products. 
 
-Product Versions
-----------------
-* [Part SKU](part URL)- Basic part and short description here
-* [Retail part SKU] (retail URL)- Retail packaging of standard description here
-* [Any other parts this repo covers](any other URLs) - Description of said parts
-
-Version History
----------------
-* [vExxFxxZxxHxxLxxSxx](URL for tag specific to this version) - Description 
-* [vEyyFyyZyyHyyLyySyy](URL for tag specific to this version) - Description
 
 License Information
 -------------------
@@ -50,4 +35,3 @@ Distributed as-is; no warranty is given.
 
 - Your friends at SparkFun.
 
-_<COLLABORATION CREDIT>_
