@@ -1,8 +1,8 @@
 SparkFun Little Soundie Audio Player
 ========================================
 
-![SparkFun Little Soundie Audio Player](https://www.sparkfun.com/products/14006)
 
+![Little Soundie Audio Player](https://cdn.sparkfun.com//assets/parts/1/1/7/9/0/14006-SparkFun_Little_Soundie_Audio_Player-01.jpg)
 [*SparkFun Little Soundie (14006)*](https://www.sparkfun.com/products/14006)
 
 The Little Soundie Audio Player is a breakout board for the VS1000D, an audio decoder capable of playing OGG and WAV type audio files. 
