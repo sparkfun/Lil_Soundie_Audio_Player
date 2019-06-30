@@ -47,7 +47,7 @@ void puthex (u_int16 a);
    See system.h for GPIO_NUMBERED_FILES definition
    */
 
-#define GPIO_MASK       0x001f  // Sel. file w/ GPIO0 pins in the mask
+#define GPIO_MASK       0x003f  // Sel. file w/ GPIO0 pins in the mask
 //#define GPIO_INVERTED   //default state is HIGH, buttons bring low
 //#define GPIO_PRIORITIES 0x04ff // Sel. file w/ GPIO0 pins, lower has priority
 
