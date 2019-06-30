@@ -62,7 +62,7 @@ the root directory.
 
 
 // The number of 512-byte blocks totally available in the SPI Flash chip
-#define CHIP_TOTAL_BLOCKS 1024 /* 1024 * 512 bytes = 5Kb (ADESTO AT25SF041) */
+#define CHIP_TOTAL_BLOCKS 1024 /* 1024 * 512 bytes = 500KB (ADESTO AT25SF041) */
 
 // Set aside some blocks for VS1000 boot code (and optional parameter data)
 #define RESERVED_BLOCKS 32
