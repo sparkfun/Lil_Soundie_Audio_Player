@@ -178,26 +178,19 @@ void GPIOCtrlIdleHook (void)
 #ifdef USE_POWERBUTTON
     if (PERIP (SCI_STATUS) & SCISTF_REGU_POWERBUT)
     {
-      /* In 2FIN2 switching on the uSD regulator affects powerbutton. */
-      if (keyOld == (SCISTF_REGU_POWERBUT << 4))
+      /* about 0.2 sec */
+      if (keyOld == SCISTF_REGU_POWERBUT && ++keyOldTime >= 3)
       {
-        if (++keyOldTime >= 3)
-        { /* about 0.2 sec */
-          PERIP (GPIO0_CLEAR_MASK) = GPIO0_SD_POWER;
           RealPowerOff ();
-        }
-        else
-        {
-          keyOldTime = 0;
-        }
       }
       else
       {
-        keyOld == (SCISTF_REGU_POWERBUT << 4);
+        keyOld = SCISTF_REGU_POWERBUT;
       }
     }
     else
     {
+      keyOldTime = 0;
       keyOld = 0;
     }
 #endif
